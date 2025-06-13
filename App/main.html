@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StreamTV - IPTV App</title>
+    <title>Professional IPTV Player</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/dashjs@4.5.0/dist/dash.all.min.js"></script>
     <style>
         :root {
             --primary-color: #ff5722;
@@ -24,444 +25,595 @@
         body {
             background-color: var(--dark-color);
             color: var(--light-color);
-        }
-        
-        /* Header Styles */
-        header {
+            height: 100vh;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            background-color: var(--dark-secondary);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
+            flex-direction: column;
         }
         
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-        
-        .nav-icons {
+        .player-container {
+            flex: 1;
             display: flex;
-            gap: 20px;
-        }
-        
-        .nav-icons i {
-            font-size: 20px;
-            cursor: pointer;
-        }
-        
-        /* Main Content */
-        main {
-            margin-top: 70px;
-            padding: 20px;
-        }
-        
-        /* Hero Carousel */
-        .hero-carousel {
+            flex-direction: column;
             position: relative;
-            height: 250px;
-            margin-bottom: 30px;
-            border-radius: 10px;
-            overflow: hidden;
         }
         
-        .carousel-slide {
-            position: absolute;
+        #videoPlayer {
             width: 100%;
             height: 100%;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
+            background-color: #000;
         }
         
-        .carousel-slide.active {
-            opacity: 1;
-        }
-        
-        .carousel-overlay {
+        .controls-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 20px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-        }
-        
-        .carousel-title {
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
-        
-        .carousel-description {
-            font-size: 14px;
-            color: var(--light-secondary);
-        }
-        
-        /* Categories Grid */
-        .section-title {
-            font-size: 20px;
-            margin: 20px 0 15px;
-        }
-        
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-        
-        .category-card {
-            background-color: var(--dark-secondary);
-            border-radius: 10px;
-            padding: 15px 10px;
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-        
-        .category-card:hover {
-            transform: scale(1.05);
-        }
-        
-        .category-icon {
-            font-size: 30px;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-        
-        .category-name {
-            font-size: 14px;
-        }
-        
-        /* Channel List */
-        .channel-list {
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            padding: 15px;
             display: flex;
-            overflow-x: auto;
-            gap: 15px;
-            padding-bottom: 15px;
-        }
-        
-        .channel-list::-webkit-scrollbar {
-            height: 5px;
-        }
-        
-        .channel-list::-webkit-scrollbar-thumb {
-            background-color: var(--primary-color);
-            border-radius: 5px;
-        }
-        
-        .channel-card {
-            min-width: 150px;
-            background-color: var(--dark-secondary);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .channel-logo {
-            width: 100%;
-            height: 90px;
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        .channel-info {
-            padding: 10px;
-        }
-        
-        .channel-name {
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-        
-        .channel-program {
-            font-size: 12px;
-            color: var(--light-secondary);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        
-        /* Player Modal */
-        .player-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.9);
-            z-index: 1000;
-            display: none;
             flex-direction: column;
+            opacity: 0;
+            transition: opacity 0.3s;
         }
         
-        .player-header {
+        .player-container:hover .controls-overlay {
+            opacity: 1;
+        }
+        
+        .progress-container {
+            width: 100%;
+            height: 5px;
+            background-color: rgba(255,255,255,0.2);
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background-color: var(--primary-color);
+            width: 0;
+            position: relative;
+        }
+        
+        .progress-time {
+            position: absolute;
+            bottom: 20px;
+            font-size: 12px;
+            background-color: rgba(0,0,0,0.7);
+            padding: 2px 5px;
+            border-radius: 3px;
+            transform: translateX(-50%);
+        }
+        
+        .main-controls {
             display: flex;
             justify-content: space-between;
-            padding: 15px;
-        }
-        
-        .player-close {
-            font-size: 24px;
-            cursor: pointer;
-        }
-        
-        .video-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
             align-items: center;
         }
         
-        .video-player {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-        }
-        
-        .player-controls {
-            padding: 15px;
+        .left-controls, .right-controls {
             display: flex;
-            justify-content: center;
-            gap: 30px;
+            align-items: center;
+            gap: 15px;
         }
         
         .control-btn {
-            font-size: 24px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        
+        .control-btn:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .channel-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .channel-logo {
+            width: 40px;
+            height: 40px;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 5px;
+        }
+        
+        .channel-name {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .program-info {
+            font-size: 14px;
+            color: var(--light-secondary);
+        }
+        
+        .quality-selector {
+            position: relative;
+        }
+        
+        .quality-btn {
+            background-color: rgba(0,0,0,0.7);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
             cursor: pointer;
         }
         
-        /* Responsive */
-        @media (min-width: 768px) {
-            .categories-grid {
-                grid-template-columns: repeat(6, 1fr);
+        .quality-options {
+            position: absolute;
+            bottom: 100%;
+            right: 0;
+            background-color: var(--dark-secondary);
+            border-radius: 5px;
+            overflow: hidden;
+            display: none;
+            min-width: 100px;
+        }
+        
+        .quality-options.show {
+            display: block;
+        }
+        
+        .quality-option {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+        
+        .quality-option:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .channel-switcher {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            pointer-events: none;
+        }
+        
+        .channel-switch-btn {
+            pointer-events: auto;
+            background-color: rgba(0,0,0,0.5);
+            border: none;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .player-container:hover .channel-switch-btn {
+            opacity: 1;
+        }
+        
+        .error-message {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0,0,0,0.8);
+            color: #ff5555;
+            font-size: 18px;
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .control-btn {
+                font-size: 18px;
+                width: 35px;
+                height: 35px;
             }
             
-            .hero-carousel {
-                height: 350px;
+            .channel-name {
+                font-size: 16px;
             }
             
-            .channel-list {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-                overflow-x: visible;
-            }
-            
-            .channel-card {
-                min-width: auto;
+            .channel-switch-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="logo">StreamTV</div>
-        <div class="nav-icons">
-            <i class="fas fa-search" id="searchBtn"></i>
-            <i class="fas fa-user" id="profileBtn"></i>
-        </div>
-    </header>
-    
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Carousel -->
-        <div class="hero-carousel">
-            <div class="carousel-slide active" style="background-image: url('https://via.placeholder.com/1200x500/333/fff?text=Live+Sports')">
-                <div class="carousel-overlay">
-                    <h2 class="carousel-title">Live Sports</h2>
-                    <p class="carousel-description">Watch all the live matches happening right now</p>
-                </div>
-            </div>
-            <div class="carousel-slide" style="background-image: url('https://via.placeholder.com/1200x500/444/fff?text=New+Movies')">
-                <div class="carousel-overlay">
-                    <h2 class="carousel-title">New Movies</h2>
-                    <p class="carousel-description">Latest blockbusters added this week</p>
-                </div>
-            </div>
-            <div class="carousel-slide" style="background-image: url('https://via.placeholder.com/1200x500/555/fff?text=Popular+Series')">
-                <div class="carousel-overlay">
-                    <h2 class="carousel-title">Popular Series</h2>
-                    <p class="carousel-description">Binge-watch the hottest shows</p>
-                </div>
-            </div>
+    <div class="player-container">
+        <video id="videoPlayer" controls></video>
+        
+        <div class="error-message" id="errorMessage"></div>
+        
+        <div class="channel-switcher">
+            <button class="channel-switch-btn" id="prevChannelBtn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="channel-switch-btn" id="nextChannelBtn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
         
-        <!-- Categories Grid -->
-        <h2 class="section-title">Categories</h2>
-        <div class="categories-grid">
-            <div class="category-card" onclick="showCategory('live')">
-                <i class="fas fa-tv category-icon"></i>
-                <div class="category-name">Live TV</div>
-            </div>
-            <div class="category-card" onclick="showCategory('movies')">
-                <i class="fas fa-film category-icon"></i>
-                <div class="category-name">Movies</div>
-            </div>
-            <div class="category-card" onclick="showCategory('series')">
-                <i class="fas fa-list-ol category-icon"></i>
-                <div class="category-name">Series</div>
-            </div>
-            <div class="category-card" onclick="showCategory('sports')">
-                <i class="fas fa-trophy category-icon"></i>
-                <div class="category-name">Sports</div>
-            </div>
-            <div class="category-card" onclick="showCategory('kids')">
-                <i class="fas fa-child category-icon"></i>
-                <div class="category-name">Kids</div>
-            </div>
-            <div class="category-card" onclick="showCategory('favorites')">
-                <i class="fas fa-heart category-icon"></i>
-                <div class="category-name">Favorites</div>
-            </div>
-        </div>
-        
-        <!-- Live Channels -->
-        <h2 class="section-title">Live Channels</h2>
-        <div class="channel-list" id="liveChannels">
-            <div class="channel-card" onclick="openPlayer('News Channel', 'https://d1e7rcqq4o2ma.cloudfront.net/bpk-tv/1702/output/index.m3u8')">
-                <div class="channel-logo" style="background-image: url('https://via.placeholder.com/150x80/333/fff?text=News+HD')"></div>
-                <div class="channel-info">
-                    <div class="channel-name">News Channel</div>
-                    <div class="channel-program">Morning News Bulletin</div>
+        <div class="controls-overlay">
+            <div class="channel-info">
+                <div class="channel-logo" id="channelLogo" style="background-image: url('https://via.placeholder.com/40x40/333/fff?text=ZEE')"></div>
+                <div>
+                    <div class="channel-name" id="channelName">ZEE TV</div>
+                    <div class="program-info" id="programInfo">Current Program Name</div>
                 </div>
             </div>
-            <div class="channel-card" onclick="openPlayer('Sports HD', 'https://example.com/stream2.m3u8')">
-                <div class="channel-logo" style="background-image: url('https://via.placeholder.com/150x80/333/fff?text=Sports+HD')"></div>
-                <div class="channel-info">
-                    <div class="channel-name">Sports HD</div>
-                    <div class="channel-program">Football: Premier League</div>
+            
+            <div class="progress-container" id="progressContainer">
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-time" id="progressTime">00:00</div>
                 </div>
             </div>
-            <div class="channel-card" onclick="openPlayer('Movie Channel', 'https://example.com/stream3.m3u8')">
-                <div class="channel-logo" style="background-image: url('https://via.placeholder.com/150x80/333/fff?text=Movies')"></div>
-                <div class="channel-info">
-                    <div class="channel-name">Movie Channel</div>
-                    <div class="channel-program">Action Movie: The Last Stand</div>
+            
+            <div class="main-controls">
+                <div class="left-controls">
+                    <button class="control-btn" id="playPauseBtn">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                    <button class="control-btn" id="muteBtn">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                    <div class="time-display" id="timeDisplay">00:00 / 00:00</div>
+                </div>
+                
+                <div class="right-controls">
+                    <div class="quality-selector">
+                        <button class="quality-btn" id="qualityBtn">Auto</button>
+                        <div class="quality-options" id="qualityOptions">
+                            <div class="quality-option" data-quality="auto">Auto</div>
+                            <!-- Quality options will be added dynamically -->
+                        </div>
+                    </div>
+                    <button class="control-btn" id="fullscreenBtn">
+                        <i class="fas fa-expand"></i>
+                    </button>
                 </div>
             </div>
-            <div class="channel-card" onclick="openPlayer('Kids TV', 'https://example.com/stream4.m3u8')">
-                <div class="channel-logo" style="background-image: url('https://via.placeholder.com/150x80/333/fff?text=Kids+TV')"></div>
-                <div class="channel-info">
-                    <div class="channel-name">Kids TV</div>
-                    <div class="channel-program">Animated Series: Adventure Time</div>
-                </div>
-            </div>
-            <div class="channel-card" onclick="openPlayer('Music Channel', 'https://example.com/stream5.m3u8')">
-                <div class="channel-logo" style="background-image: url('https://via.placeholder.com/150x80/333/fff?text=Music')"></div>
-                <div class="channel-info">
-                    <div class="channel-name">Music Channel</div>
-                    <div class="channel-program">Top 40 Hits Countdown</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Recently Watched -->
-        <h2 class="section-title">Recently Watched</h2>
-        <div class="channel-list" id="recentChannels">
-            <div class="channel-card" onclick="openPlayer('Documentary', 'https://example.com/stream6.m3u8')">
-                <div class="channel-logo" style="background-image: url('https://via.placeholder.com/150x80/333/fff?text=Docu')"></div>
-                <div class="channel-info">
-                    <div class="channel-name">Documentary</div>
-                    <div class="channel-program">Nature: Planet Earth</div>
-                </div>
-            </div>
-            <div class="channel-card" onclick="openPlayer('News 24', 'https://example.com/stream7.m3u8')">
-                <div class="channel-logo" style="background-image: url('https://via.placeholder.com/150x80/333/fff?text=News24')"></div>
-                <div class="channel-info">
-                    <div class="channel-name">News 24</div>
-                    <div class="channel-program">Evening News Update</div>
-                </div>
-            </div>
-        </div>
-    </main>
-    
-    <!-- Player Modal -->
-    <div class="player-modal" id="playerModal">
-        <div class="player-header">
-            <div id="currentChannel">Channel Name</div>
-            <i class="fas fa-times player-close" onclick="closePlayer()"></i>
-        </div>
-        <div class="video-container">
-            <video class="video-player" id="videoPlayer" controls>
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="player-controls">
-            <i class="fas fa-backward control-btn"></i>
-            <i class="fas fa-pause control-btn" id="playPauseBtn"></i>
-            <i class="fas fa-forward control-btn"></i>
         </div>
     </div>
     
     <script>
-        // Carousel functionality
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
+        // Player configuration
+        const channels = [
+            {
+                name: "ZEE TV",
+                logo: "https://via.placeholder.com/40x40/333/fff?text=ZEE",
+                program: "Popular TV Show",
+                url: "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeetv/default/manifest.mpd"
+            },
+            {
+                name: "Sony TV",
+                logo: "https://via.placeholder.com/40x40/333/fff?text=SONY",
+                program: "Daily Soap Opera",
+                url: "https://example.com/sony/manifest.mpd" // Replace with actual URL
+            },
+            {
+                name: "Star Plus",
+                logo: "https://via.placeholder.com/40x40/333/fff?text=STAR",
+                program: "Reality Show",
+                url: "https://example.com/starplus/manifest.mpd" // Replace with actual URL
+            }
+        ];
         
-        function showSlide(n) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            currentSlide = (n + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-        
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
-        
-        // Change slide every 5 seconds
-        setInterval(nextSlide, 5000);
-        
-        // Player functionality
-        const playerModal = document.getElementById('playerModal');
+        // Player elements
         const videoPlayer = document.getElementById('videoPlayer');
         const playPauseBtn = document.getElementById('playPauseBtn');
-        const currentChannelDisplay = document.getElementById('currentChannel');
+        const muteBtn = document.getElementById('muteBtn');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const progressBar = document.getElementById('progressBar');
+        const progressContainer = document.getElementById('progressContainer');
+        const progressTime = document.getElementById('progressTime');
+        const timeDisplay = document.getElementById('timeDisplay');
+        const qualityBtn = document.getElementById('qualityBtn');
+        const qualityOptions = document.getElementById('qualityOptions');
+        const channelName = document.getElementById('channelName');
+        const channelLogo = document.getElementById('channelLogo');
+        const programInfo = document.getElementById('programInfo');
+        const prevChannelBtn = document.getElementById('prevChannelBtn');
+        const nextChannelBtn = document.getElementById('nextChannelBtn');
+        const errorMessage = document.getElementById('errorMessage');
         
-        function openPlayer(channelName, streamUrl) {
-            currentChannelDisplay.textContent = channelName;
-            videoPlayer.src = streamUrl;
-            playerModal.style.display = 'flex';
-            videoPlayer.play();
-            playPauseBtn.classList.replace('fa-play', 'fa-pause');
+        // Player state
+        let currentChannelIndex = 0;
+        let player;
+        let isSeeking = false;
+        let qualityLevels = [];
+        let currentQuality = 'auto';
+        
+        // Initialize player
+        function initPlayer() {
+            if (player) {
+                player.reset();
+            } else {
+                player = dashjs.MediaPlayer().create();
+                player.updateSettings({
+                    streaming: {
+                        buffer: {
+                            fastSwitchEnabled: true
+                        }
+                    }
+                });
+                player.initialize(videoPlayer);
+            }
+            
+            loadChannel(currentChannelIndex);
         }
         
-        function closePlayer() {
-            videoPlayer.pause();
-            playerModal.style.display = 'none';
+        // Load channel by index
+        function loadChannel(index) {
+            if (index < 0 || index >= channels.length) return;
+            
+            currentChannelIndex = index;
+            const channel = channels[index];
+            
+            // Update UI
+            channelName.textContent = channel.name;
+            channelLogo.style.backgroundImage = `url('${channel.logo}')`;
+            programInfo.textContent = channel.program;
+            
+            // Hide error message if shown
+            errorMessage.style.display = 'none';
+            
+            try {
+                player.attachSource(channel.url);
+                videoPlayer.play().catch(e => {
+                    console.error("Autoplay failed:", e);
+                    // User interaction will be required to play
+                });
+                
+                // Update quality options after source is loaded
+                setTimeout(updateQualityOptions, 2000);
+            } catch (e) {
+                console.error("Error loading channel:", e);
+                showError("Failed to load channel. Please try again.");
+            }
         }
         
-        // Play/Pause toggle
-        playPauseBtn.addEventListener('click', function() {
+        // Show error message
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'flex';
+        }
+        
+        // Update quality options
+        function updateQualityOptions() {
+            if (!player) return;
+            
+            const bitrates = player.getBitrateInfoListFor('video');
+            qualityOptions.innerHTML = '<div class="quality-option" data-quality="auto">Auto</div>';
+            
+            bitrates.forEach((bitrate, index) => {
+                const option = document.createElement('div');
+                option.className = 'quality-option';
+                option.dataset.quality = index;
+                option.textContent = `${Math.round(bitrate.bitrate / 1000)} kbps`;
+                qualityOptions.appendChild(option);
+            });
+            
+            // Add click handlers for quality options
+            document.querySelectorAll('.quality-option').forEach(option => {
+                option.addEventListener('click', () => {
+                    const quality = option.dataset.quality;
+                    setQuality(quality);
+                    qualityOptions.classList.remove('show');
+                });
+            });
+        }
+        
+        // Set quality level
+        function setQuality(quality) {
+            currentQuality = quality;
+            qualityBtn.textContent = quality === 'auto' ? 'Auto' : `${Math.round(player.getBitrateInfoListFor('video')[quality].bitrate / 1000)} kbps`;
+            
+            if (quality === 'auto') {
+                player.setAutoSwitchQualityFor('video', true);
+            } else {
+                player.setAutoSwitchQualityFor('video', false);
+                player.setQualityFor('video', parseInt(quality));
+            }
+        }
+        
+        // Format time (seconds to HH:MM:SS)
+        function formatTime(seconds) {
+            const h = Math.floor(seconds / 3600);
+            const m = Math.floor((seconds % 3600) / 60);
+            const s = Math.floor(seconds % 60);
+            return `${h > 0 ? h + ':' : ''}${m < 10 ? '0' + m : m}:${s < 10 ? '0' + s : s}`;
+        }
+        
+        // Event listeners
+        playPauseBtn.addEventListener('click', () => {
             if (videoPlayer.paused) {
                 videoPlayer.play();
-                playPauseBtn.classList.replace('fa-play', 'fa-pause');
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
             } else {
                 videoPlayer.pause();
-                playPauseBtn.classList.replace('fa-pause', 'fa-play');
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
             }
         });
         
-        // Video player events
-        videoPlayer.addEventListener('play', function() {
-            playPauseBtn.classList.replace('fa-play', 'fa-pause');
+        muteBtn.addEventListener('click', () => {
+            videoPlayer.muted = !videoPlayer.muted;
+            muteBtn.innerHTML = videoPlayer.muted ? 
+                '<i class="fas fa-volume-mute"></i>' : 
+                '<i class="fas fa-volume-up"></i>';
         });
         
-        videoPlayer.addEventListener('pause', function() {
-            playPauseBtn.classList.replace('fa-pause', 'fa-play');
+        fullscreenBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                videoPlayer.requestFullscreen().catch(err => {
+                    console.error(`Error attempting to enable fullscreen: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
         });
         
-        // Category navigation (placeholder)
-        function showCategory(category) {
-            alert(`Showing ${category} content - this would filter the channel list in a real app`);
+        progressContainer.addEventListener('mousedown', (e) => {
+            isSeeking = true;
+            handleSeek(e);
+        });
+        
+        progressContainer.addEventListener('mousemove', (e) => {
+            if (isSeeking) handleSeek(e);
+        });
+        
+        document.addEventListener('mouseup', () => {
+            isSeeking = false;
+        });
+        
+        function handleSeek(e) {
+            if (!videoPlayer.duration) return;
+            
+            const rect = progressContainer.getBoundingClientRect();
+            const pos = (e.clientX - rect.left) / rect.width;
+            const seekTime = pos * videoPlayer.duration;
+            
+            progressBar.style.width = `${pos * 100}%`;
+            progressTime.textContent = formatTime(seekTime);
+            progressTime.style.left = `${pos * 100}%`;
+            
+            if (!isSeeking) return;
+            
+            videoPlayer.currentTime = seekTime;
         }
+        
+        qualityBtn.addEventListener('click', () => {
+            qualityOptions.classList.toggle('show');
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!qualityBtn.contains(e.target)) {
+                qualityOptions.classList.remove('show');
+            }
+        });
+        
+        prevChannelBtn.addEventListener('click', () => {
+            loadChannel((currentChannelIndex - 1 + channels.length) % channels.length);
+        });
+        
+        nextChannelBtn.addEventListener('click', () => {
+            loadChannel((currentChannelIndex + 1) % channels.length);
+        });
+        
+        // Player events
+        videoPlayer.addEventListener('play', () => {
+            playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+        });
+        
+        videoPlayer.addEventListener('pause', () => {
+            playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+        });
+        
+        videoPlayer.addEventListener('timeupdate', () => {
+            if (!isSeeking && videoPlayer.duration) {
+                const progress = (videoPlayer.currentTime / videoPlayer.duration) * 100;
+                progressBar.style.width = `${progress}%`;
+                progressTime.textContent = formatTime(videoPlayer.currentTime);
+                progressTime.style.left = `${progress}%`;
+                timeDisplay.textContent = `${formatTime(videoPlayer.currentTime)} / ${formatTime(videoPlayer.duration)}`;
+            }
+        });
+        
+        videoPlayer.addEventListener('volumechange', () => {
+            muteBtn.innerHTML = videoPlayer.muted || videoPlayer.volume === 0 ? 
+                '<i class="fas fa-volume-mute"></i>' : 
+                '<i class="fas fa-volume-up"></i>';
+        });
+        
+        videoPlayer.addEventListener('enterpictureinpicture', () => {
+            console.log('Entered Picture-in-Picture');
+        });
+        
+        videoPlayer.addEventListener('leavepictureinpicture', () => {
+            console.log('Left Picture-in-Picture');
+        });
+        
+        videoPlayer.addEventListener('error', () => {
+            showError("Playback error occurred. Please try another channel.");
+        });
+        
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+            
+            switch (e.key) {
+                case ' ':
+                    e.preventDefault();
+                    if (videoPlayer.paused) videoPlayer.play();
+                    else videoPlayer.pause();
+                    break;
+                case 'ArrowLeft':
+                    e.preventDefault();
+                    videoPlayer.currentTime = Math.max(0, videoPlayer.currentTime - 5);
+                    break;
+                case 'ArrowRight':
+                    e.preventDefault();
+                    videoPlayer.currentTime = Math.min(videoPlayer.duration, videoPlayer.currentTime + 5);
+                    break;
+                case 'ArrowUp':
+                    e.preventDefault();
+                    videoPlayer.volume = Math.min(1, videoPlayer.volume + 0.1);
+                    break;
+                case 'ArrowDown':
+                    e.preventDefault();
+                    videoPlayer.volume = Math.max(0, videoPlayer.volume - 0.1);
+                    break;
+                case 'm':
+                    e.preventDefault();
+                    videoPlayer.muted = !videoPlayer.muted;
+                    break;
+                case 'f':
+                    e.preventDefault();
+                    if (!document.fullscreenElement) {
+                        videoPlayer.requestFullscreen();
+                    } else {
+                        document.exitFullscreen();
+                    }
+                    break;
+                case 'n':
+                    e.preventDefault();
+                    loadChannel((currentChannelIndex + 1) % channels.length);
+                    break;
+                case 'p':
+                    e.preventDefault();
+                    loadChannel((currentChannelIndex - 1 + channels.length) % channels.length);
+                    break;
+            }
+        });
+        
+        // Initialize the player
+        initPlayer();
     </script>
 </body>
 </html>
