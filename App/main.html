@@ -27,15 +27,12 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
-      -webkit-tap-highlight-color: transparent;
     }
     
     body {
       background-color: var(--darker);
       color: var(--light);
       min-height: 100vh;
-      overflow-x: hidden;
-      touch-action: manipulation;
     }
     
     /* Video Container */
@@ -52,119 +49,65 @@
       object-fit: contain;
     }
     
-    /* Loading Overlay */
-    .loading-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      z-index: 10;
-    }
-    
-    .spinner {
-      width: 40px;
-      height: 40px;
-      border: 3px solid rgba(255, 255, 255, 0.1);
-      border-top-color: var(--primary);
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-    
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-    
-    /* Video Controls */
-    .video-controls {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(transparent, rgba(0,0,0,0.8));
-      padding: 0.75rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      opacity: 0;
-      transition: opacity 0.3s;
-      z-index: 20;
-    }
-    
-    .video-controls.visible {
-      opacity: 1;
-    }
-    
-    .controls-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .control-btn {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-      width: 32px;
-      height: 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-    }
-    
-    /* Channel Info */
-    .channel-info {
-      background-color: var(--dark);
+    /* Channel Categories */
+    .category-section {
       padding: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .category-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-light);
       display: flex;
       align-items: center;
-      gap: 1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      gap: 0.5rem;
+    }
+    
+    .category-channels {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 0.5rem;
+    }
+    
+    .channel-card {
+      background: var(--dark);
+      border-radius: 8px;
+      padding: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+    
+    .channel-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+    
+    .channel-card.active {
+      background: rgba(37, 99, 235, 0.2);
+      border-color: var(--primary);
     }
     
     .channel-logo {
-      width: 50px;
-      height: 50px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, var(--dark-gray), var(--darker));
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: var(--darker);
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
-      overflow: hidden;
+      margin-bottom: 0.5rem;
     }
     
-    .channel-info-text {
-      flex: 1;
-      overflow: hidden;
-    }
-    
-    .channel-title {
-      font-size: 1rem;
-      font-weight: 600;
+    .channel-name {
+      font-weight: 500;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
     
-    .channel-subtitle {
-      color: var(--gray);
-      font-size: 0.85rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    
-    /* Channels Drawer */
+    /* Mobile Channels Drawer */
     .channels-drawer {
       position: fixed;
       top: 0;
@@ -172,11 +115,10 @@
       width: 100%;
       height: 100%;
       background-color: var(--dark);
-      z-index: 1000;
+      z-index: 100;
+      overflow-y: auto;
       transform: translateX(100%);
       transition: transform 0.3s ease;
-      display: flex;
-      flex-direction: column;
     }
     
     .channels-drawer.open {
@@ -188,463 +130,142 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .search-box-container {
-      position: relative;
-      width: 100%;
-      padding: 0 1rem;
-      margin: 0.5rem 0;
-    }
-    
-    .search-box {
-      background-color: var(--darker);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
-      padding: 0.6rem 1rem 0.6rem 2.2rem;
-      color: var(--light);
-      width: 100%;
-    }
-    
-    /* Category Tabs */
-    .category-tabs {
-      display: flex;
-      gap: 0.5rem;
-      padding: 0.5rem 1rem;
-      overflow-x: auto;
-      background-color: var(--darker);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    
-    .category-tab {
-      padding: 0.5rem 1rem;
+      position: sticky;
+      top: 0;
       background: var(--dark);
-      border-radius: 20px;
-      font-size: 0.85rem;
-      white-space: nowrap;
-      cursor: pointer;
-      border: 1px solid transparent;
+      z-index: 10;
     }
     
-    .category-tab.active {
-      background: var(--primary);
-      border-color: var(--primary-light);
-    }
-    
-    /* Channel Grid */
-    .channel-grid-container {
-      flex: 1;
-      overflow-y: auto;
-    }
-    
-    .channel-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 0.75rem;
-      padding: 1rem;
-    }
-    
-    .channel-card {
-      background-color: var(--darker);
-      border-radius: 8px;
-      padding: 0.5rem;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      border: 1px solid transparent;
-    }
-    
-    .channel-card.active {
-      border-color: var(--primary);
-    }
-    
-    .channel-card-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 6px;
-      background: linear-gradient(135deg, var(--dark-gray), var(--darker));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 0.5rem;
-    }
-    
-    .channel-card-name {
-      font-size: 0.8rem;
-      font-weight: 500;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      width: 100%;
-    }
-    
-    /* Mobile Channels Button */
-    .mobile-channels-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--primary);
-      color: white;
+    .drawer-close-btn {
+      background: none;
       border: none;
-      border-radius: 8px;
-      padding: 0.6rem 1rem;
-      margin: 1rem;
-      cursor: pointer;
-    }
-    
-    /* Fullscreen Styles */
-    .fullscreen .channel-info,
-    .fullscreen .mobile-channels-btn {
-      display: none;
-    }
-    
-    .fullscreen .video-controls {
-      transition: opacity 0.3s 3s;
+      color: white;
+      font-size: 1.5rem;
     }
   </style>
 </head>
 <body>
-  <div class="video-container" id="video-container">
+  <div class="video-container">
     <video id="video-player" playsinline></video>
-    <div class="loading-overlay" id="loading-overlay">
-      <div class="spinner"></div>
-      <div class="loading-text">Loading channel...</div>
-    </div>
-    
-    <div class="video-controls" id="video-controls">
-      <div class="controls-row">
-        <div class="left-controls">
-          <button class="control-btn" id="play-pause-btn">
-            <i class="fas fa-play" id="play-pause-icon"></i>
-          </button>
-          <button class="control-btn" id="prev-btn">
-            <i class="fas fa-step-backward"></i>
-          </button>
-          <button class="control-btn" id="next-btn">
-            <i class="fas fa-step-forward"></i>
-          </button>
-        </div>
-        <div class="right-controls">
-          <button class="control-btn" id="fullscreen-btn">
-            <i class="fas fa-expand"></i>
-          </button>
-        </div>
-      </div>
-    </div>
   </div>
-  
-  <div class="channel-info">
-    <div class="channel-logo" id="current-channel-logo">
-      <span id="current-channel-logo-text">TV</span>
-    </div>
-    <div class="channel-info-text">
-      <div class="channel-title" id="current-channel-name">Select a channel</div>
-      <div class="channel-subtitle" id="current-channel-subtitle"></div>
-    </div>
-  </div>
-  
-  <button class="mobile-channels-btn" id="mobile-channels-btn">
-    <i class="fas fa-tv"></i>
-    <span>Browse Channels</span>
-  </button>
   
   <!-- Channels Drawer -->
   <div class="channels-drawer" id="channels-drawer">
     <div class="drawer-header">
-      <div class="channels-title">All Channels</div>
+      <h2>All Channels</h2>
       <button class="drawer-close-btn" id="drawer-close-btn">
         <i class="fas fa-times"></i>
       </button>
     </div>
     
-    <div class="search-box-container">
-      <i class="fas fa-search search-icon"></i>
-      <input type="text" class="search-box" id="search-box" placeholder="Search channels...">
-    </div>
-    
-    <div class="category-tabs" id="category-tabs">
-      <!-- Categories will be added dynamically -->
-    </div>
-    
-    <div class="channel-grid-container">
-      <div class="channel-grid" id="channel-grid">
-        <!-- Channels will be added dynamically -->
+    <!-- Movies Category -->
+    <div class="category-section">
+      <div class="category-title">
+        <i class="fas fa-film"></i>
+        <span>Movies</span>
       </div>
+      <div class="category-channels" id="movies-channels"></div>
+    </div>
+    
+    <!-- Kids Category -->
+    <div class="category-section">
+      <div class="category-title">
+        <i class="fas fa-child"></i>
+        <span>Kids</span>
+      </div>
+      <div class="category-channels" id="kids-channels"></div>
+    </div>
+    
+    <!-- Music Category -->
+    <div class="category-section">
+      <div class="category-title">
+        <i class="fas fa-music"></i>
+        <span>Music</span>
+      </div>
+      <div class="category-channels" id="music-channels"></div>
+    </div>
+    
+    <!-- Religious Category -->
+    <div class="category-section">
+      <div class="category-title">
+        <i class="fas fa-pray"></i>
+        <span>Religious</span>
+      </div>
+      <div class="category-channels" id="religious-channels"></div>
     </div>
   </div>
-
+  
   <script>
-    // Sample channels data (replace with your 500+ channels)
-    const channels = [
-      {
-        id: 1,
-        name: "Bollywood Hits",
-        subtitle: "24/7 Hindi Movies",
-        category: "movies",
-        language: "hindi",
-        logo: "M",
-        qualities: [
-          { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209612/master.m3u8" },
-          { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209612/master.m3u8" }
-        ]
-      },
-      {
-        id: 2,
-        name: "Cricket Premier",
-        subtitle: "Live Cricket Matches",
-        category: "sports",
-        language: "english",
-        logo: "C",
-        qualities: [
-          { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209627/master.m3u8" }
-        ]
-      },
-      // Add your 500+ channels here following the same structure
-      // {
-      //   id: 3,
-      //   name: "Channel Name",
-      //   subtitle: "Channel Description",
-      //   category: "category",
-      //   language: "language",
-      //   logo: "L" or URL,
-      //   qualities: [ { label: "HD/SD", url: "stream-url" } ]
-      // }
-    ];
-
-    // DOM elements
-    const videoPlayer = document.getElementById('video-player');
-    const videoContainer = document.getElementById('video-container');
-    const loadingOverlay = document.getElementById('loading-overlay');
-    const currentChannelLogo = document.getElementById('current-channel-logo');
-    const currentChannelName = document.getElementById('current-channel-name');
-    const currentChannelSubtitle = document.getElementById('current-channel-subtitle');
-    const playPauseBtn = document.getElementById('play-pause-btn');
-    const playPauseIcon = document.getElementById('play-pause-icon');
-    const prevBtn = document.getElementById('prev-btn');
-    const nextBtn = document.getElementById('next-btn');
-    const fullscreenBtn = document.getElementById('fullscreen-btn');
-    const videoControls = document.getElementById('video-controls');
-    const mobileChannelsBtn = document.getElementById('mobile-channels-btn');
-    const channelsDrawer = document.getElementById('channels-drawer');
-    const drawerCloseBtn = document.getElementById('drawer-close-btn');
-    const searchBox = document.getElementById('search-box');
-    const categoryTabs = document.getElementById('category-tabs');
-    const channelGrid = document.getElementById('channel-grid');
-
-    // Player state
-    let currentChannelIndex = -1;
-    let hls;
-    let isPlaying = false;
-    let controlsTimeout;
-    let currentCategory = 'all';
-
-    // Initialize the player
-    function initPlayer() {
-      setupEventListeners();
-      renderCategoryTabs();
-      renderChannels();
-      
-      if (channels.length > 0) {
-        changeChannel(0);
-      }
-      
-      updateControls();
-    }
-
-    // Setup event listeners
-    function setupEventListeners() {
-      videoPlayer.addEventListener('click', togglePlayPause);
-      videoPlayer.addEventListener('dblclick', toggleFullscreen);
-      
-      playPauseBtn.addEventListener('click', togglePlayPause);
-      prevBtn.addEventListener('click', playPreviousChannel);
-      nextBtn.addEventListener('click', playNextChannel);
-      fullscreenBtn.addEventListener('click', toggleFullscreen);
-      
-      videoContainer.addEventListener('mousemove', showControls);
-      videoContainer.addEventListener('mouseleave', hideControls);
-      
-      mobileChannelsBtn.addEventListener('click', openDrawer);
-      drawerCloseBtn.addEventListener('click', closeDrawer);
-      
-      searchBox.addEventListener('input', searchChannels);
-      
-      document.addEventListener('keydown', (e) => {
-        if (e.key === ' ') togglePlayPause();
-        if (e.key === 'f') toggleFullscreen();
-      });
-      
-      document.addEventListener('fullscreenchange', () => {
-        if (document.fullscreenElement) {
-          showControls();
+    // Organized channels by category
+    const channels = {
+      movies: [
+        { 
+          name: "Hindi Movies", 
+          url: "https://example.com/hindi.m3u8",
+          logo: "M"
+        },
+        { 
+          name: "Bangla Movies", 
+          url: "https://example.com/bangla.m3u8",
+          logo: "M"
         }
-      });
-    }
+      ],
+      kids: [
+        { 
+          name: "Cartoon Network", 
+          url: "https://example.com/cartoon.m3u8",
+          logo: "CN"
+        },
+        { 
+          name: "Pogo", 
+          url: "https://example.com/pogo.m3u8",
+          logo: "P"
+        }
+      ],
+      music: [
+        { 
+          name: "Bollywood Music", 
+          url: "https://example.com/bollywood.m3u8",
+          logo: "♫"
+        }
+      ],
+      religious: [
+        { 
+          name: "Islamic TV", 
+          url: "https://example.com/islamic.m3u8",
+          logo: "☪"
+        }
+      ]
+    };
 
-    // Render category tabs
-    function renderCategoryTabs() {
-      const categories = ['all', ...new Set(channels.map(c => c.category))];
-      
-      categoryTabs.innerHTML = categories.map(category => `
-        <div class="category-tab ${category === 'all' ? 'active' : ''}" 
-             data-category="${category}">
-          ${category.charAt(0).toUpperCase() + category.slice(1)}
-        </div>
-      `).join('');
-      
-      document.querySelectorAll('.category-tab').forEach(tab => {
-        tab.addEventListener('click', () => {
-          currentCategory = tab.dataset.category;
-          document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
-          tab.classList.add('active');
-          renderChannels();
-        });
-      });
-    }
-
-    // Render channels based on current category/search
+    // Render channels by category
     function renderChannels() {
-      channelGrid.innerHTML = '';
-      
-      let filteredChannels = channels;
-      
-      if (currentCategory !== 'all') {
-        filteredChannels = channels.filter(c => c.category === currentCategory);
-      }
-      
-      if (searchBox.value) {
-        const query = searchBox.value.toLowerCase();
-        filteredChannels = filteredChannels.filter(c => 
-          c.name.toLowerCase().includes(query) || 
-          c.subtitle.toLowerCase().includes(query)
-        );
-      }
-      
-      filteredChannels.forEach((channel, index) => {
-        const channelCard = document.createElement('div');
-        channelCard.className = `channel-card ${index === currentChannelIndex ? 'active' : ''}`;
-        channelCard.innerHTML = `
-          <div class="channel-card-logo">
-            ${channel.logo.startsWith('http') ? 
-              `<img src="${channel.logo}" onerror="this.parentElement.innerHTML='${channel.name.charAt(0)}'">` : 
-              channel.logo}
-          </div>
-          <div class="channel-card-name">${channel.name}</div>
-        `;
-        
-        channelCard.addEventListener('click', () => {
-          changeChannel(index);
-          closeDrawer();
+      for (const category in channels) {
+        const container = document.getElementById(`${category}-channels`);
+        channels[category].forEach(channel => {
+          const channelCard = document.createElement('div');
+          channelCard.className = 'channel-card';
+          channelCard.innerHTML = `
+            <div class="channel-logo">${channel.logo}</div>
+            <div class="channel-name">${channel.name}</div>
+          `;
+          channelCard.addEventListener('click', () => {
+            playChannel(channel.url);
+          });
+          container.appendChild(channelCard);
         });
-        
-        channelGrid.appendChild(channelCard);
-      });
-    }
-
-    // Search channels
-    function searchChannels() {
-      renderChannels();
-    }
-
-    // Change channel
-    function changeChannel(index) {
-      if (index < 0 || index >= channels.length) return;
-      
-      currentChannelIndex = index;
-      const channel = channels[index];
-      
-      currentChannelName.textContent = channel.name;
-      currentChannelSubtitle.textContent = channel.subtitle;
-      currentChannelLogo.innerHTML = channel.logo.startsWith('http') ? 
-        `<img src="${channel.logo}" onerror="this.innerHTML='${channel.name.charAt(0)}'">` : 
-        `<span>${channel.logo}</span>`;
-      
-      loadingOverlay.style.display = 'flex';
-      
-      if (hls) hls.destroy();
-      
-      const streamUrl = channel.qualities[0].url;
-      
-      if (Hls.isSupported()) {
-        hls = new Hls();
-        hls.loadSource(streamUrl);
-        hls.attachMedia(videoPlayer);
-        hls.on(Hls.Events.MANIFEST_PARSED, () => videoPlayer.play());
-      } 
-      else if (videoPlayer.canPlayType('application/vnd.apple.mpegurl')) {
-        videoPlayer.src = streamUrl;
-        videoPlayer.play();
-      }
-      
-      renderChannels();
-    }
-
-    // Player control functions
-    function togglePlayPause() {
-      if (videoPlayer.paused) {
-        videoPlayer.play().catch(e => console.log('Playback error:', e));
-      } else {
-        videoPlayer.pause();
-      }
-      updateControls();
-      showControls();
-    }
-
-    function playNextChannel() {
-      const nextIndex = (currentChannelIndex + 1) % channels.length;
-      changeChannel(nextIndex);
-    }
-
-    function playPreviousChannel() {
-      const prevIndex = (currentChannelIndex - 1 + channels.length) % channels.length;
-      changeChannel(prevIndex);
-    }
-
-    function toggleFullscreen() {
-      if (!document.fullscreenElement) {
-        videoContainer.requestFullscreen().catch(e => console.log('Fullscreen error:', e));
-      } else {
-        document.exitFullscreen();
       }
     }
 
-    function updateControls() {
-      playPauseIcon.className = videoPlayer.paused ? 'fas fa-play' : 'fas fa-pause';
+    // Play selected channel
+    function playChannel(url) {
+      const videoPlayer = document.getElementById('video-player');
+      videoPlayer.src = url;
+      videoPlayer.play();
     }
 
-    function showControls() {
-      videoControls.classList.add('visible');
-      clearTimeout(controlsTimeout);
-      controlsTimeout = setTimeout(hideControls, 3000);
-    }
-
-    function hideControls() {
-      if (!document.fullscreenElement || !videoContainer.matches(':hover')) {
-        videoControls.classList.remove('visible');
-      }
-    }
-
-    // Drawer functions
-    function openDrawer() {
-      channelsDrawer.classList.add('open');
-    }
-
-    function closeDrawer() {
-      channelsDrawer.classList.remove('open');
-    }
-
-    // Initialize HLS.js if needed
-    if (typeof Hls === 'undefined') {
-      const script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/hls.js@latest';
-      script.onload = initPlayer;
-      document.head.appendChild(script);
-    } else {
-      initPlayer();
-    }
+    // Initialize
+    renderChannels();
   </script>
 </body>
 </html>
