@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>T Play - TV Streaming</title>
+  <title>T Play - Mobile & TV Streaming</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -42,7 +42,7 @@
       touch-action: manipulation;
     }
     
-    /* Header - Hidden in fullscreen */
+    /* Header */
     .header {
       display: flex;
       justify-content: space-between;
@@ -54,10 +54,6 @@
       top: 0;
       z-index: 100;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .fullscreen .header {
-      display: none;
     }
     
     .logo {
@@ -72,14 +68,23 @@
       color: var(--primary);
     }
     
-    /* Main Player Layout */
-    .player-container {
-      flex: 1;
+    .header-actions {
       display: flex;
-      flex-direction: column;
-      max-width: 100%;
-      margin: 0 auto;
-      width: 100%;
+      gap: 0.5rem;
+    }
+    
+    .header-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
     }
     
     /* Video Container */
@@ -95,7 +100,6 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-      cursor: pointer;
     }
     
     /* Loading Overlay */
@@ -115,34 +119,35 @@
     }
     
     .spinner {
-      width: 50px;
-      height: 50px;
-      border: 4px solid rgba(255, 255, 255, 0.1);
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(255, 255, 255, 0.1);
       border-top-color: var(--primary);
       border-radius: 50%;
       animation: spin 1s linear infinite;
+    }
+    
+    .loading-text {
+      color: var(--light-gray);
+      font-weight: 500;
+      font-size: 0.9rem;
     }
     
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
     
-    .loading-text {
-      color: var(--light-gray);
-      font-weight: 500;
-    }
-    
-    /* Video Controls - Optimized for TV */
+    /* Video Controls */
     .video-controls {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
       background: linear-gradient(transparent, rgba(0,0,0,0.8));
-      padding: 1rem;
+      padding: 0.75rem;
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 0.5rem;
       opacity: 0;
       transition: opacity 0.3s;
       z-index: 20;
@@ -152,24 +157,31 @@
       opacity: 1;
     }
     
-    .fullscreen .video-controls {
-      padding: 1.5rem;
-    }
-    
     .progress-container {
       width: 100%;
-      height: 6px;
+      height: 4px;
       background-color: rgba(255,255,255,0.2);
       cursor: pointer;
-      border-radius: 3px;
+      border-radius: 2px;
       position: relative;
+      overflow: hidden;
     }
     
     .progress-bar {
       height: 100%;
       background: linear-gradient(90deg, var(--primary), var(--primary-light));
-      border-radius: 3px;
+      border-radius: 2px;
       width: 0%;
+    }
+    
+    .progress-buffer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: rgba(255,255,255,0.4);
+      width: 0%;
+      border-radius: 2px;
     }
     
     .controls-row {
@@ -181,33 +193,28 @@
     .left-controls, .right-controls {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.5rem;
     }
     
     .control-btn {
       background: none;
       border: none;
       color: white;
-      font-size: 1.5rem;
+      font-size: 1rem;
       cursor: pointer;
-      width: 44px;
-      height: 44px;
+      width: 32px;
+      height: 32px;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      transition: all 0.2s;
-    }
-    
-    .control-btn:focus {
-      outline: 2px solid var(--primary);
     }
     
     .time-display {
-      font-size: 1rem;
+      font-size: 0.8rem;
       color: white;
       font-family: monospace;
-      min-width: 120px;
+      min-width: 100px;
       text-align: center;
     }
     
@@ -221,14 +228,10 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     
-    .fullscreen .channel-info {
-      display: none;
-    }
-    
     .channel-logo {
       width: 50px;
       height: 50px;
-      border-radius: 8px;
+      border-radius: 10px;
       background: linear-gradient(135deg, var(--dark-gray), var(--darker));
       display: flex;
       align-items: center;
@@ -258,7 +261,7 @@
     .channel-title {
       font-size: 1rem;
       font-weight: 600;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.2rem;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -272,26 +275,44 @@
       text-overflow: ellipsis;
     }
     
-    /* Channels Drawer - Mobile */
-    .mobile-channels-btn {
+    .player-status {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
       display: flex;
       align-items: center;
-      justify-content: center;
-      background: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      padding: 0.75rem 1rem;
-      font-weight: 500;
-      cursor: pointer;
-      margin: 1rem;
-      font-size: 1rem;
+      gap: 0.5rem;
     }
     
-    .fullscreen .mobile-channels-btn {
-      display: none;
+    .player-status .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--gray);
     }
     
+    .player-status.playing .status-dot {
+      background-color: var(--success);
+      animation: pulse 1.5s infinite;
+    }
+    
+    .player-status.buffering .status-dot {
+      background-color: var(--warning);
+    }
+    
+    .player-status.error .status-dot {
+      background-color: var(--danger);
+    }
+    
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+    
+    /* Channels Drawer */
     .channels-drawer {
       position: fixed;
       top: 0;
@@ -322,31 +343,30 @@
       background: none;
       border: none;
       color: var(--gray);
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       cursor: pointer;
-      padding: 0.5rem;
     }
     
     .search-box-container {
       position: relative;
       width: 100%;
       padding: 0 1rem;
-      margin: 1rem 0;
+      margin: 0.5rem 0;
     }
     
     .search-box {
       background-color: var(--darker);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 8px;
-      padding: 0.75rem 1rem 0.75rem 2.5rem;
+      padding: 0.6rem 1rem 0.6rem 2.2rem;
       color: var(--light);
       width: 100%;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
     
     .search-icon {
       position: absolute;
-      left: 1.75rem;
+      left: 1.5rem;
       top: 50%;
       transform: translateY(-50%);
       color: var(--gray);
@@ -355,7 +375,7 @@
     .channel-list {
       flex: 1;
       overflow-y: auto;
-      padding: 0 1rem 1rem;
+      padding: 0 0.5rem 0.5rem;
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
@@ -364,11 +384,11 @@
     .channel-card {
       background-color: var(--darker);
       border-radius: 8px;
-      padding: 0.75rem;
+      padding: 0.6rem;
       cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.6rem;
       border: 1px solid transparent;
     }
     
@@ -380,12 +400,26 @@
     .channel-card-logo {
       width: 40px;
       height: 40px;
-      border-radius: 8px;
+      border-radius: 6px;
       background: linear-gradient(135deg, var(--dark-gray), var(--darker));
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
+      overflow: hidden;
       flex-shrink: 0;
+    }
+    
+    .channel-card-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .channel-card-logo span {
+      font-weight: bold;
+      color: var(--primary-light);
+      font-size: 0.9rem;
     }
     
     .channel-card-text {
@@ -395,27 +429,56 @@
     
     .channel-card-name {
       font-weight: 500;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.1rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 0.9rem;
+    }
+    
+    .channel-card-subtitle {
+      color: var(--gray);
+      font-size: 0.8rem;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
     
+    /* Mobile Channels Button */
+    .mobile-channels-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      margin: 1rem;
+      font-size: 0.9rem;
+    }
+    
+    .mobile-channels-btn i {
+      margin-right: 0.5rem;
+    }
+    
     /* Toast Notifications */
     .toast {
       position: fixed;
-      bottom: 1.5rem;
+      bottom: 1rem;
       left: 50%;
       transform: translateX(-50%);
       background-color: var(--dark);
       color: white;
-      padding: 0.75rem 1.5rem;
+      padding: 0.6rem 1.2rem;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       z-index: 100;
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.5rem;
       opacity: 0;
       transition: opacity 0.3s;
       max-width: 90%;
@@ -425,16 +488,46 @@
       opacity: 1;
     }
     
-    /* Focus styles for TV remote navigation */
-    *:focus {
+    .toast.success {
+      background-color: var(--success);
+    }
+    
+    .toast.error {
+      background-color: var(--danger);
+    }
+    
+    .toast.warning {
+      background-color: var(--warning);
+    }
+    
+    .toast i {
+      font-size: 1rem;
+    }
+    
+    /* Fullscreen Styles */
+    .fullscreen .header,
+    .fullscreen .channel-info,
+    .fullscreen .mobile-channels-btn {
+      display: none;
+    }
+    
+    /* TV Remote Focus Styles */
+    .control-btn:focus,
+    .channel-card:focus,
+    .mobile-channels-btn:focus,
+    .drawer-close-btn:focus {
       outline: 2px solid var(--primary);
       outline-offset: 2px;
     }
     
-    /* Hide controls after inactivity */
-    .hide-controls {
-      opacity: 0 !important;
-      pointer-events: none;
+    /* Hide controls in fullscreen after delay */
+    .fullscreen .video-controls {
+      transition: opacity 0.3s 3s;
+    }
+    
+    .fullscreen .video-container:hover .video-controls,
+    .fullscreen .video-controls.visible {
+      transition: opacity 0.3s 0s;
     }
   </style>
 </head>
@@ -442,62 +535,70 @@
   <header class="header">
     <div class="logo">
       <i class="fas fa-play-circle logo-icon"></i>
-      <span>T Play TV</span>
+      <span>T Play</span>
+    </div>
+    <div class="header-actions">
+      <button class="header-btn" id="fullscreen-btn" title="Fullscreen">
+        <i class="fas fa-expand"></i>
+      </button>
     </div>
   </header>
   
-  <div class="player-container">
-    <div class="video-container">
-      <video id="video-player" playsinline></video>
-      <div class="loading-overlay" id="loading-overlay">
-        <div class="spinner"></div>
-        <div class="loading-text" id="loading-text">Loading channel...</div>
+  <div class="video-container" id="video-container">
+    <video id="video-player" playsinline></video>
+    <div class="loading-overlay" id="loading-overlay">
+      <div class="spinner"></div>
+      <div class="loading-text" id="loading-text">Loading channel...</div>
+    </div>
+    
+    <div class="video-controls" id="video-controls">
+      <div class="progress-container" id="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+        <div class="progress-buffer" id="progress-buffer"></div>
       </div>
-      
-      <div class="video-controls" id="video-controls">
-        <div class="progress-container" id="progress-container">
-          <div class="progress-bar" id="progress-bar"></div>
+      <div class="controls-row">
+        <div class="left-controls">
+          <button class="control-btn" id="play-pause-btn">
+            <i class="fas fa-play" id="play-pause-icon"></i>
+          </button>
+          <button class="control-btn" id="prev-btn">
+            <i class="fas fa-step-backward"></i>
+          </button>
+          <button class="control-btn" id="next-btn">
+            <i class="fas fa-step-forward"></i>
+          </button>
+          <div class="time-display" id="time-display">00:00 / --:--</div>
         </div>
-        <div class="controls-row">
-          <div class="left-controls">
-            <button class="control-btn" id="play-pause-btn">
-              <i class="fas fa-play" id="play-pause-icon"></i>
-            </button>
-            <button class="control-btn" id="prev-btn">
-              <i class="fas fa-step-backward"></i>
-            </button>
-            <button class="control-btn" id="next-btn">
-              <i class="fas fa-step-forward"></i>
-            </button>
-            <div class="time-display" id="time-display">00:00 / --:--</div>
-          </div>
-          <div class="right-controls">
-            <button class="control-btn" id="fullscreen-btn">
-              <i class="fas fa-expand"></i>
-            </button>
-          </div>
+        <div class="right-controls">
+          <button class="control-btn" id="pip-btn">
+            <i class="fas fa-clone"></i>
+          </button>
         </div>
       </div>
     </div>
-    
-    <div class="channel-info">
-      <div class="channel-logo" id="current-channel-logo">
-        <img id="current-channel-logo-img" style="display:none;">
-        <span id="current-channel-logo-text">TV</span>
-      </div>
-      <div class="channel-info-text">
-        <div class="channel-title" id="current-channel-name">Select a channel</div>
-        <div class="channel-subtitle" id="current-channel-subtitle"></div>
-      </div>
-    </div>
-    
-    <button class="mobile-channels-btn" id="mobile-channels-btn">
-      <i class="fas fa-tv"></i>
-      <span>Browse Channels</span>
-    </button>
   </div>
   
-  <!-- Mobile Channels Drawer -->
+  <div class="channel-info">
+    <div class="channel-logo" id="current-channel-logo">
+      <img id="current-channel-logo-img" style="display:none;">
+      <span id="current-channel-logo-text">TV</span>
+    </div>
+    <div class="channel-info-text">
+      <div class="channel-title" id="current-channel-name">Select a channel</div>
+      <div class="channel-subtitle" id="current-channel-subtitle"></div>
+    </div>
+    <div class="player-status" id="player-status">
+      <div class="status-dot"></div>
+      <span>Ready</span>
+    </div>
+  </div>
+  
+  <button class="mobile-channels-btn" id="mobile-channels-btn">
+    <i class="fas fa-tv"></i>
+    <span>Browse Channels</span>
+  </button>
+  
+  <!-- Channels Drawer -->
   <div class="channels-drawer" id="channels-drawer">
     <div class="drawer-header">
       <div class="channels-title">Channels</div>
@@ -522,81 +623,162 @@
     // Channels data
     const channels = [
       { 
-        name: "Movies HD", 
-        subtitle: "24/7 Latest Movies", 
-        url: "https://cloudfrontnet.vercel.app/tplay/playout/209612/master.m3u8",
+        name: "T Play Movies", 
+        subtitle: "24/7 Hindi Movies", 
+        qualities: [
+          { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209612/master.m3u8" },
+          { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209612/sd.m3u8" }
+        ],
+        logo: "https://avatars.githubusercontent.com/u/210236050?v=4"
+      },
+      { 
+        name: "T Play Movies", 
+        subtitle: "24/7 Bangla Movies", 
+        qualities: [
+          { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209627/master.m3u8" },
+          { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209627/sd.m3u8" }
+        ],
+        logo: "https://avatars.githubusercontent.com/u/210236050?v=4"
+      },
+      { 
+        name: "T Play Movies", 
+        subtitle: "24/7 Dubbed Movies", 
+        qualities: [
+          { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209593/master.m3u8" },
+          { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209593/sd.m3u8" }
+        ],
         logo: "M"
       },
       { 
-        name: "Sports", 
-        subtitle: "Live Sports Events", 
-        url: "https://cloudfrontnet.vercel.app/tplay/playout/209627/master.m3u8",
-        logo: "S"
+        name: "T Play Waz", 
+        subtitle: "24/7 Bangla Waz", 
+        qualities: [
+          { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209617/master.m3u8" },
+          { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209617/sd.m3u8" }
+        ],
+        logo: "W"
       },
       { 
-        name: "Kids", 
-        subtitle: "Cartoons & Animations", 
-        url: "https://example.com/stream3.m3u8",
+        name: "T Play Kirtan", 
+        subtitle: "24/7 Bangla Kirtan", 
+        qualities: [
+          { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209618/master.m3u8" },
+          { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209618/sd.m3u8" }
+        ],
         logo: "K"
       },
       { 
-        name: "News", 
-        subtitle: "24/7 News Coverage", 
-        url: "https://example.com/stream4.m3u8",
-        logo: "N"
+        name: "T Play Kids", 
+        subtitle: "24/7 Bantul The Great", 
+        qualities: [
+          { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209869/master.m3u8" },
+          { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209869/sd.m3u8" }
+        ],
+        logo: "K"
       },
       { 
-        name: "Music", 
-        subtitle: "Popular Music Videos", 
-        url: "https://example.com/stream5.m3u8",
-        logo: "♪"
+        name: "T Play Kids", 
+        subtitle: "24/7 Gopal Bhar", 
+        qualities: [
+          { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209611/master.m3u8" },
+          { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209611/sd.m3u8" }
+        ],
+        logo: "K"
+      },
+      { 
+        name: "T Play Kids", 
+        subtitle: "24/7 Motu Patlu", 
+        qualities: [
+          { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209622/master.m3u8" },
+          { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209622/sd.m3u8" }
+        ],
+        logo: "K"
+      },
+      { 
+        name: "T Play Kids", 
+        subtitle: "24/7 Shinchan", 
+        qualities: [
+          { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209901/master.m3u8" },
+          { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209901/sd.m3u8" }
+        ],
+        logo: "K"
+      },
+      { 
+        name: "T Play Kids", 
+        subtitle: "24/7 Doraemon", 
+        qualities: [
+          { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209902/master.m3u8" },
+          { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209902/sd.m3u8" }
+        ],
+        logo: "K"
       }
     ];
     
     // DOM elements
     const videoPlayer = document.getElementById('video-player');
+    const videoContainer = document.getElementById('video-container');
     const loadingOverlay = document.getElementById('loading-overlay');
     const loadingText = document.getElementById('loading-text');
-    const currentChannelLogo = document.getElementById('current-channel-logo');
     const currentChannelLogoImg = document.getElementById('current-channel-logo-img');
     const currentChannelLogoText = document.getElementById('current-channel-logo-text');
     const currentChannelName = document.getElementById('current-channel-name');
     const currentChannelSubtitle = document.getElementById('current-channel-subtitle');
+    const playerStatus = document.getElementById('player-status');
+    const prevBtn = document.getElementById('prev-btn');
     const playPauseBtn = document.getElementById('play-pause-btn');
     const playPauseIcon = document.getElementById('play-pause-icon');
-    const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
     const fullscreenBtn = document.getElementById('fullscreen-btn');
-    const timeDisplay = document.getElementById('time-display');
+    const pipBtn = document.getElementById('pip-btn');
+    const progressContainer = document.getElementById('progress-container');
     const progressBar = document.getElementById('progress-bar');
-    const videoControls = document.getElementById('video-controls');
+    const progressBuffer = document.getElementById('progress-buffer');
+    const timeDisplay = document.getElementById('time-display');
     const channelList = document.getElementById('channel-list');
+    const toast = document.getElementById('toast');
+    const toastMessage = document.getElementById('toast-message');
+    const videoControls = document.getElementById('video-controls');
     const mobileChannelsBtn = document.getElementById('mobile-channels-btn');
     const channelsDrawer = document.getElementById('channels-drawer');
     const drawerCloseBtn = document.getElementById('drawer-close-btn');
     const searchBox = document.getElementById('search-box');
-    const toast = document.getElementById('toast');
-    const toastMessage = document.getElementById('toast-message');
     
     // Player state
     let currentChannelIndex = -1;
+    let hls;
     let isPlaying = false;
     let controlsTimeout;
-    let inactivityTimeout;
     let isFullscreen = false;
+    let isTvDevice = false;
     
     // Initialize the player
     function initPlayer() {
+      detectTvDevice();
       renderChannelList();
       setupEventListeners();
       
-      // Start with the first channel
+      // Try to play the first channel
       if (channels.length > 0) {
         changeChannel(0);
       }
       
       // Start progress update loop
       requestAnimationFrame(updateProgress);
+    }
+    
+    // Detect TV device
+    function detectTvDevice() {
+      // Check for TV-specific features or user agent
+      const isTv = window.matchMedia('(hover: none) and (pointer: coarse) and (min-width: 720px)').matches;
+      const isTizen = navigator.userAgent.includes('Tizen');
+      const isWebOS = navigator.userAgent.includes('Web0S');
+      
+      isTvDevice = isTv || isTizen || isWebOS;
+      
+      if (isTvDevice) {
+        document.body.classList.add('tv-device');
+        showToast('TV mode activated', 'success');
+      }
     }
     
     // Render channel list
@@ -609,7 +791,13 @@
       );
       
       if (filteredChannels.length === 0) {
-        channelList.innerHTML = '<div class="no-results">No channels found</div>';
+        const noResults = document.createElement('div');
+        noResults.className = 'no-results';
+        noResults.textContent = 'No channels found';
+        noResults.style.padding = '1rem';
+        noResults.style.textAlign = 'center';
+        noResults.style.color = 'var(--gray)';
+        channelList.appendChild(noResults);
         return;
       }
       
@@ -618,9 +806,17 @@
         channelCard.className = `channel-card ${index === currentChannelIndex ? 'active' : ''}`;
         channelCard.tabIndex = 0;
         
+        let logoElement;
+        if (channel.logo.startsWith('http')) {
+          logoElement = `<img src="${channel.logo}" alt="${channel.name}" onerror="this.style.display='none';this.parentElement.querySelector('span').style.display='block'">`;
+        } else {
+          logoElement = `<span>${channel.logo}</span>`;
+        }
+        
         channelCard.innerHTML = `
           <div class="channel-card-logo">
-            <span>${channel.logo}</span>
+            ${logoElement}
+            <span style="display:${channel.logo.startsWith('http') ? 'none' : 'block'}">${channel.logo}</span>
           </div>
           <div class="channel-card-text">
             <div class="channel-card-name">${channel.name}</div>
@@ -633,7 +829,7 @@
           closeDrawer();
         });
         
-        // For TV remote navigation
+        // For TV remote support
         channelCard.addEventListener('keydown', (e) => {
           if (e.key === 'Enter') {
             changeChannel(index);
@@ -643,102 +839,281 @@
         
         channelList.appendChild(channelCard);
       });
+      
+      // Focus first channel for TV devices
+      if (isTvDevice && filteredChannels.length > 0) {
+        const firstChannel = channelList.querySelector('.channel-card');
+        if (firstChannel) firstChannel.focus();
+      }
     }
     
     // Setup event listeners
     function setupEventListeners() {
       // Video player events
       videoPlayer.addEventListener('click', togglePlayPause);
-      videoPlayer.addEventListener('play', onPlay);
-      videoPlayer.addEventListener('pause', onPause);
-      videoPlayer.addEventListener('waiting', onWaiting);
-      videoPlayer.addEventListener('playing', onPlaying);
-      videoPlayer.addEventListener('timeupdate', updateTimeDisplay);
+      videoPlayer.addEventListener('dblclick', toggleFullscreen);
       
-      // Control buttons
-      playPauseBtn.addEventListener('click', togglePlayPause);
+      // Navigation buttons
       prevBtn.addEventListener('click', playPreviousChannel);
+      playPauseBtn.addEventListener('click', togglePlayPause);
       nextBtn.addEventListener('click', playNextChannel);
       fullscreenBtn.addEventListener('click', toggleFullscreen);
+      pipBtn.addEventListener('click', togglePictureInPicture);
       
-      // Mobile drawer
+      // TV remote key events
+      document.addEventListener('keydown', handleKeyDown);
+      
+      // Progress bar
+      progressContainer.addEventListener('click', seek);
+      
+      // Show/hide controls
+      videoContainer.addEventListener('mousemove', showControls);
+      videoContainer.addEventListener('mouseleave', hideControls);
+      videoContainer.addEventListener('touchstart', showControls);
+      
+      // Player events
+      videoPlayer.addEventListener('playing', () => {
+        isPlaying = true;
+        playPauseIcon.classList.replace('fa-play', 'fa-pause');
+        loadingOverlay.style.display = 'none';
+        playerStatus.querySelector('span').textContent = 'Playing';
+        playerStatus.className = 'player-status playing';
+      });
+      
+      videoPlayer.addEventListener('pause', () => {
+        isPlaying = false;
+        playPauseIcon.classList.replace('fa-pause', 'fa-play');
+        playerStatus.querySelector('span').textContent = 'Paused';
+        playerStatus.className = 'player-status';
+      });
+      
+      videoPlayer.addEventListener('waiting', () => {
+        loadingText.textContent = 'Buffering...';
+        loadingOverlay.style.display = 'flex';
+        playerStatus.querySelector('span').textContent = 'Buffering';
+        playerStatus.className = 'player-status buffering';
+      });
+      
+      videoPlayer.addEventListener('error', () => {
+        showToast('Error playing channel', 'error');
+        playerStatus.querySelector('span').textContent = 'Error';
+        playerStatus.className = 'player-status error';
+        loadingOverlay.style.display = 'flex';
+      });
+      
+      videoPlayer.addEventListener('timeupdate', updateTimeDisplay);
+      
+      // Picture-in-Picture events
+      videoPlayer.addEventListener('enterpictureinpicture', () => {
+        pipBtn.innerHTML = '<i class="fas fa-times"></i>';
+        showToast('Entered Picture-in-Picture mode', 'success');
+      });
+      
+      videoPlayer.addEventListener('leavepictureinpicture', () => {
+        pipBtn.innerHTML = '<i class="fas fa-clone"></i>';
+        showToast('Exited Picture-in-Picture mode', 'success');
+      });
+      
+      // Fullscreen events
+      document.addEventListener('fullscreenchange', () => {
+        isFullscreen = !!document.fullscreenElement;
+        document.body.classList.toggle('fullscreen', isFullscreen);
+        
+        if (isFullscreen) {
+          showControls();
+          // Auto-hide controls after 3 seconds in fullscreen
+          setTimeout(hideControls, 3000);
+        }
+      });
+      
+      // Mobile channels drawer
       mobileChannelsBtn.addEventListener('click', openDrawer);
       drawerCloseBtn.addEventListener('click', closeDrawer);
       
-      // Search
+      // Search functionality
       searchBox.addEventListener('input', (e) => {
         renderChannelList(e.target.value);
       });
+    }
+    
+    // Handle TV remote key events
+    function handleKeyDown(e) {
+      // Ignore if focused on search box
+      if (document.activeElement === searchBox) return;
       
-      // Fullscreen changes
-      document.addEventListener('fullscreenchange', () => {
-        isFullscreen = !!document.fullscreenElement;
-        resetInactivityTimer();
-      });
-      
-      // Handle TV remote key events
-      document.addEventListener('keydown', handleRemoteKeys);
-      
-      // Handle inactivity
-      document.addEventListener('mousemove', resetInactivityTimer);
-      document.addEventListener('keydown', resetInactivityTimer);
-      document.addEventListener('click', resetInactivityTimer);
+      switch(e.key) {
+        case 'ArrowLeft':
+          if (isFullscreen) rewind();
+          else if (document.activeElement === playPauseBtn) prevBtn.focus();
+          break;
+        case 'ArrowRight':
+          if (isFullscreen) fastForward();
+          else if (document.activeElement === playPauseBtn) nextBtn.focus();
+          break;
+        case 'ArrowUp':
+        case 'ArrowDown':
+          if (!isFullscreen) {
+            e.preventDefault();
+            if (e.key === 'ArrowUp' && document.activeElement === playPauseBtn) {
+              mobileChannelsBtn.focus();
+            } else if (e.key === 'ArrowDown' && document.activeElement === playPauseBtn) {
+              const firstChannel = channelList.querySelector('.channel-card');
+              if (firstChannel) firstChannel.focus();
+            }
+          }
+          break;
+        case ' ':
+        case 'Enter':
+          if (document.activeElement === playPauseBtn) {
+            togglePlayPause();
+          } else if (document.activeElement === prevBtn) {
+            playPreviousChannel();
+          } else if (document.activeElement === nextBtn) {
+            playNextChannel();
+          } else if (document.activeElement === pipBtn) {
+            togglePictureInPicture();
+          } else if (document.activeElement === fullscreenBtn) {
+            toggleFullscreen();
+          } else if (document.activeElement === mobileChannelsBtn) {
+            openDrawer();
+          }
+          break;
+        case 'Backspace':
+        case 'Escape':
+          if (channelsDrawer.classList.contains('open')) {
+            closeDrawer();
+          } else if (isFullscreen) {
+            toggleFullscreen();
+          }
+          break;
+        case 'MediaPlayPause':
+          togglePlayPause();
+          break;
+        case 'MediaTrackPrevious':
+          playPreviousChannel();
+          break;
+        case 'MediaTrackNext':
+          playNextChannel();
+          break;
+      }
     }
     
     // Change channel
     function changeChannel(index) {
       if (index < 0 || index >= channels.length) return;
-      
-      currentChannelIndex = index;
-      const channel = channels[index];
-      
-      // Update UI
-      currentChannelName.textContent = channel.name;
-      currentChannelSubtitle.textContent = channel.subtitle;
-      currentChannelLogoText.textContent = channel.logo;
-      currentChannelLogoImg.style.display = 'none';
-      currentChannelLogoText.style.display = 'block';
+      if (index === currentChannelIndex) return;
       
       // Show loading state
       loadingText.textContent = 'Loading channel...';
       loadingOverlay.style.display = 'flex';
+      playerStatus.querySelector('span').textContent = 'Loading';
+      playerStatus.className = 'player-status buffering';
       
-      // Change video source
-      videoPlayer.src = channel.url;
-      videoPlayer.load();
+      const channel = channels[index];
+      currentChannelIndex = index;
       
-      // Try to autoplay
-      videoPlayer.play().catch(e => {
-        showToast('Click to play', 'warning');
-      });
+      // Update UI
+      currentChannelName.textContent = channel.name;
+      currentChannelSubtitle.textContent = channel.subtitle;
+      
+      // Update logo display
+      if (channel.logo.startsWith('http')) {
+        currentChannelLogoImg.src = channel.logo;
+        currentChannelLogoImg.style.display = 'block';
+        currentChannelLogoText.style.display = 'none';
+        currentChannelLogoImg.onerror = () => {
+          currentChannelLogoImg.style.display = 'none';
+          currentChannelLogoText.style.display = 'block';
+          currentChannelLogoText.textContent = channel.name.charAt(0);
+        };
+      } else {
+        currentChannelLogoText.textContent = channel.logo;
+        currentChannelLogoText.style.display = 'block';
+        currentChannelLogoImg.style.display = 'none';
+      }
+      
+      // Clean up previous HLS instance if exists
+      if (hls) {
+        hls.destroy();
+      }
+      
+      // Use the HD stream by default
+      const streamUrl = channel.qualities[0].url;
+      
+      // Try to play with HLS.js first
+      if (Hls.isSupported()) {
+        hls = new Hls({
+          maxBufferLength: 30,
+          maxMaxBufferLength: 600,
+          enableWorker: true,
+          lowLatencyMode: true,
+          backBufferLength: 30
+        });
+        
+        hls.loadSource(streamUrl);
+        hls.attachMedia(videoPlayer);
+        
+        hls.on(Hls.Events.MANIFEST_PARSED, () => {
+          videoPlayer.play().catch(e => {
+            showToast('Click to play', 'warning');
+          });
+          
+          // Update buffer indicator
+          hls.on(Hls.Events.FRAG_BUFFERED, () => {
+            if (hls && hls.media) {
+              const buffered = hls.media.buffered;
+              if (buffered.length > 0) {
+                const bufferedEnd = buffered.end(buffered.length - 1);
+                const duration = hls.media.duration;
+                if (duration > 0) {
+                  const bufferedPercent = (bufferedEnd / duration) * 100;
+                  progressBuffer.style.width = `${bufferedPercent}%`;
+                }
+              }
+            }
+          });
+        });
+        
+        hls.on(Hls.Events.ERROR, (event, data) => {
+          if (data.fatal) {
+            switch(data.type) {
+              case Hls.ErrorTypes.NETWORK_ERROR:
+                showToast('Network error, trying to recover', 'error');
+                hls.startLoad();
+                break;
+              case Hls.ErrorTypes.MEDIA_ERROR:
+                showToast('Media error, trying to recover', 'error');
+                hls.recoverMediaError();
+                break;
+              default:
+                showToast('Cannot play this channel', 'error');
+                playNextChannel();
+                break;
+            }
+          }
+        });
+      } 
+      // Fallback to native HLS
+      else if (videoPlayer.canPlayType('application/vnd.apple.mpegurl')) {
+        videoPlayer.src = streamUrl;
+        videoPlayer.play().catch(e => {
+          showToast('Click to play', 'warning');
+        });
+      } 
+      else {
+        showToast('HLS not supported in this browser', 'error');
+      }
       
       // Update channel list highlights
       renderChannelList(searchBox.value);
       
-      // Show notification
-      showToast(`Now playing: ${channel.name}`);
+      // Show channel change notification
+      showToast(`Now playing: ${channel.name} - ${channel.subtitle}`, 'success');
       
-      resetInactivityTimer();
-    }
-    
-    // Player state handlers
-    function onPlay() {
-      isPlaying = true;
-      playPauseIcon.classList.replace('fa-play', 'fa-pause');
-    }
-    
-    function onPause() {
-      isPlaying = false;
-      playPauseIcon.classList.replace('fa-pause', 'fa-play');
-    }
-    
-    function onWaiting() {
-      loadingText.textContent = 'Buffering...';
-      loadingOverlay.style.display = 'flex';
-    }
-    
-    function onPlaying() {
-      loadingOverlay.style.display = 'none';
+      // Focus play button for TV devices
+      if (isTvDevice) {
+        setTimeout(() => playPauseBtn.focus(), 100);
+      }
     }
     
     // Toggle play/pause
@@ -753,13 +1128,26 @@
       showControls();
     }
     
-    // Play next/previous channel
+    // Rewind 10 seconds
+    function rewind() {
+      videoPlayer.currentTime = Math.max(0, videoPlayer.currentTime - 10);
+      showControls();
+    }
+    
+    // Fast forward 10 seconds
+    function fastForward() {
+      videoPlayer.currentTime = Math.min(videoPlayer.duration, videoPlayer.currentTime + 10);
+      showControls();
+    }
+    
+    // Play next channel
     function playNextChannel() {
       const nextIndex = (currentChannelIndex + 1) % channels.length;
       changeChannel(nextIndex);
       showControls();
     }
     
+    // Play previous channel
     function playPreviousChannel() {
       const prevIndex = (currentChannelIndex - 1 + channels.length) % channels.length;
       changeChannel(prevIndex);
@@ -769,13 +1157,27 @@
     // Toggle fullscreen
     function toggleFullscreen() {
       if (!document.fullscreenElement) {
-        videoPlayer.requestFullscreen().catch(err => {
+        videoContainer.requestFullscreen().catch(err => {
           showToast(`Error entering fullscreen: ${err.message}`, 'error');
         });
       } else {
         document.exitFullscreen();
       }
-      showControls();
+    }
+    
+    // Toggle Picture-in-Picture
+    function togglePictureInPicture() {
+      if (document.pictureInPictureElement) {
+        document.exitPictureInPicture().catch(err => {
+          showToast(`Error exiting PiP: ${err.message}`, 'error');
+        });
+      } else if (document.pictureInPictureEnabled) {
+        videoPlayer.requestPictureInPicture().catch(err => {
+          showToast(`Error entering PiP: ${err.message}`, 'error');
+        });
+      } else {
+        showToast('Picture-in-Picture not supported', 'error');
+      }
     }
     
     // Update progress bar
@@ -785,6 +1187,16 @@
         progressBar.style.width = `${progress}%`;
       }
       requestAnimationFrame(updateProgress);
+    }
+    
+    // Seek to position in video
+    function seek(e) {
+      if (!videoPlayer.duration) return;
+      
+      const rect = progressContainer.getBoundingClientRect();
+      const pos = (e.clientX - rect.left) / rect.width;
+      videoPlayer.currentTime = pos * videoPlayer.duration;
+      showControls();
     }
     
     // Update time display
@@ -806,118 +1218,69 @@
       return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
     }
     
-    // Show/hide controls
+    // Show controls
     function showControls() {
-      clearTimeout(controlsTimeout);
       videoControls.classList.add('visible');
-      
-      if (!isFullscreen) {
-        controlsTimeout = setTimeout(() => {
-          videoControls.classList.remove('visible');
-        }, 3000);
-      }
-      
-      resetInactivityTimer();
-    }
-    
-    // Handle TV remote keys
-    function handleRemoteKeys(e) {
-      switch(e.key) {
-        case 'ArrowLeft':
-          if (isFullscreen) rewind();
-          break;
-        case 'ArrowRight':
-          if (isFullscreen) fastForward();
-          break;
-        case 'ArrowUp':
-        case 'ArrowDown':
-          // Prevent default to avoid scrolling
-          if (isFullscreen) e.preventDefault();
-          break;
-        case 'Enter':
-          if (document.activeElement === videoPlayer) {
-            togglePlayPause();
-          }
-          break;
-        case 'Backspace':
-        case 'Escape':
-          if (isFullscreen && document.fullscreenElement) {
-            document.exitFullscreen();
-          } else if (channelsDrawer.classList.contains('open')) {
-            closeDrawer();
-          }
-          break;
-        case ' ':
-        case 'Spacebar':
-          togglePlayPause();
-          e.preventDefault();
-          break;
-        case 'MediaPlayPause':
-          togglePlayPause();
-          break;
-        case 'MediaTrackNext':
-          playNextChannel();
-          break;
-        case 'MediaTrackPrevious':
-          playPreviousChannel();
-          break;
-      }
-      
-      // Show controls when any key is pressed
-      if (isFullscreen) {
-        showControls();
-      }
-    }
-    
-    // Rewind/fast forward
-    function rewind() {
-      videoPlayer.currentTime = Math.max(0, videoPlayer.currentTime - 10);
-      showControls();
-    }
-    
-    function fastForward() {
-      videoPlayer.currentTime = Math.min(videoPlayer.duration, videoPlayer.currentTime + 10);
-      showControls();
-    }
-    
-    // Inactivity timer for fullscreen
-    function resetInactivityTimer() {
-      clearTimeout(inactivityTimeout);
+      clearTimeout(controlsTimeout);
       
       if (isFullscreen) {
-        videoControls.classList.remove('hide-controls');
-        inactivityTimeout = setTimeout(() => {
-          videoControls.classList.add('hide-controls');
-        }, 3000);
+        controlsTimeout = setTimeout(hideControls, 3000);
       }
     }
     
-    // Mobile drawer functions
-    function openDrawer() {
-      channelsDrawer.classList.add('open');
-      renderChannelList(searchBox.value);
+    // Hide controls
+    function hideControls() {
+      if (!videoContainer.matches(':hover') && !isTvDevice) {
+        videoControls.classList.remove('visible');
+      }
     }
     
-    function closeDrawer() {
-      channelsDrawer.classList.remove('open');
-      // Return focus to player
-      videoPlayer.focus();
-    }
-    
-    // Toast notifications
+    // Show toast notification
     function showToast(message, type = '') {
       toast.className = `toast ${type}`;
       toastMessage.textContent = message;
       
+      // Set appropriate icon
+      const icon = toast.querySelector('i');
+      if (type === 'success') {
+        icon.className = 'fas fa-check-circle';
+      } else if (type === 'error') {
+        icon.className = 'fas fa-exclamation-circle';
+      } else if (type === 'warning') {
+        icon.className = 'fas fa-exclamation-triangle';
+      } else {
+        icon.className = 'fas fa-info-circle';
+      }
+      
       toast.classList.add('show');
+      
       clearTimeout(toast.timeout);
       toast.timeout = setTimeout(() => {
         toast.classList.remove('show');
       }, 3000);
     }
     
-    // Initialize the player
-    initPlayer();
+    // Open mobile channels drawer
+    function openDrawer() {
+      channelsDrawer.classList.add('open');
+      renderChannelList(searchBox.value);
+    }
+    
+    // Close mobile channels drawer
+    function closeDrawer() {
+      channelsDrawer.classList.remove('open');
+      playPauseBtn.focus();
+    }
+    
+    // Initialize HLS.js if needed
+    if (typeof Hls === 'undefined') {
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/hls.js@latest';
+      script.onload = initPlayer;
+      document.head.appendChild(script);
+    } else {
+      initPlayer();
+    }
   </script>
 </body>
 </html>
