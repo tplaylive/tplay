@@ -330,10 +330,46 @@
     .channel-list {
       flex: 1;
       overflow-y: auto;
-      padding: 0 0.5rem 0.5rem;
+      padding: 0 0.5rem;
       display: flex;
       flex-direction: column;
+    }
+    
+    .categories-container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0.5rem;
       gap: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .category-btn {
+      background-color: var(--darker);
+      color: var(--light);
+      border: 1px solid var(--primary);
+      border-radius: 20px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+    
+    .category-btn.active {
+      background-color: var(--primary);
+      color: white;
+    }
+    
+    .category-btn:hover {
+      background-color: var(--primary-dark);
+    }
+    
+    .channels-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 0.5rem;
+      padding: 0.5rem;
+      overflow-y: auto;
+      flex: 1;
     }
     
     .channel-card {
@@ -397,6 +433,13 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+    
+    .no-results {
+      padding: 1rem;
+      text-align: center;
+      color: var(--gray);
+      grid-column: 1 / -1;
     }
     
     /* Mobile Channels Button */
@@ -546,7 +589,10 @@
       <i class="fas fa-search search-icon"></i>
       <input type="text" class="search-box" id="search-box" placeholder="Search channels...">
     </div>
-    <div class="channel-list" id="channel-list"></div>
+    <div class="channel-list" id="channel-list">
+      <div class="categories-container" id="categories-container"></div>
+      <div class="channels-grid" id="channels-grid"></div>
+    </div>
   </div>
   
   <!-- Toast Notification -->
@@ -556,99 +602,105 @@
   </div>
   
   <script>
-    // Channels data
-    const channels = [
-      { 
-        name: "T Play Movies", 
-        subtitle: "24/7 Hindi Movies", 
-        qualities: [
-          { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209612/master.m3u8" },
-          { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209612/sd.m3u8" }
-        ],
-        logo: "https://avatars.githubusercontent.com/u/210236050?v=4"
-      },
-      { 
-        name: "T Play Movies", 
-        subtitle: "24/7 Bangla Movies", 
-        qualities: [
-          { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209627/master.m3u8" },
-          { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209627/sd.m3u8" }
-        ],
-        logo: "https://avatars.githubusercontent.com/u/210236050?v=4"
-      },
-      { 
-        name: "T Play Movies", 
-        subtitle: "24/7 Dubbed Movies", 
-        qualities: [
-          { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209593/master.m3u8" },
-          { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209593/sd.m3u8" }
-        ],
-        logo: "M"
-      },
-      { 
-        name: "T Play Waz", 
-        subtitle: "24/7 Bangla Waz", 
-        qualities: [
-          { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209617/master.m3u8" },
-          { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209617/sd.m3u8" }
-        ],
-        logo: "W"
-      },
-      { 
-        name: "T Play Kirtan", 
-        subtitle: "24/7 Bangla Kirtan", 
-        qualities: [
-          { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209618/master.m3u8" },
-          { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209618/sd.m3u8" }
-        ],
-        logo: "K"
-      },
-      { 
-        name: "T Play Kids", 
-        subtitle: "24/7 Bantul The Great", 
-        qualities: [
-          { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209869/master.m3u8" },
-          { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209869/sd.m3u8" }
-        ],
-        logo: "K"
-      },
-      { 
-        name: "T Play Kids", 
-        subtitle: "24/7 Gopal Bhar", 
-        qualities: [
-          { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209611/master.m3u8" },
-          { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209611/sd.m3u8" }
-        ],
-        logo: "K"
-      },
-      { 
-        name: "T Play Kids", 
-        subtitle: "24/7 Motu Patlu", 
-        qualities: [
-          { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209622/master.m3u8" },
-          { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209622/sd.m3u8" }
-        ],
-        logo: "K"
-      },
-      { 
-        name: "T Play Kids", 
-        subtitle: "24/7 Shinchan", 
-        qualities: [
-          { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209901/master.m3u8" },
-          { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209901/sd.m3u8" }
-        ],
-        logo: "K"
-      },
-      { 
-        name: "T Play Kids", 
-        subtitle: "24/7 Doraemon", 
-        qualities: [
-          { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209902/master.m3u8" },
-          { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209902/sd.m3u8" }
-        ],
-        logo: "K"
-      }
-    ];
+    // Channels data organized by categories
+    const channels = {
+      "Movies": [
+        { 
+          name: "T Play Movies", 
+          subtitle: "24/7 Hindi Movies", 
+          qualities: [
+            { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209612/master.m3u8" },
+            { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209612/sd.m3u8" }
+          ],
+          logo: "https://avatars.githubusercontent.com/u/210236050?v=4"
+        },
+        { 
+          name: "T Play Movies", 
+          subtitle: "24/7 Bangla Movies", 
+          qualities: [
+            { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209627/master.m3u8" },
+            { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209627/sd.m3u8" }
+          ],
+          logo: "https://avatars.githubusercontent.com/u/210236050?v=4"
+        },
+        { 
+          name: "T Play Movies", 
+          subtitle: "24/7 Dubbed Movies", 
+          qualities: [
+            { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209593/master.m3u8" },
+            { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209593/sd.m3u8" }
+          ],
+          logo: "M"
+        }
+      ],
+      "Kids": [
+        { 
+          name: "T Play Kids", 
+          subtitle: "24/7 Bantul The Great", 
+          qualities: [
+            { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209869/master.m3u8" },
+            { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209869/sd.m3u8" }
+          ],
+          logo: "K"
+        },
+        { 
+          name: "T Play Kids", 
+          subtitle: "24/7 Gopal Bhar", 
+          qualities: [
+            { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209611/master.m3u8" },
+            { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209611/sd.m3u8" }
+          ],
+          logo: "K"
+        },
+        { 
+          name: "T Play Kids", 
+          subtitle: "24/7 Motu Patlu", 
+          qualities: [
+            { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209622/master.m3u8" },
+            { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209622/sd.m3u8" }
+          ],
+          logo: "K"
+        },
+        { 
+          name: "T Play Kids", 
+          subtitle: "24/7 Shinchan", 
+          qualities: [
+            { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209901/master.m3u8" },
+            { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209901/sd.m3u8" }
+          ],
+          logo: "K"
+        },
+        { 
+          name: "T Play Kids", 
+          subtitle: "24/7 Doraemon", 
+          qualities: [
+            { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209902/master.m3u8" },
+            { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209902/sd.m3u8" }
+          ],
+          logo: "K"
+        }
+      ],
+      "Religious": [
+        { 
+          name: "T Play Waz", 
+          subtitle: "24/7 Bangla Waz", 
+          qualities: [
+            { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209617/master.m3u8" },
+            { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209617/sd.m3u8" }
+          ],
+          logo: "W"
+        },
+        { 
+          name: "T Play Kirtan", 
+          subtitle: "24/7 Bangla Kirtan", 
+          qualities: [
+            { label: "HD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209618/master.m3u8" },
+            { label: "SD", url: "https://cloudfrontnet.vercel.app/tplay/playout/209618/sd.m3u8" }
+          ],
+          logo: "K"
+        }
+      ]
+    };
     
     // DOM elements
     const videoPlayer = document.getElementById('video-player');
@@ -671,6 +723,8 @@
     const progressBuffer = document.getElementById('progress-buffer');
     const timeDisplay = document.getElementById('time-display');
     const channelList = document.getElementById('channel-list');
+    const categoriesContainer = document.getElementById('categories-container');
+    const channelsGrid = document.getElementById('channels-grid');
     const toast = document.getElementById('toast');
     const toastMessage = document.getElementById('toast-message');
     const videoControls = document.getElementById('video-controls');
@@ -681,20 +735,29 @@
     
     // Player state
     let currentChannelIndex = -1;
+    let currentCategory = 'all';
     let hls;
     let isPlaying = false;
     let controlsTimeout;
     let isFullscreen = false;
     let isTvDevice = false;
+    let allChannels = [];
     
     // Initialize the player
     function initPlayer() {
+      // Flatten all channels into one array for navigation
+      allChannels = [];
+      Object.values(channels).forEach(category => {
+        allChannels.push(...category);
+      });
+      
       detectTvDevice();
-      renderChannelList();
+      renderCategories();
+      renderAllChannels();
       setupEventListeners();
       
       // Try to play the first channel
-      if (channels.length > 0) {
+      if (allChannels.length > 0) {
         changeChannel(0);
       }
       
@@ -715,11 +778,42 @@
       }
     }
     
-    // Render channel list
-    function renderChannelList(filter = '') {
-      channelList.innerHTML = '';
+    // Render category buttons
+    function renderCategories() {
+      categoriesContainer.innerHTML = '';
       
-      const filteredChannels = channels.filter(channel => 
+      // Create "All Channels" button
+      const allChannelsBtn = document.createElement('button');
+      allChannelsBtn.className = 'category-btn active';
+      allChannelsBtn.textContent = 'All Channels';
+      allChannelsBtn.addEventListener('click', () => {
+        currentCategory = 'all';
+        document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+        allChannelsBtn.classList.add('active');
+        renderAllChannels(searchBox.value);
+      });
+      categoriesContainer.appendChild(allChannelsBtn);
+      
+      // Create category buttons
+      Object.keys(channels).forEach(category => {
+        const categoryBtn = document.createElement('button');
+        categoryBtn.className = 'category-btn';
+        categoryBtn.textContent = category;
+        categoryBtn.addEventListener('click', () => {
+          currentCategory = category;
+          document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+          categoryBtn.classList.add('active');
+          renderCategoryChannels(category, searchBox.value);
+        });
+        categoriesContainer.appendChild(categoryBtn);
+      });
+    }
+    
+    // Render all channels
+    function renderAllChannels(filter = '') {
+      channelsGrid.innerHTML = '';
+      
+      const filteredChannels = allChannels.filter(channel => 
         channel.name.toLowerCase().includes(filter.toLowerCase()) || 
         channel.subtitle.toLowerCase().includes(filter.toLowerCase())
       );
@@ -728,43 +822,72 @@
         const noResults = document.createElement('div');
         noResults.className = 'no-results';
         noResults.textContent = 'No channels found';
-        noResults.style.padding = '1rem';
-        noResults.style.textAlign = 'center';
-        noResults.style.color = 'var(--gray)';
-        channelList.appendChild(noResults);
-        return;
+        channelsGrid.appendChild(noResults);
+      } else {
+        filteredChannels.forEach((channel, index) => {
+          channelsGrid.appendChild(createChannelCard(channel, index));
+        });
+      }
+    }
+    
+    // Render channels for a specific category
+    function renderCategoryChannels(category, filter = '') {
+      channelsGrid.innerHTML = '';
+      
+      const categoryChannels = channels[category] || [];
+      const filteredChannels = categoryChannels.filter(channel => 
+        channel.name.toLowerCase().includes(filter.toLowerCase()) || 
+        channel.subtitle.toLowerCase().includes(filter.toLowerCase())
+      );
+      
+      if (filteredChannels.length === 0) {
+        const noResults = document.createElement('div');
+        noResults.className = 'no-results';
+        noResults.textContent = 'No channels found in this category';
+        channelsGrid.appendChild(noResults);
+      } else {
+        filteredChannels.forEach((channel, index) => {
+          // Find the global index of this channel
+          const globalIndex = allChannels.findIndex(c => 
+            c.name === channel.name && c.subtitle === channel.subtitle
+          );
+          if (globalIndex !== -1) {
+            channelsGrid.appendChild(createChannelCard(channel, globalIndex));
+          }
+        });
+      }
+    }
+    
+    // Create channel card element
+    function createChannelCard(channel, index) {
+      const channelCard = document.createElement('div');
+      channelCard.className = `channel-card ${index === currentChannelIndex ? 'active' : ''}`;
+      channelCard.tabIndex = 0;
+      
+      let logoElement;
+      if (channel.logo.startsWith('http')) {
+        logoElement = `<img src="${channel.logo}" alt="${channel.name}" onerror="this.style.display='none';this.parentElement.querySelector('span').style.display='block'">`;
+      } else {
+        logoElement = `<span>${channel.logo}</span>`;
       }
       
-      filteredChannels.forEach((channel, index) => {
-        const channelCard = document.createElement('div');
-        channelCard.className = `channel-card ${index === currentChannelIndex ? 'active' : ''}`;
-        channelCard.tabIndex = 0;
-        
-        let logoElement;
-        if (channel.logo.startsWith('http')) {
-          logoElement = `<img src="${channel.logo}" alt="${channel.name}" onerror="this.style.display='none';this.parentElement.querySelector('span').style.display='block'">`;
-        } else {
-          logoElement = `<span>${channel.logo}</span>`;
-        }
-        
-        channelCard.innerHTML = `
-          <div class="channel-card-logo">
-            ${logoElement}
-            <span style="display:${channel.logo.startsWith('http') ? 'none' : 'block'}">${channel.logo}</span>
-          </div>
-          <div class="channel-card-text">
-            <div class="channel-card-name">${channel.name}</div>
-            <div class="channel-card-subtitle">${channel.subtitle}</div>
-          </div>
-        `;
-        
-        channelCard.addEventListener('click', () => {
-          changeChannel(index);
-          closeDrawer();
-        });
-        
-        channelList.appendChild(channelCard);
+      channelCard.innerHTML = `
+        <div class="channel-card-logo">
+          ${logoElement}
+          <span style="display:${channel.logo.startsWith('http') ? 'none' : 'block'}">${channel.logo}</span>
+        </div>
+        <div class="channel-card-text">
+          <div class="channel-card-name">${channel.name}</div>
+          <div class="channel-card-subtitle">${channel.subtitle}</div>
+        </div>
+      `;
+      
+      channelCard.addEventListener('click', () => {
+        changeChannel(index);
+        closeDrawer();
       });
+      
+      return channelCard;
     }
     
     // Setup event listeners
@@ -851,7 +974,11 @@
       
       // Search functionality
       searchBox.addEventListener('input', (e) => {
-        renderChannelList(e.target.value);
+        if (currentCategory === 'all') {
+          renderAllChannels(e.target.value);
+        } else {
+          renderCategoryChannels(currentCategory, e.target.value);
+        }
       });
     }
     
@@ -896,7 +1023,7 @@
     
     // Change channel
     function changeChannel(index) {
-      if (index < 0 || index >= channels.length) return;
+      if (index < 0 || index >= allChannels.length) return;
       if (index === currentChannelIndex) return;
       
       loadingText.textContent = 'Loading channel...';
@@ -904,7 +1031,7 @@
       playerStatus.querySelector('span').textContent = 'Loading';
       playerStatus.className = 'player-status buffering';
       
-      const channel = channels[index];
+      const channel = allChannels[index];
       currentChannelIndex = index;
       
       currentChannelName.textContent = channel.name;
@@ -992,7 +1119,21 @@
         showToast('HLS not supported in this browser', 'error');
       }
       
-      renderChannelList(searchBox.value);
+      // Update the channel list to highlight the current channel
+      if (currentCategory === 'all') {
+        renderAllChannels(searchBox.value);
+      } else {
+        // Find which category this channel belongs to
+        for (const category in channels) {
+          if (channels[category].some(c => 
+            c.name === channel.name && c.subtitle === channel.subtitle
+          )) {
+            renderCategoryChannels(category, searchBox.value);
+            break;
+          }
+        }
+      }
+      
       showToast(`Now playing: ${channel.name} - ${channel.subtitle}`, 'success');
     }
     
@@ -1022,14 +1163,14 @@
     
     // Play next channel
     function playNextChannel() {
-      const nextIndex = (currentChannelIndex + 1) % channels.length;
+      const nextIndex = (currentChannelIndex + 1) % allChannels.length;
       changeChannel(nextIndex);
       showControls();
     }
     
     // Play previous channel
     function playPreviousChannel() {
-      const prevIndex = (currentChannelIndex - 1 + channels.length) % channels.length;
+      const prevIndex = (currentChannelIndex - 1 + allChannels.length) % allChannels.length;
       changeChannel(prevIndex);
       showControls();
     }
@@ -1142,7 +1283,11 @@
     // Open mobile channels drawer
     function openDrawer() {
       channelsDrawer.classList.add('open');
-      renderChannelList(searchBox.value);
+      if (currentCategory === 'all') {
+        renderAllChannels(searchBox.value);
+      } else {
+        renderCategoryChannels(currentCategory, searchBox.value);
+      }
     }
     
     // Close mobile channels drawer
