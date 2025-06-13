@@ -42,51 +42,6 @@
       touch-action: manipulation;
     }
     
-    /* Header */
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-      background-color: rgba(15, 23, 42, 0.8);
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-weight: 700;
-      font-size: 1.2rem;
-    }
-    
-    .logo-icon {
-      color: var(--primary);
-    }
-    
-    .header-actions {
-      display: flex;
-      gap: 0.5rem;
-    }
-    
-    .header-btn {
-      background: rgba(255, 255, 255, 0.1);
-      border: none;
-      color: white;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    
     /* Video Container */
     .video-container {
       position: relative;
@@ -505,19 +460,9 @@
     }
     
     /* Fullscreen Styles */
-    .fullscreen .header,
     .fullscreen .channel-info,
     .fullscreen .mobile-channels-btn {
       display: none;
-    }
-    
-    /* TV Remote Focus Styles */
-    .control-btn:focus,
-    .channel-card:focus,
-    .mobile-channels-btn:focus,
-    .drawer-close-btn:focus {
-      outline: 2px solid var(--primary);
-      outline-offset: 2px;
     }
     
     /* Hide controls in fullscreen after delay */
@@ -532,18 +477,6 @@
   </style>
 </head>
 <body>
-  <header class="header">
-    <div class="logo">
-      <i class="fas fa-play-circle logo-icon"></i>
-      <span>T Play</span>
-    </div>
-    <div class="header-actions">
-      <button class="header-btn" id="fullscreen-btn" title="Fullscreen">
-        <i class="fas fa-expand"></i>
-      </button>
-    </div>
-  </header>
-  
   <div class="video-container" id="video-container">
     <video id="video-player" playsinline></video>
     <div class="loading-overlay" id="loading-overlay">
@@ -570,6 +503,9 @@
           <div class="time-display" id="time-display">00:00 / --:--</div>
         </div>
         <div class="right-controls">
+          <button class="control-btn" id="fullscreen-btn">
+            <i class="fas fa-expand"></i>
+          </button>
           <button class="control-btn" id="pip-btn">
             <i class="fas fa-clone"></i>
           </button>
@@ -768,7 +704,6 @@
     
     // Detect TV device
     function detectTvDevice() {
-      // Check for TV-specific features or user agent
       const isTv = window.matchMedia('(hover: none) and (pointer: coarse) and (min-width: 720px)').matches;
       const isTizen = navigator.userAgent.includes('Tizen');
       const isWebOS = navigator.userAgent.includes('Web0S');
@@ -776,7 +711,6 @@
       isTvDevice = isTv || isTizen || isWebOS;
       
       if (isTvDevice) {
-        document.body.classList.add('tv-device');
         showToast('TV mode activated', 'success');
       }
     }
@@ -829,22 +763,8 @@
           closeDrawer();
         });
         
-        // For TV remote support
-        channelCard.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter') {
-            changeChannel(index);
-            closeDrawer();
-          }
-        });
-        
         channelList.appendChild(channelCard);
       });
-      
-      // Focus first channel for TV devices
-      if (isTvDevice && filteredChannels.length > 0) {
-        const firstChannel = channelList.querySelector('.channel-card');
-        if (firstChannel) firstChannel.focus();
-      }
     }
     
     // Setup event listeners
@@ -921,7 +841,6 @@
         
         if (isFullscreen) {
           showControls();
-          // Auto-hide controls after 3 seconds in fullscreen
           setTimeout(hideControls, 3000);
         }
       });
@@ -938,45 +857,18 @@
     
     // Handle TV remote key events
     function handleKeyDown(e) {
-      // Ignore if focused on search box
       if (document.activeElement === searchBox) return;
       
       switch(e.key) {
         case 'ArrowLeft':
           if (isFullscreen) rewind();
-          else if (document.activeElement === playPauseBtn) prevBtn.focus();
           break;
         case 'ArrowRight':
           if (isFullscreen) fastForward();
-          else if (document.activeElement === playPauseBtn) nextBtn.focus();
-          break;
-        case 'ArrowUp':
-        case 'ArrowDown':
-          if (!isFullscreen) {
-            e.preventDefault();
-            if (e.key === 'ArrowUp' && document.activeElement === playPauseBtn) {
-              mobileChannelsBtn.focus();
-            } else if (e.key === 'ArrowDown' && document.activeElement === playPauseBtn) {
-              const firstChannel = channelList.querySelector('.channel-card');
-              if (firstChannel) firstChannel.focus();
-            }
-          }
           break;
         case ' ':
         case 'Enter':
-          if (document.activeElement === playPauseBtn) {
-            togglePlayPause();
-          } else if (document.activeElement === prevBtn) {
-            playPreviousChannel();
-          } else if (document.activeElement === nextBtn) {
-            playNextChannel();
-          } else if (document.activeElement === pipBtn) {
-            togglePictureInPicture();
-          } else if (document.activeElement === fullscreenBtn) {
-            toggleFullscreen();
-          } else if (document.activeElement === mobileChannelsBtn) {
-            openDrawer();
-          }
+          togglePlayPause();
           break;
         case 'Backspace':
         case 'Escape':
@@ -995,6 +887,10 @@
         case 'MediaTrackNext':
           playNextChannel();
           break;
+        case 'f':
+        case 'F11':
+          toggleFullscreen();
+          break;
       }
     }
     
@@ -1003,7 +899,6 @@
       if (index < 0 || index >= channels.length) return;
       if (index === currentChannelIndex) return;
       
-      // Show loading state
       loadingText.textContent = 'Loading channel...';
       loadingOverlay.style.display = 'flex';
       playerStatus.querySelector('span').textContent = 'Loading';
@@ -1012,11 +907,9 @@
       const channel = channels[index];
       currentChannelIndex = index;
       
-      // Update UI
       currentChannelName.textContent = channel.name;
       currentChannelSubtitle.textContent = channel.subtitle;
       
-      // Update logo display
       if (channel.logo.startsWith('http')) {
         currentChannelLogoImg.src = channel.logo;
         currentChannelLogoImg.style.display = 'block';
@@ -1032,15 +925,12 @@
         currentChannelLogoImg.style.display = 'none';
       }
       
-      // Clean up previous HLS instance if exists
       if (hls) {
         hls.destroy();
       }
       
-      // Use the HD stream by default
       const streamUrl = channel.qualities[0].url;
       
-      // Try to play with HLS.js first
       if (Hls.isSupported()) {
         hls = new Hls({
           maxBufferLength: 30,
@@ -1058,7 +948,6 @@
             showToast('Click to play', 'warning');
           });
           
-          // Update buffer indicator
           hls.on(Hls.Events.FRAG_BUFFERED, () => {
             if (hls && hls.media) {
               const buffered = hls.media.buffered;
@@ -1093,7 +982,6 @@
           }
         });
       } 
-      // Fallback to native HLS
       else if (videoPlayer.canPlayType('application/vnd.apple.mpegurl')) {
         videoPlayer.src = streamUrl;
         videoPlayer.play().catch(e => {
@@ -1104,16 +992,8 @@
         showToast('HLS not supported in this browser', 'error');
       }
       
-      // Update channel list highlights
       renderChannelList(searchBox.value);
-      
-      // Show channel change notification
       showToast(`Now playing: ${channel.name} - ${channel.subtitle}`, 'success');
-      
-      // Focus play button for TV devices
-      if (isTvDevice) {
-        setTimeout(() => playPauseBtn.focus(), 100);
-      }
     }
     
     // Toggle play/pause
@@ -1240,7 +1120,6 @@
       toast.className = `toast ${type}`;
       toastMessage.textContent = message;
       
-      // Set appropriate icon
       const icon = toast.querySelector('i');
       if (type === 'success') {
         icon.className = 'fas fa-check-circle';
@@ -1269,7 +1148,6 @@
     // Close mobile channels drawer
     function closeDrawer() {
       channelsDrawer.classList.remove('open');
-      playPauseBtn.focus();
     }
     
     // Initialize HLS.js if needed
