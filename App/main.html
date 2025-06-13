@@ -1,271 +1,619 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>T Play - Premium Streaming</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    :root {
-      --primary: #2563eb;
-      --primary-light: #3b82f6;
-      --primary-dark: #1d4ed8;
-      --dark: #0f172a;
-      --darker: #020617;
-      --light: #f8fafc;
-      --light-gray: #e2e8f0;
-      --gray: #94a3b8;
-      --dark-gray: #475569;
-      --success: #10b981;
-      --danger: #ef4444;
-      --warning: #f59e0b;
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-    
-    body {
-      background-color: var(--darker);
-      color: var(--light);
-      min-height: 100vh;
-    }
-    
-    /* Video Container */
-    .video-container {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16/9;
-      background-color: black;
-    }
-    
-    #video-player {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-    
-    /* Channel Categories */
-    .category-section {
-      padding: 1rem;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    
-    .category-title {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: var(--primary-light);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    
-    .category-channels {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 0.5rem;
-    }
-    
-    .channel-card {
-      background: var(--dark);
-      border-radius: 8px;
-      padding: 0.75rem;
-      cursor: pointer;
-      transition: all 0.2s;
-      border: 1px solid transparent;
-    }
-    
-    .channel-card:hover {
-      border-color: var(--primary);
-      transform: translateY(-2px);
-    }
-    
-    .channel-card.active {
-      background: rgba(37, 99, 235, 0.2);
-      border-color: var(--primary);
-    }
-    
-    .channel-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-      background: var(--darker);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 0.5rem;
-    }
-    
-    .channel-name {
-      font-weight: 500;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    
-    /* Mobile Channels Drawer */
-    .channels-drawer {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: var(--dark);
-      z-index: 100;
-      overflow-y: auto;
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
-    }
-    
-    .channels-drawer.open {
-      transform: translateX(0);
-    }
-    
-    .drawer-header {
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      background: var(--dark);
-      z-index: 10;
-    }
-    
-    .drawer-close-btn {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional IPTV Player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/dashjs@4.5.0/dist/dash.all.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff5722;
+            --dark-color: #121212;
+            --dark-secondary: #1e1e1e;
+            --light-color: #ffffff;
+            --light-secondary: #aaaaaa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .player-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        #videoPlayer {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+        }
+        
+        .controls-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .player-container:hover .controls-overlay {
+            opacity: 1;
+        }
+        
+        .progress-container {
+            width: 100%;
+            height: 5px;
+            background-color: rgba(255,255,255,0.2);
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background-color: var(--primary-color);
+            width: 0;
+            position: relative;
+        }
+        
+        .progress-time {
+            position: absolute;
+            bottom: 20px;
+            font-size: 12px;
+            background-color: rgba(0,0,0,0.7);
+            padding: 2px 5px;
+            border-radius: 3px;
+            transform: translateX(-50%);
+        }
+        
+        .main-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .left-controls, .right-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .control-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        
+        .control-btn:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .channel-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .channel-logo {
+            width: 40px;
+            height: 40px;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 5px;
+        }
+        
+        .channel-name {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .program-info {
+            font-size: 14px;
+            color: var(--light-secondary);
+        }
+        
+        .quality-selector {
+            position: relative;
+        }
+        
+        .quality-btn {
+            background-color: rgba(0,0,0,0.7);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .quality-options {
+            position: absolute;
+            bottom: 100%;
+            right: 0;
+            background-color: var(--dark-secondary);
+            border-radius: 5px;
+            overflow: hidden;
+            display: none;
+            min-width: 100px;
+        }
+        
+        .quality-options.show {
+            display: block;
+        }
+        
+        .quality-option {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+        
+        .quality-option:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .channel-switcher {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            pointer-events: none;
+        }
+        
+        .channel-switch-btn {
+            pointer-events: auto;
+            background-color: rgba(0,0,0,0.5);
+            border: none;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .player-container:hover .channel-switch-btn {
+            opacity: 1;
+        }
+        
+        .error-message {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0,0,0,0.8);
+            color: #ff5555;
+            font-size: 18px;
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .control-btn {
+                font-size: 18px;
+                width: 35px;
+                height: 35px;
+            }
+            
+            .channel-name {
+                font-size: 16px;
+            }
+            
+            .channel-switch-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="video-container">
-    <video id="video-player" playsinline></video>
-  </div>
-  
-  <!-- Channels Drawer -->
-  <div class="channels-drawer" id="channels-drawer">
-    <div class="drawer-header">
-      <h2>All Channels</h2>
-      <button class="drawer-close-btn" id="drawer-close-btn">
-        <i class="fas fa-times"></i>
-      </button>
+    <div class="player-container">
+        <video id="videoPlayer" controls></video>
+        
+        <div class="error-message" id="errorMessage"></div>
+        
+        <div class="channel-switcher">
+            <button class="channel-switch-btn" id="prevChannelBtn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="channel-switch-btn" id="nextChannelBtn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <div class="controls-overlay">
+            <div class="channel-info">
+                <div class="channel-logo" id="channelLogo" style="background-image: url('https://via.placeholder.com/40x40/333/fff?text=ZEE')"></div>
+                <div>
+                    <div class="channel-name" id="channelName">ZEE TV</div>
+                    <div class="program-info" id="programInfo">Current Program Name</div>
+                </div>
+            </div>
+            
+            <div class="progress-container" id="progressContainer">
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-time" id="progressTime">00:00</div>
+                </div>
+            </div>
+            
+            <div class="main-controls">
+                <div class="left-controls">
+                    <button class="control-btn" id="playPauseBtn">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                    <button class="control-btn" id="muteBtn">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                    <div class="time-display" id="timeDisplay">00:00 / 00:00</div>
+                </div>
+                
+                <div class="right-controls">
+                    <div class="quality-selector">
+                        <button class="quality-btn" id="qualityBtn">Auto</button>
+                        <div class="quality-options" id="qualityOptions">
+                            <div class="quality-option" data-quality="auto">Auto</div>
+                            <!-- Quality options will be added dynamically -->
+                        </div>
+                    </div>
+                    <button class="control-btn" id="fullscreenBtn">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
     
-    <!-- Movies Category -->
-    <div class="category-section">
-      <div class="category-title">
-        <i class="fas fa-film"></i>
-        <span>Movies</span>
-      </div>
-      <div class="category-channels" id="movies-channels"></div>
-    </div>
-    
-    <!-- Kids Category -->
-    <div class="category-section">
-      <div class="category-title">
-        <i class="fas fa-child"></i>
-        <span>Kids</span>
-      </div>
-      <div class="category-channels" id="kids-channels"></div>
-    </div>
-    
-    <!-- Music Category -->
-    <div class="category-section">
-      <div class="category-title">
-        <i class="fas fa-music"></i>
-        <span>Music</span>
-      </div>
-      <div class="category-channels" id="music-channels"></div>
-    </div>
-    
-    <!-- Religious Category -->
-    <div class="category-section">
-      <div class="category-title">
-        <i class="fas fa-pray"></i>
-        <span>Religious</span>
-      </div>
-      <div class="category-channels" id="religious-channels"></div>
-    </div>
-  </div>
-  
-  <script>
-    // Organized channels by category
-    const channels = {
-      movies: [
-        { 
-          name: "Hindi Movies", 
-          url: "https://example.com/hindi.m3u8",
-          logo: "M"
-        },
-        { 
-          name: "Bangla Movies", 
-          url: "https://example.com/bangla.m3u8",
-          logo: "M"
+    <script>
+        // Player configuration
+        const channels = [
+            {
+                name: "ZEE TV",
+                logo: "https://via.placeholder.com/40x40/333/fff?text=ZEE",
+                program: "Popular TV Show",
+                url: "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeetv/default/manifest.mpd"
+            },
+            {
+                name: "Sony TV",
+                logo: "https://via.placeholder.com/40x40/333/fff?text=SONY",
+                program: "Daily Soap Opera",
+                url: "https://example.com/sony/manifest.mpd" // Replace with actual URL
+            },
+            {
+                name: "Star Plus",
+                logo: "https://via.placeholder.com/40x40/333/fff?text=STAR",
+                program: "Reality Show",
+                url: "https://example.com/starplus/manifest.mpd" // Replace with actual URL
+            }
+        ];
+        
+        // Player elements
+        const videoPlayer = document.getElementById('videoPlayer');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const muteBtn = document.getElementById('muteBtn');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const progressBar = document.getElementById('progressBar');
+        const progressContainer = document.getElementById('progressContainer');
+        const progressTime = document.getElementById('progressTime');
+        const timeDisplay = document.getElementById('timeDisplay');
+        const qualityBtn = document.getElementById('qualityBtn');
+        const qualityOptions = document.getElementById('qualityOptions');
+        const channelName = document.getElementById('channelName');
+        const channelLogo = document.getElementById('channelLogo');
+        const programInfo = document.getElementById('programInfo');
+        const prevChannelBtn = document.getElementById('prevChannelBtn');
+        const nextChannelBtn = document.getElementById('nextChannelBtn');
+        const errorMessage = document.getElementById('errorMessage');
+        
+        // Player state
+        let currentChannelIndex = 0;
+        let player;
+        let isSeeking = false;
+        let qualityLevels = [];
+        let currentQuality = 'auto';
+        
+        // Initialize player
+        function initPlayer() {
+            if (player) {
+                player.reset();
+            } else {
+                player = dashjs.MediaPlayer().create();
+                player.updateSettings({
+                    streaming: {
+                        buffer: {
+                            fastSwitchEnabled: true
+                        }
+                    }
+                });
+                player.initialize(videoPlayer);
+            }
+            
+            loadChannel(currentChannelIndex);
         }
-      ],
-      kids: [
-        { 
-          name: "Cartoon Network", 
-          url: "https://example.com/cartoon.m3u8",
-          logo: "CN"
-        },
-        { 
-          name: "Pogo", 
-          url: "https://example.com/pogo.m3u8",
-          logo: "P"
+        
+        // Load channel by index
+        function loadChannel(index) {
+            if (index < 0 || index >= channels.length) return;
+            
+            currentChannelIndex = index;
+            const channel = channels[index];
+            
+            // Update UI
+            channelName.textContent = channel.name;
+            channelLogo.style.backgroundImage = `url('${channel.logo}')`;
+            programInfo.textContent = channel.program;
+            
+            // Hide error message if shown
+            errorMessage.style.display = 'none';
+            
+            try {
+                player.attachSource(channel.url);
+                videoPlayer.play().catch(e => {
+                    console.error("Autoplay failed:", e);
+                    // User interaction will be required to play
+                });
+                
+                // Update quality options after source is loaded
+                setTimeout(updateQualityOptions, 2000);
+            } catch (e) {
+                console.error("Error loading channel:", e);
+                showError("Failed to load channel. Please try again.");
+            }
         }
-      ],
-      music: [
-        { 
-          name: "Bollywood Music", 
-          url: "https://example.com/bollywood.m3u8",
-          logo: "♫"
+        
+        // Show error message
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'flex';
         }
-      ],
-      religious: [
-        { 
-          name: "Islamic TV", 
-          url: "https://example.com/islamic.m3u8",
-          logo: "☪"
+        
+        // Update quality options
+        function updateQualityOptions() {
+            if (!player) return;
+            
+            const bitrates = player.getBitrateInfoListFor('video');
+            qualityOptions.innerHTML = '<div class="quality-option" data-quality="auto">Auto</div>';
+            
+            bitrates.forEach((bitrate, index) => {
+                const option = document.createElement('div');
+                option.className = 'quality-option';
+                option.dataset.quality = index;
+                option.textContent = `${Math.round(bitrate.bitrate / 1000)} kbps`;
+                qualityOptions.appendChild(option);
+            });
+            
+            // Add click handlers for quality options
+            document.querySelectorAll('.quality-option').forEach(option => {
+                option.addEventListener('click', () => {
+                    const quality = option.dataset.quality;
+                    setQuality(quality);
+                    qualityOptions.classList.remove('show');
+                });
+            });
         }
-      ]
-    };
-
-    // Render channels by category
-    function renderChannels() {
-      for (const category in channels) {
-        const container = document.getElementById(`${category}-channels`);
-        channels[category].forEach(channel => {
-          const channelCard = document.createElement('div');
-          channelCard.className = 'channel-card';
-          channelCard.innerHTML = `
-            <div class="channel-logo">${channel.logo}</div>
-            <div class="channel-name">${channel.name}</div>
-          `;
-          channelCard.addEventListener('click', () => {
-            playChannel(channel.url);
-          });
-          container.appendChild(channelCard);
+        
+        // Set quality level
+        function setQuality(quality) {
+            currentQuality = quality;
+            qualityBtn.textContent = quality === 'auto' ? 'Auto' : `${Math.round(player.getBitrateInfoListFor('video')[quality].bitrate / 1000)} kbps`;
+            
+            if (quality === 'auto') {
+                player.setAutoSwitchQualityFor('video', true);
+            } else {
+                player.setAutoSwitchQualityFor('video', false);
+                player.setQualityFor('video', parseInt(quality));
+            }
+        }
+        
+        // Format time (seconds to HH:MM:SS)
+        function formatTime(seconds) {
+            const h = Math.floor(seconds / 3600);
+            const m = Math.floor((seconds % 3600) / 60);
+            const s = Math.floor(seconds % 60);
+            return `${h > 0 ? h + ':' : ''}${m < 10 ? '0' + m : m}:${s < 10 ? '0' + s : s}`;
+        }
+        
+        // Event listeners
+        playPauseBtn.addEventListener('click', () => {
+            if (videoPlayer.paused) {
+                videoPlayer.play();
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                videoPlayer.pause();
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+            }
         });
-      }
-    }
-
-    // Play selected channel
-    function playChannel(url) {
-      const videoPlayer = document.getElementById('video-player');
-      videoPlayer.src = url;
-      videoPlayer.play();
-    }
-
-    // Initialize
-    renderChannels();
-  </script>
+        
+        muteBtn.addEventListener('click', () => {
+            videoPlayer.muted = !videoPlayer.muted;
+            muteBtn.innerHTML = videoPlayer.muted ? 
+                '<i class="fas fa-volume-mute"></i>' : 
+                '<i class="fas fa-volume-up"></i>';
+        });
+        
+        fullscreenBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                videoPlayer.requestFullscreen().catch(err => {
+                    console.error(`Error attempting to enable fullscreen: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        });
+        
+        progressContainer.addEventListener('mousedown', (e) => {
+            isSeeking = true;
+            handleSeek(e);
+        });
+        
+        progressContainer.addEventListener('mousemove', (e) => {
+            if (isSeeking) handleSeek(e);
+        });
+        
+        document.addEventListener('mouseup', () => {
+            isSeeking = false;
+        });
+        
+        function handleSeek(e) {
+            if (!videoPlayer.duration) return;
+            
+            const rect = progressContainer.getBoundingClientRect();
+            const pos = (e.clientX - rect.left) / rect.width;
+            const seekTime = pos * videoPlayer.duration;
+            
+            progressBar.style.width = `${pos * 100}%`;
+            progressTime.textContent = formatTime(seekTime);
+            progressTime.style.left = `${pos * 100}%`;
+            
+            if (!isSeeking) return;
+            
+            videoPlayer.currentTime = seekTime;
+        }
+        
+        qualityBtn.addEventListener('click', () => {
+            qualityOptions.classList.toggle('show');
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!qualityBtn.contains(e.target)) {
+                qualityOptions.classList.remove('show');
+            }
+        });
+        
+        prevChannelBtn.addEventListener('click', () => {
+            loadChannel((currentChannelIndex - 1 + channels.length) % channels.length);
+        });
+        
+        nextChannelBtn.addEventListener('click', () => {
+            loadChannel((currentChannelIndex + 1) % channels.length);
+        });
+        
+        // Player events
+        videoPlayer.addEventListener('play', () => {
+            playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+        });
+        
+        videoPlayer.addEventListener('pause', () => {
+            playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+        });
+        
+        videoPlayer.addEventListener('timeupdate', () => {
+            if (!isSeeking && videoPlayer.duration) {
+                const progress = (videoPlayer.currentTime / videoPlayer.duration) * 100;
+                progressBar.style.width = `${progress}%`;
+                progressTime.textContent = formatTime(videoPlayer.currentTime);
+                progressTime.style.left = `${progress}%`;
+                timeDisplay.textContent = `${formatTime(videoPlayer.currentTime)} / ${formatTime(videoPlayer.duration)}`;
+            }
+        });
+        
+        videoPlayer.addEventListener('volumechange', () => {
+            muteBtn.innerHTML = videoPlayer.muted || videoPlayer.volume === 0 ? 
+                '<i class="fas fa-volume-mute"></i>' : 
+                '<i class="fas fa-volume-up"></i>';
+        });
+        
+        videoPlayer.addEventListener('enterpictureinpicture', () => {
+            console.log('Entered Picture-in-Picture');
+        });
+        
+        videoPlayer.addEventListener('leavepictureinpicture', () => {
+            console.log('Left Picture-in-Picture');
+        });
+        
+        videoPlayer.addEventListener('error', () => {
+            showError("Playback error occurred. Please try another channel.");
+        });
+        
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+            
+            switch (e.key) {
+                case ' ':
+                    e.preventDefault();
+                    if (videoPlayer.paused) videoPlayer.play();
+                    else videoPlayer.pause();
+                    break;
+                case 'ArrowLeft':
+                    e.preventDefault();
+                    videoPlayer.currentTime = Math.max(0, videoPlayer.currentTime - 5);
+                    break;
+                case 'ArrowRight':
+                    e.preventDefault();
+                    videoPlayer.currentTime = Math.min(videoPlayer.duration, videoPlayer.currentTime + 5);
+                    break;
+                case 'ArrowUp':
+                    e.preventDefault();
+                    videoPlayer.volume = Math.min(1, videoPlayer.volume + 0.1);
+                    break;
+                case 'ArrowDown':
+                    e.preventDefault();
+                    videoPlayer.volume = Math.max(0, videoPlayer.volume - 0.1);
+                    break;
+                case 'm':
+                    e.preventDefault();
+                    videoPlayer.muted = !videoPlayer.muted;
+                    break;
+                case 'f':
+                    e.preventDefault();
+                    if (!document.fullscreenElement) {
+                        videoPlayer.requestFullscreen();
+                    } else {
+                        document.exitFullscreen();
+                    }
+                    break;
+                case 'n':
+                    e.preventDefault();
+                    loadChannel((currentChannelIndex + 1) % channels.length);
+                    break;
+                case 'p':
+                    e.preventDefault();
+                    loadChannel((currentChannelIndex - 1 + channels.length) % channels.length);
+                    break;
+            }
+        });
+        
+        // Initialize the player
+        initPlayer();
+    </script>
 </body>
 </html>
