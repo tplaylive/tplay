@@ -739,18 +739,22 @@
           logo: "https://cdn.brandfetch.io/somoynews.tv/fallback/lettermark/theme/dark/h/256/w/256/icon?c=1bfwsmEH20zzEfSNTed",
           type: "hls"
         },
-        { 
-          name: "Zee Bangla", 
-          subtitle: "24/7 Entertainment", 
-          qualities: [
-            { label: "HD", url: "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeebangla/default/manifest.mpd" }
-          ],
-          logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zee_Bangla_logo.svg/1200px-Zee_Bangla_logo.svg.png",
-          type: "dash",
-          drm: {
-            widevine: {
-              licenseUrl: "https://widevine-proxy.appspot.com/proxy"
-            }
+        {
+  name: "Zee Bangla", 
+  subtitle: "24/7 Entertainment", 
+  qualities: [
+    { 
+      label: "HD", 
+      url: "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeebangla/default/manifest.mpd" 
+    }
+  ],
+  logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zee_Bangla_logo.svg/1200px-Zee_Bangla_logo.svg.png",
+  type: "dash",
+  drm: {
+    clearkey: {
+      keyId: "1df83e058b864da896c9288eef63b113",
+      key: "fc32f26239054b56aab48225305598fe"
+    }
           }
         }
       ]
