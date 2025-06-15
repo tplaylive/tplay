@@ -1160,6 +1160,7 @@
       // Show/hide controls
       videoContainer.addEventListener('mousemove', showControls);
       videoContainer.addEventListener('mouseleave', hideControls);
+      videoContainer.addEventListener('click', showControls);
       videoContainer.addEventListener('touchstart', showControls);
       
       // Player events
@@ -1212,7 +1213,15 @@
         
         if (isFullscreen) {
           showControls();
-          setTimeout(hideControls, 3000);
+          // Add fullscreen-specific event listeners
+          videoContainer.addEventListener('mousemove', showControls);
+          videoContainer.addEventListener('click', showControls);
+        } else {
+          // When exiting fullscreen, clear any pending hide timeout
+          clearTimeout(controlsTimeout);
+          // Remove fullscreen-specific event listeners
+          videoContainer.removeEventListener('mousemove', showControls);
+          videoContainer.removeEventListener('click', showControls);
         }
       });
       
@@ -1233,6 +1242,11 @@
     // Handle TV remote key events
     function handleKeyDown(e) {
       if (document.activeElement === searchBox) return;
+      
+      // Show controls on any key press in fullscreen
+      if (isFullscreen) {
+        showControls();
+      }
       
       switch(e.key) {
         case 'ArrowLeft':
@@ -1433,6 +1447,7 @@
       videoControls.classList.add('visible');
       clearTimeout(controlsTimeout);
       
+      // Only auto-hide in fullscreen mode
       if (isFullscreen) {
         controlsTimeout = setTimeout(hideControls, 3000);
       }
@@ -1440,7 +1455,8 @@
     
     // Hide controls
     function hideControls() {
-      if (!videoContainer.matches(':hover') && !isTvDevice) {
+      // Only hide in fullscreen mode or if not hovering (for non-TV devices)
+      if (isFullscreen || (!videoContainer.matches(':hover') && !isTvDevice)) {
         videoControls.classList.remove('visible');
       }
     }
