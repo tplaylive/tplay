@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>T PLAY - Free IPTV Platform | Live TV & Streaming</title>
+    <meta name="description" content="Professional streaming platform with live TV channels, movies, sports, and entertainment content. Premium streaming experience for global users.">
+    <link rel="icon" type="image/png" href="/attached_assets/T Play_1752914478755.png">
+    <link rel="shortcut icon" type="image/png" href="/attached_assets/T Play_1752914478755.png">
+    <link rel="apple-touch-icon" href="/attached_assets/T Play_1752914478755.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Theme Colors for PWA -->
+    <meta name="theme-color" content="#8A2BE2" />
+    <meta name="msapplication-TileColor" content="#8A2BE2" />
+    
+    <!-- iOS PWA Support -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="T PLAY" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet">
+    
+    <!-- Immediate Dark Theme Styling -->
+    <style>
+      /* Apply dark theme immediately to prevent any flash */
+      html, body {
+        background-color: #0a0a0a !important;
+        color: white !important;
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', sans-serif;
+      }
+      #root {
+        background-color: #0a0a0a !important;
+        color: white !important;
+        min-height: 100vh;
+      }
+      /* Prevent any light theme flash */
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body style="background-color: #0a0a0a !important; color: white !important; margin: 0; padding: 0;">
+    <div id="root" style="background-color: #0a0a0a !important; color: white !important; min-height: 100vh;"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- PWA Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('T PLAY SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('T PLAY SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+    <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/shaka-player.compiled.js"></script>
+    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
+    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
+  </body>
+</html>

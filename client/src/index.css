@@ -1,0 +1,527 @@
+/* Immediate Dark Theme Application */
+html {
+  background-color: #0a0a0a !important;
+  color: white !important;
+}
+
+body {
+  background-color: #0a0a0a !important;
+  color: white !important;
+  margin: 0;
+  padding: 0;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+
+  /* T Play Custom Colors - Based on Logo */
+  --tplay-blue: hsl(200, 100%, 50%);
+  --tplay-purple: hsl(280, 100%, 50%);
+  --tplay-pink: hsl(320, 100%, 60%);
+  --tplay-orange: hsl(30, 100%, 50%);
+  --tplay-yellow: hsl(50, 100%, 50%);
+  --tplay-gradient: linear-gradient(135deg, hsl(200, 100%, 50%) 0%, hsl(280, 100%, 50%) 25%, hsl(320, 100%, 60%) 50%, hsl(30, 100%, 50%) 75%, hsl(50, 100%, 50%) 100%);
+  --dark-primary: hsl(0, 0%, 5%);
+  --dark-secondary: hsl(0, 0%, 10%);
+  --dark-tertiary: hsl(0, 0%, 15%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    background-color: #0a0a0a !important;
+    color: white !important;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    font-family: 'Inter', sans-serif !important;
+    background-color: #0a0a0a !important;
+    color: white !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  #root {
+    background-color: #0a0a0a !important;
+    color: white !important;
+    min-height: 100vh !important;
+  }
+}
+
+/* Force dark theme for all elements - High Priority */
+* {
+  color-scheme: dark !important;
+}
+
+/* Override any potential light theme styles */
+.bg-background, .bg-white {
+  background-color: #0a0a0a !important;
+}
+
+.text-foreground, .text-black {
+  color: white !important;
+}
+
+/* Ensure all common background classes are dark */
+.bg-card, .bg-popover, .bg-muted {
+  background-color: #1a1a1a !important;
+  color: white !important;
+}
+
+/* T Play App - Main Layout - Persistent Dark Theme */
+.app-container {
+  min-height: 100vh !important;
+  background-color: #0a0a0a !important;
+  color: white !important;
+}
+
+/* Prevent any light theme flash */
+html.dark, html.light, html {
+  background-color: #0a0a0a !important;
+  color: white !important;
+}
+
+/* Video.js customizations */
+.video-js {
+  background-color: #000;
+}
+
+.video-js .vjs-big-play-button {
+  background: var(--tplay-gradient);
+  border: none;
+}
+
+.video-js .vjs-control-bar {
+  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.8) 100%);
+}
+
+.video-js .vjs-progress-control .vjs-progress-holder .vjs-play-progress {
+  background: var(--tplay-gradient);
+}
+
+/* Channel grid container */
+.channel-grid-container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  justify-items: center;
+  align-items: start;
+  padding: 0;
+  width: 100%;
+}
+
+/* Channel grid hover effects */
+.channel-card {
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.channel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Channel Grid Circular Logo Fix */
+.channel-card img {
+  width: 64px !important;
+  height: 64px !important;
+  object-fit: cover;
+  border-radius: 50% !important;
+  aspect-ratio: 1 / 1;
+  min-width: 64px;
+  min-height: 64px;
+  max-width: 64px;
+  max-height: 64px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Video Player Responsive Fixes */
+.video-player-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  background: black;
+}
+
+.video-player-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.video-player-wrapper video,
+.video-player-wrapper .hls-player {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+}
+
+/* HLS Player Responsive */
+.hls-player {
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+
+/* Fullscreen Video Controls Hide */
+.hls-player::-webkit-media-controls {
+  display: none !important;
+}
+
+.hls-player::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+.hls-player::-webkit-media-controls-play-button {
+  display: none !important;
+}
+
+.hls-player::-webkit-media-controls-timeline {
+  display: none !important;
+}
+
+.hls-player::-webkit-media-controls-current-time-display {
+  display: none !important;
+}
+
+.hls-player::-webkit-media-controls-time-remaining-display {
+  display: none !important;
+}
+
+.hls-player::-webkit-media-controls-mute-button {
+  display: none !important;
+}
+
+.hls-player::-webkit-media-controls-volume-slider {
+  display: none !important;
+}
+
+.hls-player::-webkit-media-controls-fullscreen-button {
+  display: none !important;
+}
+
+/* Firefox Video Controls Hide */
+.hls-player::-moz-media-controls {
+  display: none !important;
+}
+
+/* General HTML5 Video Controls Hide */
+.hls-player {
+  background: black;
+}
+
+.hls-player:focus {
+  outline: none;
+}
+
+/* Fullscreen Mode Clean */
+.video-player-container:-webkit-full-screen {
+  width: 100vw !important;
+  height: 100vh !important;
+  background: black;
+}
+
+.video-player-container:-moz-full-screen {
+  width: 100vw !important;
+  height: 100vh !important;
+  background: black;
+}
+
+.video-player-container:fullscreen {
+  width: 100vw !important;
+  height: 100vh !important;
+  background: black;
+}
+
+.hls-player:-webkit-full-screen {
+  width: 100vw !important;
+  height: 100vh !important;
+  object-fit: contain;
+  background: black;
+}
+
+.hls-player:-moz-full-screen {
+  width: 100vw !important;
+  height: 100vh !important;
+  object-fit: contain;
+  background: black;
+}
+
+.hls-player:fullscreen {
+  width: 100vw !important;
+  height: 100vh !important;
+  object-fit: contain;
+  background: black;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Scrollbar styling */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--dark-secondary);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--tplay-blue) 0%, var(--tplay-purple) 100%);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--tplay-purple) 0%, var(--tplay-pink) 100%);
+}
+
+/* Additional gradient utilities */
+.gradient-text {
+  background: linear-gradient(135deg, var(--tplay-blue) 0%, var(--tplay-purple) 50%, var(--tplay-pink) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-border {
+  border-image: linear-gradient(135deg, var(--tplay-blue) 0%, var(--tplay-purple) 100%);
+  border-image-slice: 1;
+}
+
+/* Custom video player slider styling */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-track {
+  background: rgba(255, 255, 255, 0.3);
+  height: 4px;
+  border-radius: 2px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(45deg, var(--tplay-blue), var(--tplay-purple));
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: linear-gradient(45deg, var(--tplay-purple), var(--tplay-pink));
+  transform: scale(1.1);
+}
+
+.slider::-moz-range-track {
+  background: rgba(255, 255, 255, 0.3);
+  height: 4px;
+  border-radius: 2px;
+  border: none;
+}
+
+.slider::-moz-range-thumb {
+  background: linear-gradient(45deg, var(--tplay-blue), var(--tplay-purple));
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+/* TV Remote Specific Styles */
+.tv-focusable {
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.tv-focusable:focus {
+  transform: scale(1.05);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.3);
+  z-index: 10;
+  position: relative;
+}
+
+.tv-focusable:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Enhanced Channel Card Focus */
+.channel-card.tv-focusable:focus {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.6), 0 0 30px rgba(59, 130, 246, 0.4);
+}
+
+/* Category Filter Focus */
+.category-filter.tv-focusable:focus {
+  transform: scale(1.02);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+/* TV Remote Visual Hints */
+.tv-remote-hint {
+  position: relative;
+}
+
+.tv-remote-hint::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px dashed rgba(59, 130, 246, 0.3);
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tv-remote-hint:hover::before {
+  opacity: 1;
+}
+
+/* TV Mode Adjustments */
+@media (min-width: 1024px) {
+  .tv-focusable {
+    cursor: pointer;
+  }
+  
+  .tv-focusable:focus {
+    cursor: pointer;
+  }
+}
+
+/* TV Remote Navigation Bar */
+.tv-nav-bar {
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+/* Enhanced Video Player Focus */
+.video-player.tv-focusable:focus {
+  outline: 3px solid #3b82f6;
+  outline-offset: 4px;
+}
+
+/* TV Remote Instructions */
+.tv-instructions {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Video Player Overlay Optimization */
+@media (max-width: 768px) {
+  .video-js .vjs-overlay {
+    font-size: 12px !important;
+  }
+  
+  /* Ensure video player overlays don't exceed screen width */
+  .video-js .vjs-control-bar {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* Mobile-specific overlay positioning */
+  .mobile-video-overlay {
+    position: absolute;
+    width: calc(100% - 8px);
+    left: 4px;
+    right: 4px;
+    max-width: none !important;
+    overflow: hidden;
+  }
+  
+  /* Compact mobile text */
+  .mobile-compact-text {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+  }
+}
