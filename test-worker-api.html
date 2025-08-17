@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T PLAY Worker API Tester</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            background: linear-gradient(45deg, #00BFFF, #8A2BE2, #FF1493);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        button {
+            background: linear-gradient(45deg, #00BFFF, #8A2BE2);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        textarea, input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 5px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            margin: 5px 0;
+        }
+        textarea::placeholder, input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+        .response {
+            background: rgba(0,0,0,0.3);
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>T PLAY Worker API Tester</h1>
+        
+        <div class="test-section">
+            <h3>API Configuration</h3>
+            <input type="text" id="apiKey" placeholder="API Key" value="worker_demo_key_2025">
+            <input type="text" id="workerId" placeholder="Worker ID" value="worker001">
+            <input type="text" id="baseUrl" placeholder="Base URL" value="http://localhost:5000">
+        </div>
+
+        <div class="test-section">
+            <h3>1. Test Connection & Get All Channels</h3>
+            <button onclick="testConnection()">Test GET /worker/channels</button>
+            <div id="connectionResponse" class="response"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>2. Add Channel</h3>
+            <input type="text" id="channelName" placeholder="Channel Name" value="Test Sports HD">
+            <input type="text" id="streamUrl" placeholder="Stream URL" value="https://example.com/stream.m3u8">
+            <input type="text" id="logoUrl" placeholder="Logo URL (optional)" value="https://example.com/logo.png">
+            <input type="text" id="description" placeholder="Description" value="Live cricket and football matches">
+            <button onclick="addChannel()">Add Channel</button>
+            <div id="addResponse" class="response"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>3. Get Worker Statistics</h3>
+            <button onclick="getStats()">Get Stats</button>
+            <div id="statsResponse" class="response"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>4. Bulk Add Channels</h3>
+            <textarea id="bulkChannels" rows="8" placeholder="JSON array of channels">
+[
+  {
+    "name": "Zee TV HD",
+    "streamUrl": "https://example.com/zee.m3u8",
+    "description": "Hindi entertainment"
+  },
+  {
+    "name": "Star Sports 2",
+    "streamUrl": "https://example.com/sports2.mpd",
+    "description": "Live sports coverage"
+  }
+]</textarea>
+            <button onclick="bulkAdd()">Bulk Add</button>
+            <div id="bulkResponse" class="response"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>5. Access Worker Dashboard</h3>
+            <button onclick="openDashboard()">Open Worker Dashboard</button>
+            <p>Or visit: <a href="/worker" style="color: #00BFFF;">/worker</a></p>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = () => document.getElementById('baseUrl').value;
+        const API_KEY = () => document.getElementById('apiKey').value;
+        const WORKER_ID = () => document.getElementById('workerId').value;
+
+        async function makeRequest(endpoint, method = 'GET', body = null) {
+            const url = `${API_BASE()}${endpoint}`;
+            const options = {
+                method,
+                headers: {
+                    'X-API-Key': API_KEY(),
+                    'Content-Type': 'application/json'
+                }
+            };
+
+            if (body) {
+                options.body = JSON.stringify(body);
+            }
+
+            try {
+                const response = await fetch(url, options);
+                const data = await response.json();
+                return {
+                    status: response.status,
+                    ok: response.ok,
+                    data: data
+                };
+            } catch (error) {
+                return {
+                    status: 0,
+                    ok: false,
+                    error: error.message
+                };
+            }
+        }
+
+        async function testConnection() {
+            const response = await makeRequest('/worker/channels');
+            document.getElementById('connectionResponse').textContent = 
+                `Status: ${response.status}\n` + 
+                JSON.stringify(response.data || response.error, null, 2);
+        }
+
+        async function addChannel() {
+            const channelData = {
+                name: document.getElementById('channelName').value,
+                streamUrl: document.getElementById('streamUrl').value,
+                logo: document.getElementById('logoUrl').value || undefined,
+                description: document.getElementById('description').value,
+                workerId: WORKER_ID()
+            };
+
+            const response = await makeRequest('/worker/channels/add', 'POST', channelData);
+            document.getElementById('addResponse').textContent = 
+                `Status: ${response.status}\n` + 
+                JSON.stringify(response.data || response.error, null, 2);
+        }
+
+        async function getStats() {
+            const response = await makeRequest(`/worker/stats?workerId=${WORKER_ID()}`);
+            document.getElementById('statsResponse').textContent = 
+                `Status: ${response.status}\n` + 
+                JSON.stringify(response.data || response.error, null, 2);
+        }
+
+        async function bulkAdd() {
+            try {
+                const channels = JSON.parse(document.getElementById('bulkChannels').value);
+                const bulkData = {
+                    workerId: WORKER_ID(),
+                    channels: channels
+                };
+
+                const response = await makeRequest('/worker/channels/bulk', 'POST', bulkData);
+                document.getElementById('bulkResponse').textContent = 
+                    `Status: ${response.status}\n` + 
+                    JSON.stringify(response.data || response.error, null, 2);
+            } catch (error) {
+                document.getElementById('bulkResponse').textContent = 
+                    `Error: Invalid JSON\n${error.message}`;
+            }
+        }
+
+        function openDashboard() {
+            window.open('/worker', '_blank');
+        }
+
+        // Auto-test connection on page load
+        window.addEventListener('load', () => {
+            setTimeout(testConnection, 1000);
+        });
+    </script>
+</body>
+</html>

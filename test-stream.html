@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stream Test</title>
+</head>
+<body>
+    <h1>Testing Oxygen Music Stream</h1>
+    
+    <!-- Test 1: Direct HTML5 Video -->
+    <h2>Test 1: Native HTML5 Video</h2>
+    <video id="native-video" controls width="400" height="225">
+        <source src="https://cloudfrontnet.vercel.app/tplay/playout/209901/master.m3u8" type="application/x-mpegURL">
+        <source src="https://cloudfrontnet.vercel.app/tplay/playout/209901/master.m3u8" type="application/vnd.apple.mpegurl">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Test 2: HLS.js -->
+    <h2>Test 2: HLS.js</h2>
+    <video id="hls-video" controls width="400" height="225"></video>
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.12/dist/hls.min.js"></script>
+    <script>
+        console.log("Testing stream: https://cloudfrontnet.vercel.app/tplay/playout/209901/master.m3u8");
+
+        // Test native support
+        const nativeVideo = document.getElementById('native-video');
+        nativeVideo.addEventListener('loadstart', () => console.log('Native: Load started'));
+        nativeVideo.addEventListener('loadeddata', () => console.log('Native: Data loaded'));
+        nativeVideo.addEventListener('canplay', () => console.log('Native: Can play'));
+        nativeVideo.addEventListener('playing', () => console.log('Native: Playing'));
+        nativeVideo.addEventListener('error', (e) => console.error('Native error:', e));
+
+        // Test HLS.js
+        const hlsVideo = document.getElementById('hls-video');
+        if (Hls.isSupported()) {
+            const hls = new Hls();
+            hls.loadSource('https://cloudfrontnet.vercel.app/tplay/playout/209901/master.m3u8');
+            hls.attachMedia(hlsVideo);
+            
+            hls.on(Hls.Events.MANIFEST_PARSED, () => {
+                console.log('HLS: Manifest parsed');
+            });
+            
+            hls.on(Hls.Events.ERROR, (event, data) => {
+                console.error('HLS error:', data);
+            });
+        } else {
+            console.log('HLS.js not supported');
+        }
+    </script>
+</body>
+</html>
