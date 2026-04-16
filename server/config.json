@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "last_updated": "2026-04-16",
+  "sources": [
+    {
+      "name": "T Play",
+      "url": "https://raw.githubusercontent.com/tplaylive/stream/refs/heads/main/main.js",
+      "type": "json",
+      "enabled": true
+    },
+    {
+      "name": "Pishow",
+      "url": "https://raw.githubusercontent.com/amazeyourself/m3u/refs/heads/main/pishow.m3u",
+      "type": "m3u",
+      "enabled": true
+    },
+    {
+      "name": "Tangotv",
+      "url": "https://raw.githubusercontent.com/amazeyourself/m3u/refs/heads/main/tangotv.m3u",
+      "type": "m3u",
+      "enabled": false
+    }
+  ]
+}
