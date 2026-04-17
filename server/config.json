@@ -37,6 +37,12 @@
       "url": "https://raw.githubusercontent.com/amazeyourself/m3u/refs/heads/main/pishow.m3u",
       "type": "m3u",
       "enabled": true
+    },
+        {
+      "name": "BDIX",
+      "url": "https://raw.githubusercontent.com/OwnerPlugins/LiveTVCollector/479d4a934777a5c6dddd3eaace9b7f8b59e3a90f/LiveTV/India/LiveTV.m3u",
+      "type": "m3u",
+      "enabled": true
     }
   ]
 }
