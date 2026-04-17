@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "last_updated": "2026-04-16",
+  "last_updated": "2026-04-17",
   "sources": [
     {
-      "name": "T Play",
-      "url": "https://raw.githubusercontent.com/tplaylive/iptv-secure-channels/refs/heads/main/main.js",
-      "type": "json",
+      "name": "Dish Tv",
+      "url": "https://raw.githubusercontent.com/geekyhimanshu/Khu/01702035a52a28036f87f38a7f458574164ff03f/Dishtv.m3u",
+      "type": "m3u",
       "enabled": true
     },
     {
@@ -13,12 +13,6 @@
       "url": "https://raw.githubusercontent.com/amazeyourself/m3u/refs/heads/main/pishow.m3u",
       "type": "m3u",
       "enabled": true
-    },
-    {
-      "name": "Tangotv",
-      "url": "https://raw.githubusercontent.com/amazeyourself/m3u/refs/heads/main/tangotv.m3u",
-      "type": "m3u",
-      "enabled": false
     }
   ]
 }
