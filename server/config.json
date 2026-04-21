@@ -34,7 +34,7 @@
     },
         {
       "name": "Distro TV",
-      "url": "https://raw.githubusercontent.com/abusaeeidx/IPTV-Scraper-Zilla/refs/heads/main/distrotv.m3u",
+      "url": "https://raw.githubusercontent.com/abusaeeidx/IPTV-Scraper-Zilla/main/combined-playlist.m3u",
       "type": "m3u",
       "enabled": true
     }
