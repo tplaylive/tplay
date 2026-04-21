@@ -31,6 +31,12 @@
       "url": "https://raw.githubusercontent.com/amazeyourself/m3u/refs/heads/main/pishow.m3u",
       "type": "m3u",
       "enabled": true
+    },
+        {
+      "name": "CricHD",
+      "url": "https://raw.githubusercontent.com/abusaeeidx/IPTV-Scraper-Zilla/refs/heads/main/CricHD.m3u",
+      "type": "m3u",
+      "enabled": true
     }
   ]
 }
