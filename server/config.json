@@ -33,8 +33,8 @@
       "enabled": true
     },
         {
-      "name": "CricHD",
-      "url": "https://raw.githubusercontent.com/abusaeeidx/IPTV-Scraper-Zilla/refs/heads/main/CricHD.m3u",
+      "name": "Distro TV",
+      "url": "https://raw.githubusercontent.com/abusaeeidx/IPTV-Scraper-Zilla/refs/heads/main/distrotv.m3u",
       "type": "m3u",
       "enabled": true
     }
