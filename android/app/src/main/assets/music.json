@@ -1,0 +1,871 @@
+{
+  "channels": [
+    {
+      "id": 1,
+      "name": "24/7 Music",
+      "sources": [
+        { "name": "Playlist", "url": "https://tplay.live/out/music/world-music.index.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/Jzqh6SSX/tplay.jpg",
+      "category": ["Music", "24/7", "English", "World"],
+      "package": ["500"],
+      "description": "English Songs"
+    },
+    {
+      "id": 2,
+      "name": "24/7 Music",
+      "sources": [
+        { "name": "Playlist", "url": "https://tplay.live/out/music/world-music2.index.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/Jzqh6SSX/tplay.jpg",
+      "category": ["Music", "24/7", "English", "World"],
+      "package": ["500"],
+      "description": "English Songs"
+    },
+    {
+      "id": 3,
+      "name": "24/7 Music",
+      "sources": [
+        { "name": "Playlist", "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://maxotts.maxdigitaltv.com/x-media/C93/master.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/Jzqh6SSX/tplay.jpg",
+      "category": ["Music", "24/7", "Nepali", "Nepal"],
+      "package": ["500"],
+      "description": "Nepali Songs"
+    },
+    {
+      "id": 4,
+      "name": "24/7 Music",
+      "sources": [
+        { "name": "Playlist", "url": "https://tplay.live/out/music/indian-music2.index.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/Jzqh6SSX/tplay.jpg",
+      "category": ["Music", "24/7", "Hindi", "India"],
+      "package": ["500"],
+      "description": "Hindi Songs"
+    },
+    {
+      "id": 5,
+      "name": "Music India",
+      "sources": [
+        { "name": "Server 1", "url": "https://cdn-2.pishow.tv/live/226/master.m3u8" },
+        { "name": "Server 2", "url": "https://mumt05.tangotv.in/MUSICINDIA/index.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/QNYG5Kz9/music-india.jpg",
+      "category": ["Music", "Hindi", "India"],
+      "package": ["150", "250", "500"],
+      "description": "India"
+    },
+    {
+      "id": 6,
+      "name": "yrf MUSIC",
+      "sources": [
+        { "name": "Stream 1", "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01412-xiaomiasia-yrfmusic-xiaomi/playlist.m3u8" },
+        { "name": "Stream 2", "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/yrf-music/master.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/pdHkcC7q/yrf-music.jpg",
+      "category": ["Music", "Hindi", "India"],
+      "package": ["250", "500"],
+      "description": "India"
+    },
+    {
+      "id": 7,
+      "name": "Zoom Music",
+      "sources": [
+        { "name": "Stream 1", "url": "https://pubads.g.doubleclick.net/ssai/event/JCAm25qkRXiKcK1AJMlvKQ/master.m3u8" },
+        { "name": "Stream 2", "url": "https://d1g66oqspoyxao.cloudfront.net/master.m3u8" },
+        { "name": "Stream 3", "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/zoom-tv/master.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/D0GYG0Dr/zoom.jpg",
+      "category": ["Music", "Hindi", "India"],
+      "package": ["150", "250", "500"],
+      "description": "India"
+    },
+    {
+      "id": 8,
+      "name": "9XM",
+      "sources": [
+        { "name": "Stream 1", "url": "https://wiselp.wiseplayout.com/9XM/master.m3u8" },
+        { "name": "Stream 2", "url": "https://d14c63magvk61v.cloudfront.net/strm/channels/9xm/master.m3u8" },
+        { "name": "Stream 3", "url": "https://9xjio.wiseplayout.com/9XM/master.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/Wb8VmBjp/9xm.jpg",
+      "category": ["Music", "Hindi", "India"],
+      "package": ["150", "250", "500"],
+      "description": "India"
+    },
+    {
+      "id": 9,
+      "name": "B4U Music",
+      "sources": [
+        { "name": "Stream 1", "url": "https://mumt04.tangotv.in/B4UMUSIC/index.m3u8" },
+        { "name": "Stream 2", "url": "https://cdn-2.pishow.tv/live/415/master.m3u8" },
+        { "name": "Stream 3", "url": "https://mumbai-edge.smartplaytv.in/B4uMusic/index.m3u8" },
+        { "name": "Stream 4", "url": "https://amg00877-b4unew-amg00877c3-lg-in-5261.playouts.now.amagi.tv/playlist/amg00877-b4unetworkeuropefast-b4umusic-lgin/playlist.m3u8" },
+        { "name": "Stream 5", "url": "https://cdnb4u.wiseplayout.com/B4U_Music/master.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/mrvFm9CF/B4-U-Music.png",
+      "category": ["Music", "Hindi", "India"],
+      "package": ["150", "250", "500"],
+      "description": "India"
+    },
+    {
+      "id": 10,
+      "name": "Mastiii",
+      "sources": [
+        { "name": "Stream 1", "url": "https://d1taaads3ztvmu.cloudfront.net/120723/mastii/chunklist.m3u8" },
+        { "name": "Stream 2", "url": "https://mumt02.tangotv.in/MASTIII/index.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/L4f6PQnh/mastiii.jpg",
+      "category": ["Music", "Hindi", "India"],
+      "package": ["250", "500"],
+      "description": "India"
+    },
+    {
+      "id": 11,
+      "name": "Deewana",
+      "sources": [
+        { "name": "Stream 1", "url": "https://tplay.live/originals/deewana/index.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/9Q7G21N6/Deewana.png",
+      "category": ["Music", "Hindi", "India"],
+      "package": ["150", "250", "500"],
+      "description": "India"
+    },
+    {
+      "id": 12,
+      "name": "Hindi Hits",
+      "sources": [
+        { "name": "Stream 1", "url": "https://mumt01.tangotv.in/HINDIHITS/index.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/LsxnsjGm/hindi-hits.jpg",
+      "category": ["Music", "Hindi", "India"],
+      "package": ["150", "250", "500"],
+      "description": "India"
+    },
+    {
+      "id": 13,
+      "name": "Evergreen Hits",
+      "sources": [
+        { "name": "Stream 1", "url": "https://mumt02.tangotv.in/EVERGREENHITS2/index.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/vTg1kDqw/evergreen-hits2.jpg",
+      "category": ["Music", "Hindi", "India"],
+      "package": ["150", "250", "500"],
+      "description": "India"
+    },
+    {
+      "id": 14,
+      "name": "Melody Hits",
+      "sources": [
+        { "name": "Stream 1", "url": "https://mumt03.tangotv.in/MELODYHITS/index.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/KYpnR1HC/melody-hits.jpg",
+      "category": ["Music", "Hindi", "India"],
+      "package": ["150", "250", "500"],
+      "description": "India"
+    },
+    {
+      "id": 15,
+      "name": "Classic Hits",
+      "sources": [
+        { "name": "Stream 1", "url": "https://mumt03.tangotv.in/CLASSICHITS/index.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/Kvbgc7YM/classic-hits.jpg",
+      "category": ["Music", "Hindi", "India"],
+      "package": ["150", "250", "500"],
+      "description": "India"
+    },
+    {
+      "id": 16,
+      "name": "NH BollyRaga",
+      "sources": [
+        { "name": "Stream 1", "url": "https://cc-up9j649x4thrj.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-up9j649x4thrj/SBUM/RunnTV/BollyRaga_IN/BollyRaga_IN.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/fbkbmd2g/nh-br.jpg",
+      "category": ["Music", "Hindi", "India"],
+      "package": ["250", "500"],
+      "description": "India"
+    },
+    {
+      "id": 17,
+      "name": "Insync",
+      "sources": [
+        { "name": "Stream 1", "url": "https://mumt04.tangotv.in/INSYNC/index.m3u8" }
+      ],
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgf8vivzH870a8bvAvQOoFXSnmBm_cSwMF8g&s",
+      "category": ["Music", "Hindi", "India"],
+      "package": ["250", "500"],
+      "description": "India"
+    },
+    {
+      "id": 18,
+      "name": "Joo Music",
+      "sources": [
+        { "name": "Stream 1", "url": "https://livecdn.live247stream.com/joomusic/tv/playlist.m3u8" }
+      ],
+      "img": "https://image.roku.com/developer_channels/prod/9cf63093182d69095ae19a443776978bb2398161ccc2dbda94e71f200b85f511.png",
+      "category": ["Music", "Hindi", "India"],
+      "package": ["250", "500"],
+      "description": "Europe & Africa"
+    },
+    {
+      "id": 19,
+      "name": "8XM",
+      "sources": [
+        { "name": "Stream 1", "url": "https://vodzong.mjunoon.tv:8087/streamtest/8XM-131/playlist.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/Qd4nc618/8xm.jpg",
+      "category": ["Music", "Hindi", "India"],
+      "package": ["250", "500"],
+      "description": "Pakistan"
+    },
+    {
+      "id": 20,
+      "name": "Jalwa",
+      "sources": [
+        { "name": "Stream 1", "url": "https://vodzong.mjunoon.tv:8087/streamtest/JalwaTV-135/playlist.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/pTGNr2Cw/jalwa.jpg",
+      "category": ["Music", "Hindi", "India"],
+      "package": ["250", "500"],
+      "description": "Pakistan"
+    },
+    {
+      "id": 21,
+      "name": "9X Jalwa",
+      "sources": [
+        { "name": "Stream 1", "url": "https://wiselp.wiseplayout.com/9X_Jalwa/master.m3u8" },
+        { "name": "Stream 2", "url": "https://d14c63magvk61v.cloudfront.net/strm/channels/9xjalwa/master.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/h4VgFtZS/9x-jalwa.jpg",
+      "category": ["Music", "Hindi", "India"],
+      "package": ["250", "500"],
+      "description": "India"
+    },
+    {
+      "id": 22,
+      "name": "9X Tashan",
+      "sources": [
+        { "name": "Stream 1", "url": "https://9xjio.wiseplayout.com/9X_Tashan/master.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/kMwkxRB1/9x-tashan.jpg",
+      "category": ["Music", "Punjabi", "India"],
+      "package": [],
+      "description": "Punjabi"
+    },
+    {
+      "id": 23,
+      "name": "E 24",
+      "sources": [
+        { "name": "Stream 1", "url": "https://amg13643-amg13643c2-amgplt0173.playout.now3.amagi.tv/playlist/amg13643-amg13643c2-amgplt0173/playlist.m3u8" },
+        { "name": "Stream 2", "url": "https://bagnetwork.digivive.com/hlslive/Admin/px09241091/live/E24LiveB/master_1.m3u8" },
+        { "name": "Stream 3", "url": "https://mumt04.tangotv.in/E24/index.m3u8" },
+        { "name": "Stream 4", "url": "https://live-e24.dailyhunt.in/eternowsa/live/amlst:E24_,b256,b512,b1024,b1824,.smil/playlist.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/wBKM5G7V/e-24.jpg",
+      "category": ["Music", "Punjabi", "India"],
+      "package": ["250", "500"],
+      "description": "Hindi/Punjabi"
+    },
+    {
+      "id": 24,
+      "name": "Steelbird Music",
+      "sources": [
+        { "name": "Stream 1", "url": "https://cdn2.in/SteelbirdMusicTVhls/live.m3u8" },
+        { "name": "Stream 2", "url": "https://cdn-4.pishow.tv/live/1504/master.m3u8" },
+        { "name": "Stream 3", "url": "https://server.livelegitpro.in/punjabihits/index.m3u8" }
+      ],
+      "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/93926d5dd30455efa55a1c0a3bb797e9.png",
+      "category": ["Music", "Punjabi", "India"],
+      "package": ["250", "500"],
+      "description": "Punjabi"
+    },
+    {
+      "id": 25,
+      "name": "Only Music",
+      "sources": [
+        { "name": "Stream 1", "url": "https://mumbai-edge.smartplaytv.in/OnlyMusic/index.m3u8" },
+        { "name": "Stream 2", "url": "https://livestream.unlimitedcdn.com/onlymusic/index.m3u8" }
+      ],
+      "img": "https://jiotvimages.cdn.jio.com/dare_images/shows/2026-03-12/260312903011.jpg?width=700",
+      "category": ["Music", "Punjabi", "India"],
+      "package": ["250", "500"],
+      "description": "Punjabi"
+    },
+    {
+      "id": 26,
+      "name": "Josh TV",
+      "sources": [
+        { "name": "Stream 1", "url": "https://mumt03.tangotv.in/JOSHTV/index.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/yY6RNL41/joshtv.jpg",
+      "category": ["Music", "Punjabi", "India"],
+      "package": [],
+      "description": "Punjabi"
+    },
+    {
+      "id": 27,
+      "name": "Punjabi Music HD",
+      "sources": [
+        { "name": "Stream 1", "url": "https://mumt02.tangotv.in/PUNJABIMUSICHD/index.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/d0f62zFZ/punjabi-musichd.jpg",
+      "category": ["Music", "Punjabi", "India"],
+      "package": [],
+      "description": "Punjabi"
+    },
+    {
+      "id": 28,
+      "name": "Punjabi Hits",
+      "sources": [
+        { "name": "Stream 1", "url": "https://legitpro.co.in/punjabihits/punjabihits/index.m3u8" },
+        { "name": "Stream 2", "url": "https://live1.ottlive.co.in/tabbarhitsswift/index.m3u8" },
+        { "name": "Stream 3", "url": "https://server.livelegitpro.in/punjabihits/index.m3u8" }
+      ],
+      "img": "https://play-lh.googleusercontent.com/Z5eBTFh01UZmECMBw2buJ3i2mWeRKYu3jgYrmN-byioWwpzOrCImYR6LRAtd53QrueM",
+      "category": ["Music", "Punjabi", "India"],
+      "package": ["250", "500"],
+      "description": "Punjabi"
+    },
+    {
+      "id": 29,
+      "name": "PTC Music",
+      "sources": [
+        { "name": "Stream 1", "url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/f913cf893c594f73b114216e74a2efbc/index.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/zvj04hnW/ptc-music.jpg",
+      "category": ["Music", "Punjabi", "India"],
+      "package": [],
+      "description": "Punjabi"
+    },
+    {
+      "id": 30,
+      "name": "PTC Chak De",
+      "sources": [
+        { "name": "Stream 1", "url": "https://cdn-1.pishow.tv/live/449/master.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/G2BRLcM2/ptc-chakde.jpg",
+      "category": ["Music", "Punjabi", "India"],
+      "package": [],
+      "description": "Punjabi"
+    },
+    {
+      "id": 31,
+      "name": "MH1",
+      "sources": [
+        { "name": "Server 1", "url": "https://mumt04.tangotv.in/MHONE/index.m3u8" }
+      ],
+      "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/fa5f35e8773cdb342d0e7c4a8152713e.png",
+      "category": ["Music", "Punjabi", "India"],
+      "package": [],
+      "description": "Punjabi Music"
+    },
+    {
+      "id": 32,
+      "name": "Saga Music HD",
+      "sources": [
+        { "name": "Stream 1", "url": "https://amg00223-unisys-amg00223c5-lg-in-2048.playouts.now.amagi.tv/playlist/amg00223-sevencolorsbroadcastingprivatelimited-sagamusic-lgin/playlist.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/pLXwzmwP/saga-music.jpg",
+      "category": ["Music", "Punjabi", "India"],
+      "package": [],
+      "description": "Punjabi"
+    },
+    {
+      "id": 33,
+      "name": "Saga Music Haryanvi HD",
+      "sources": [
+        { "name": "Stream 1", "url": "https://amg00223-unisys-amg00223c4-lg-in-2049.playouts.now.amagi.tv/playlist/amg00223-sevencolorsbroadcastingprivatelimited-sagamusicharyanvi-lgin/playlist.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/P5RRD2bM/saga-har.jpg",
+      "category": ["Music", "Haryanvi", "India"],
+      "package": [],
+      "description": "Haryanvi"
+    },
+    {
+      "id": 34,
+      "name": "Ragni TV",
+      "sources": [
+        { "name": "Server 1", "url": "https://mumt04.tangotv.in/RAGNITV/index.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/SQcv7NPS/ragni.jpg",
+      "category": ["Music", "Haryanvi", "India"],
+      "package": [],
+      "description": "Haryanvi"
+    },
+    {
+      "id": 35,
+      "name": "Dabangg",
+      "sources": [
+        { "name": "Server 1", "url": "https://mumt01.tangotv.in/DABANGG/index.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/j21NsgJD/dabangg.jpg",
+      "category": ["Music", "Bhojpuri", "India"],
+      "package": [],
+      "description": "Bhojpuri"
+    },
+    {
+      "id": 36,
+      "name": "Sangeet Bhojpuri",
+      "sources": [
+        { "name": "Server 1", "url": "https://cdn-4.pishow.tv/live/1293/master.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/yYgHbgfn/sangeet-bhojpuri-1.jpg",
+      "category": ["Music", "Bhojpuri", "India"],
+      "package": [],
+      "description": "Bhojpuri"
+    },
+    {
+      "id": 37,
+      "name": "Sangeet Marathi",
+      "sources": [
+        { "name": "Server 1", "url": "https://mumt02.tangotv.in/SANGEETMARATHI/index.m3u8" }
+      ],
+      "img": "https://yt3.googleusercontent.com/ytc/AIdro_krsl3aXY8SdNBmq2U_JLwb8OsIzHGOR1nbrlaq_h8MvRI=s900-c-k-c0x00ffffff-no-rj",
+      "category": ["Music", "Marathi", "India"],
+      "package": [],
+      "description": "Marathi"
+    },
+    {
+      "id": 38,
+      "name": "9X Jhakaas",
+      "sources": [
+        { "name": "Server 1", "url": "https://cdn-3.pishow.tv/live/6/master.m3u8" },
+        { "name": "Server 2", "url": "https://9xjio.wiseplayout.com/9X_Jhakaas/master.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/0jq4rTv0/9xs-jhakkas.jpg",
+      "category": ["Music", "Marathi", "India"],
+      "package": [],
+      "description": "Marathi"
+    },
+    {
+      "id": 39,
+      "name": "Dhoom Music Bangla",
+      "sources": [
+        { "name": "Server 1", "url": "https://mumt03.tangotv.in/DHOOM/index.m3u8" },
+        { "name": "Server 2", "url": "https://cdn-1.pishow.tv/live/1456/master.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/26RpwgN5/dmb-music.jpg",
+      "category": ["Music", "Bengali", "India"],
+      "package": [],
+      "description": "Bangla"
+    },
+    {
+      "id": 40,
+      "name": "Sangeet Bangla",
+      "sources": [
+        { "name": "Server 1", "url": "https://cdn-4.pishow.tv/live/1143/master.m3u8" },
+        { "name": "Server 2", "url": "https://mumt05.tangotv.in/SANGEETBANGLA/index.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/NGy2zxLw/sangeet-bangla.jpg",
+      "category": ["Music", "Bengali", "India"],
+      "package": [],
+      "description": "Bangla"
+    },
+    {
+      "id": 41,
+      "name": "Bengali Beats",
+      "sources": [
+        { "name": "Server 1", "url": "https://tplay.live/originals/bengali-beats/index.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/jSLNzXgM/Bengali-Beats.png",
+      "category": ["Music", "Bengali", "India"],
+      "package": [],
+      "description": "Bangla"
+    },
+    {
+      "id": 42,
+      "name": "Channel 16",
+      "sources": [
+        { "name": "Server 1", "url": "https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/channel16bd.stream/tracks-v1a1/mono.m3u8" }
+      ],
+      "img": "https://www.jagobd.com/wp-content/uploads/2026/01/channel16.jpeg",
+      "category": ["Music", "Bengali", "Bangladesh"],
+      "package": [],
+      "description": "Bangla"
+    },
+    {
+      "id": 43,
+      "name": "ATN Music",
+      "sources": [
+        { "name": "Server 1", "url": "https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/atnmusic.stream/playlist.m3u8" }
+      ],
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQPj5iTBCJZuCESElF9UMc-RPCL_WSwPSh4w&s",
+      "category": ["Music", "Bengali", "Bangladesh"],
+      "package": [],
+      "description": "Bangla"
+    },
+    {
+      "id": 44,
+      "name": "Music Bangla",
+      "sources": [
+        { "name": "Server 1", "url": "https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/musicbangla2025.stream/playlist.m3u8" }
+      ],
+      "img": "https://www.jagobd.com/wp-content/uploads/2024/12/mb.jpg?x71442",
+      "category": ["Music", "Bengali", "Bangladesh"],
+      "package": [],
+      "description": "Bangla"
+    },
+    {
+      "id": 45,
+      "name": "Ramdhenu",
+      "sources": [
+        { "name": "Server 1", "url": "https://mumt01.tangotv.in/RAMDHENU/index.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/QC6KPQ0X/ramdhenu.jpg",
+      "category": ["Music", "Assamese", "India"],
+      "package": [],
+      "description": "Assamese"
+    },
+    {
+      "id": 46,
+      "name": "Tarang Music",
+      "sources": [
+        { "name": "Server 1", "url": "https://livetv.tarangplus.in/tarangmusic-origin/live/playlist.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/25rP5nCd/tarang-music.jpg",
+      "category": ["Music", "Odia", "India"],
+      "package": [],
+      "description": "Odia"
+    },
+    {
+      "id": 47,
+      "name": "Ekamra Musiq",
+      "sources": [
+        { "name": "Server 1", "url": "https://live.ekamraott.com/musiq/musiq/index.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/vmqxMQvJ/ekamra-music.jpg",
+      "category": ["Music", "Odia", "India"],
+      "package": [],
+      "description": "Odia"
+    },
+    {
+      "id": 48,
+      "name": "Public Music",
+      "sources": [
+        { "name": "Server 1", "url": "https://cdn-3.pishow.tv/live/441/master.m3u8" },
+        { "name": "Server 2", "url": "https://mumbai-edge.smartplaytv.in/publicmusickannada/index.m3u8" }
+      ],
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_3rFEtXJ4KScIt6kwtLeGN-ZwdSiBA4UZJg&s",
+      "category": ["Music", "Kannada", "India"],
+      "package": [],
+      "description": "Kannada"
+    },
+    {
+      "id": 49,
+      "name": "Kappa TV",
+      "sources": [
+        { "name": "Server 1", "url": "https://cdn-3.pishow.tv/live/1123/master.m3u8" }
+      ],
+      "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/575e7238007c7695a7c2bc5d7b6d0ff9.png",
+      "category": ["Music", "Malayalam", "India"],
+      "package": [],
+      "description": "Malayalam"
+    },
+    {
+      "id": 50,
+      "name": "Raj Musix Malayalam",
+      "sources": [
+        { "name": "Server 1", "url": "https://mumt04.tangotv.in/RAJMUSIXMALAYALAM/index.m3u8" }
+      ],
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgZKDNWTOu4vLY0Wsn1xmHlLPjnpgQQtIT6Q&s",
+      "category": ["Music", "Malayalam", "India"],
+      "package": [],
+      "description": "Malayalam"
+    },
+    {
+      "id": 51,
+      "name": "Raj Musix Telugu",
+      "sources": [
+        { "name": "Server 1", "url": "https://cdn-1.pishow.tv/live/1213/master.m3u8" },
+        { "name": "Server 2", "url": "https://mumt02.tangotv.in/RAJMUSIXTELUGU/index.m3u8" }
+      ],
+      "img": "https://d229kpbsb5jevy.cloudfront.net/tv/150/150/bnw/Raj-Musi-Telugu_TV_white.png",
+      "category": ["Music", "Telugu", "India"],
+      "package": [],
+      "description": "Telugu"
+    },
+    {
+      "id": 52,
+      "name": "ETV Music",
+      "sources": [
+        { "name": "Server 1", "url": "https://cc-szivnms4rlah6.akamaized.net/WWBI/Amagi/ETV_Music_IN/playlist.m3u8" }
+      ],
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2RNrjFccwhjJV-ort5wgqqvyGs5kpGfVGPg&s",
+      "category": ["Music", "Telugu", "India"],
+      "package": [],
+      "description": "Telugu"
+    },
+    {
+      "id": 53,
+      "name": "Kalaignar Murasu",
+      "sources": [
+        { "name": "Server 1", "url": "https://yuppmedtaorire.akamaized.net/v1/master/a0d007312bfd99c47f76b77ae26b1ccdaae76cb1/murasu_nim_https/050522/murasu/playlist.m3u8" },
+        { "name": "Server 2", "url": "https://segment.yuppcdn.net/050522/murasu/playlist.m3u8" }
+      ],
+      "img": "https://yt3.googleusercontent.com/QQBHnrVMU6Ex_Y1s64zndprXIJX4uhCh8OUwq1sfgrp3MENL1zR1KP1Adv0aXX3f-yK0uCP15A=s900-c-k-c0x00ffffff-no-rj",
+      "category": ["Music", "Tamil", "India"],
+      "package": [],
+      "description": "Tamil"
+    },
+    {
+      "id": 54,
+      "name": "Sun Music",
+      "sources": [
+        { "name": "Server 1", "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://ajkiptv.ridsys.in/riptv/live/SUN_MUSIC/index.m3u8" },
+        { "name": "Server 2", "url": "https://segment.yuppcdn.net/050522/murasu/playlist.m3u8" }
+      ],
+      "img": "https://jiotvimages.cdn.jio.com/dare_images/images/Sun_Music_HD.png",
+      "category": ["Music", "Tamil", "India"],
+      "package": [],
+      "description": "Tamil"
+    },
+    {
+      "id": 55,
+      "name": "Rasi Music HD",
+      "sources": [
+        {
+          "name": "Server 1",
+          "url": "https://rasinetworks.in/live/rasimusichd/index.mpd",
+          "type": "dash"
+        }
+      ],
+      "img": "https://livetv.ashokadigital.net/upload/logo/1742386594_RASI%20MUSIC%20LOGO%20HD.png",
+      "category": ["Music", "Tamil", "India"],
+      "package": [],
+      "description": "Tamil"
+    },
+    {
+      "id": 56,
+      "name": "Tunes 6 Music",
+      "sources": [
+        { "name": "Server 1", "url": "https://stream.d6-pro.com/tunes6music/live/video.m3u8" }
+      ],
+      "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/1db45bfc850c95f573a5546a4e3274f7.png",
+      "category": ["Music", "Tamil", "India"],
+      "package": [],
+      "description": "Tamil"
+    },
+    {
+      "id": 57,
+      "name": "7S Music",
+      "sources": [
+        { "name": "Server 1", "url": "https://mumt03.tangotv.in/7SMUSIC/index.m3u8" }
+      ],
+      "img": "https://static.wikia.nocookie.net/logopedia/images/a/ac/76_Tamil_channel.jpeg/revision/latest?cb=20191225165506",
+      "category": ["Music", "Tamil", "India"],
+      "package": [],
+      "description": "Tamil"
+    },
+    {
+      "id": 58,
+      "name": "K-POP by CJ ENM",
+      "sources": [
+        { "name": "Server 1", "url": "https://cc-s23bl4el34qh7.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-s23bl4el34qh7/f4acc9ba_daae_4ed0_b836_32126cead919/hls/playlist.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/sx6FN3qq/kpop-cj.jpg",
+      "category": ["Music", "English", "Korean", "Korea"],
+      "package": [],
+      "description": "World"
+    },
+    {
+      "id": 59,
+      "name": "24hr K Pop",
+      "sources": [
+        { "name": "Server 1", "url": "https://live20.bozztv.com/akamaissh101/ssh101/24hrkpoptv/chunks.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/4NSw2Y26/24h-kpop.jpg",
+      "category": ["Music", "English", "Korean", "Korea"],
+      "package": [],
+      "description": "World"
+    },
+    {
+      "id": 60,
+      "name": "New KPOP",
+      "sources": [
+        { "name": "Server 1", "url": "https://newidco-newkid-1-eu.xiaomi.wurl.tv/playlist.m3u8" }
+      ],
+      "img": "https://pbs.twimg.com/profile_images/1574980809127141376/sTw4-M6__400x400.jpg",
+      "category": ["Music", "English", "Korean", "Korea"],
+      "package": [],
+      "description": "World"
+    },
+    {
+      "id": 61,
+      "name": "K Pop",
+      "sources": [
+        { "name": "Server 1", "url": "https://live20.bozztv.com/giatv/giatv-kpoptvplay/kpoptvplay/playlist.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/wMrpYMsN/kpop-music.jpg",
+      "category": ["Music", "English", "Korean", "Korea"],
+      "package": [],
+      "description": "World"
+    },
+    {
+      "id": 62,
+      "name": "Deluxe Music",
+      "sources": [
+        { "name": "Server 1", "url": "https://sdn-global-live-streaming-packager-cache.3qsdn.com/13456/13456_264_live.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/9F9d3TyJ/d-music.jpg",
+      "category": ["Music", "English", "World"],
+      "package": [],
+      "description": "World"
+    },
+    {
+      "id": 63,
+      "name": "Oxygen Music",
+      "sources": [
+        { "name": "Server 1", "url": "https://tplay.live/originals/oxygen-music/index.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/8z1kS0G5/Oxygen-Music.jpg",
+      "category": ["Music", "English", "India"],
+      "package": [],
+      "description": "Asia"
+    },
+    {
+      "id": 64,
+      "name": "VEVO",
+      "sources": [
+        { "name": "Server 1", "url": "https://amg00056-amg00056c9-rakuten-fr-3243.playouts.now.amagi.tv/playlist/amg00056-vevotvfast-vevopopfr-rakutenfr/playlist.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/65xcYwPj/vevo-music.jpg",
+      "category": ["Music", "English", "World"],
+      "package": [],
+      "description": "World"
+    },
+    {
+      "id": 65,
+      "name": "CMC",
+      "sources": [
+        { "name": "Server 1", "url": "https://cmc-cmctv-cineverse.amagi.tv/playlist.m3u8" }
+      ],
+      "img": "https://upload.wikimedia.org/wikipedia/commons/e/ea/California_Music_Channel_Logo_%28cropped%29.png",
+      "category": ["Music", "English", "California"],
+      "package": [],
+      "description": "San Francisco"
+    },
+    {
+      "id": 66,
+      "name": "Juice TV",
+      "sources": [
+        { "name": "Server 1", "url": "https://juicex.nz/hls/mystream.m3u8" }
+      ],
+      "img": "https://upload.wikimedia.org/wikipedia/en/3/38/Juice_TV_Logo.png",
+      "category": ["Music", "English", "New Zealand"],
+      "package": [],
+      "description": "World"
+    },
+    {
+      "id": 67,
+      "name": "Total Music 80S",
+      "sources": [
+        { "name": "Server 1", "url": "https://cdn.global.elektamedia.com/live/c7eds/Totalmusic_80s/SA_LIVE_hls_enc/master.m3u8" }
+      ],
+      "img": "https://static.elektamedia.com/ch/tmc_80s.png",
+      "category": ["Music", "English", "UK"],
+      "package": [],
+      "description": "World"
+    },
+    {
+      "id": 68,
+      "name": "Total Music 2000S",
+      "sources": [
+        { "name": "Server 1", "url": "https://cdn.global.elektamedia.com/live/c7eds/Totalmusic_00s/SA_LIVE_hls_enc/master.m3u8" }
+      ],
+      "img": "https://static.elektamedia.com/ch/tmc_00s.png",
+      "category": ["Music", "English", "UK"],
+      "package": [],
+      "description": "World"
+    },
+    {
+      "id": 69,
+      "name": "Total Music",
+      "sources": [
+        { "name": "Server 1", "url": "https://cdn.global.elektamedia.com/live/c7eds/Totalmusic/SA_LIVE_hls_enc/master.m3u8" }
+      ],
+      "img": "https://static.wikitide.net/indietvwiki/e/e1/Totalmusic_Main_Logo.png",
+      "category": ["Music", "English", "UK"],
+      "package": [],
+      "description": "World"
+    },
+    {
+      "id": 70,
+      "name": "Total Music Dance",
+      "sources": [
+        { "name": "Server 1", "url": "https://cdn.global.elektamedia.com/live/c7eds/Totalmusic_Dance/SA_LIVE_hls_enc/master.m3u8" }
+      ],
+      "img": "https://static.elektamedia.com/ch/tmc_dance.png",
+      "category": ["Music", "English", "UK"],
+      "package": [],
+      "description": "World"
+    },
+    {
+      "id": 71,
+      "name": "Total Music Concerts",
+      "sources": [
+        { "name": "Server 1", "url": "https://cdn.global.elektamedia.com/live/c7eds/Totalmusic_Concerts/SA_LIVE_hls_enc/master.m3u8" }
+      ],
+      "img": "https://static.elektamedia.com/ch/tmc_concerts.png",
+      "category": ["Music", "English", "UK"],
+      "package": [],
+      "description": "World"
+    },
+    {
+      "id": 72,
+      "name": "AMUSIC Channel",
+      "sources": [
+        { "name": "Server 1", "url": "https://mn-nl.mncdn.com/amusictv/amusicsrt.stream/chunklist.m3u8" }
+      ],
+      "img": "https://i.postimg.cc/Y0gjK7Nt/amusic-channel.jpg",
+      "category": ["Music", "English", "Nigeria"],
+      "package": [],
+      "description": "World"
+    },
+    {
+      "id": 73,
+      "name": "Bok TV",
+      "sources": [
+        { "name": "Server 1", "url": "https://livestream2.bokradio.co.za/hls/Bok5c.m3u8" }
+      ],
+      "img": "https://yt3.googleusercontent.com/5xB_UYxcBO5CPahYeIANbBOl1pdzj8IsLzjHxxdAnAT2JWGyGjMkqW5bZnty3juWehdcCxVb=s900-c-k-c0x00ffffff-no-rj",
+      "category": ["Music", "English", "South Africa"],
+      "package": [],
+      "description": "World"
+    },
+    {
+      "id": 74,
+      "name": "MBC Loud",
+      "sources": [
+        { "name": "Server 1", "url": "https://d2lfa0y84k5bwn.cloudfront.net/out/v1/86dd4506a70c4d7fb35e2ab50296d9a3/index.m3u8" }
+      ],
+      "img": "https://static.wikia.nocookie.net/logopedia/images/a/ae/LOUD_FM.svg/revision/latest/scale-to-width-down/200?cb=20250711111939",
+      "category": ["Music", "English", "Saudi Arabia"],
+      "package": [],
+      "description": "World"
+    },
+    {
+      "id": 75,
+      "name": "M1",
+      "sources": [
+        { "name": "Server 1", "url": "https://m-1.data.lt/m-1/smil:m-1.smil/playlist.m3u8" }
+      ],
+      "img": "https://upload.wikimedia.org/wikipedia/commons/6/6d/M1_%282025%29.png",
+      "category": ["Music", "Arabic", "Saudi Arabia"],
+      "package": [],
+      "description": "World"
+    },
+    {
+      "id": 76,
+      "name": "Fon Music",
+      "sources": [
+        { "name": "Server 1", "url": "https://tntm.mediacdn.ru/cdn/tntmusic/playlist.m3u8" }
+      ],
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/FON_MUSIC_Logo_2026.webp/250px-FON_MUSIC_Logo_2026.webp.png",
+      "category": ["Music", "Russian", "Russia"],
+      "package": [],
+      "description": "World"
+    }
+  ]
+}
