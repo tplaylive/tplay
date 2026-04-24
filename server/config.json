@@ -9,6 +9,12 @@
       "enabled": true
     },
     {
+      "name": "Kids",
+      "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/client/src/components/ui/kids.json",
+      "type": "json",
+      "enabled": true
+    },
+    {
       "name": "Music",
       "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/android/app/src/main/assets/music.json",
       "type": "json",
