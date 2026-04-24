@@ -13,7 +13,7 @@
       "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/android/app/src/main/assets/music.json",
       "type": "json",
       "enabled": true
-    }
+    },
     {
       "name": "Movies",
       "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/client/src/lib/Movies.json",
