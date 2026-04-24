@@ -3,12 +3,6 @@
   "last_updated": "2026-04-17",
   "sources": [
     {
-      "name": "T Play",
-      "url": "https://raw.githubusercontent.com/tplaylive/iptv-secure-channels/refs/heads/main/main.js",
-      "type": "json",
-      "enabled": false
-    },
-    {
       "name": "Music",
       "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/android/app/src/main/assets/music.json",
       "type": "json",
@@ -17,6 +11,12 @@
     {
       "name": "Movies",
       "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/client/src/lib/Movies.json",
+      "type": "json",
+      "enabled": true
+    },
+    {
+      "name": "T Play",
+      "url": "https://raw.githubusercontent.com/tplaylive/iptv-secure-channels/refs/heads/main/main.js",
       "type": "json",
       "enabled": true
     },
