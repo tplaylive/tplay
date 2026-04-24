@@ -9,6 +9,18 @@
       "enabled": true
     },
     {
+      "name": "Music",
+      "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/android/app/src/main/assets/music.json",
+      "type": "json",
+      "enabled": true
+    },
+    {
+      "name": "Movies",
+      "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/android/capacitor-cordova-android-plugins/src/main/movies.json",
+      "type": "json",
+      "enabled": true
+    },
+    {
       "name": "Dish Tv",
       "url": "https://raw.githubusercontent.com/amazeyourself/m3u/refs/heads/main/dishd2h.m3u",
       "type": "m3u",
@@ -30,12 +42,6 @@
       "name": "Pishow",
       "url": "https://raw.githubusercontent.com/amazeyourself/m3u/refs/heads/main/pishow.m3u",
       "type": "m3u",
-      "enabled": true
-    },
-        {
-      "name": "Distro TV",
-      "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/android/app/src/main/assets/music.json",
-      "type": "json",
       "enabled": true
     }
   ]
