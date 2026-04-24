@@ -39,8 +39,20 @@
       "enabled": true
     },
     {
+      "name": "Infotainment",
+      "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/dist/public/assets/Infotainment.json",
+      "type": "json",
+      "enabled": true
+    },
+    {
       "name": "Sports",
       "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/client/src/pages/Sports.json",
+      "type": "json",
+      "enabled": true
+    },
+    {
+      "name": "Religious",
+      "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/android/capacitor-cordova-android-plugins/src/Religious.json",
       "type": "json",
       "enabled": true
     },
