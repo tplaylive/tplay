@@ -1,0 +1,1599 @@
+[
+  {
+    "name": "Star Jalsha",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://stvlive.net:8080/starjalsha/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://cors-proxy.cooks.fyi/http://180.94.28.28:8097//STAR-JALSHA/index.fmp4.m3u8?token=e009bfd5fbfaba1006f7c34f860bbcac2ec89596-67fdf9ff38949fb20343b0487454c38f-1776070284-1776066684&remote=no_check_ip"
+      },
+      {
+        "name": "Server 3",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=https://genz2.zibobdixserver.top/302/index.m3u8"
+      },
+      {
+        "name": "Server 4",
+        "url": "https://yupptvcatchupire.yuppcdn.net/preview/starjalsha/1800.m3u8"
+      },
+      {
+        "name": "Server 5",
+        "url": "https://warm-caverns-48629-92fab798385f.herokuapp.com/http://103.175.242.10:8080/starjalsha/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/WpQ9PsZ3/star-jalsha.jpg",
+    "category": ["Entertainment", "Bengali", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Bangla"
+  },
+  {
+    "name": "Zee Bangla",
+    "sources": [
+      {
+        "name": "SD",
+        "url": "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeebangla/default/manifest.mpd",
+        "type": "dash",
+        "drm": {
+          "kid": "1df83e058b864da896c9288eef63b113",
+          "key": "fc32f26239054b56aab48225305598fe"
+        }
+      }
+    ],
+    "img": "https://i.postimg.cc/wj9Q6Mj6/zee-bangla.jpg",
+    "category": ["Entertainment", "Bengali", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Bangla"
+  },
+  {
+    "name": "Zee Bangla HD",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=https://genz.zibobdixserver.top/zeeban/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://stvlive.net:8080/zeebangla/index.m3u8"
+      },
+      {
+        "name": "Server 3",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=https://genz2.zibobdixserver.top/301/index.m3u8"
+      },
+      {
+        "name": "Server 4",
+        "url": "https://catchup.yuppcdn.net/amazonv2/36/preview/zeebangla/master/chunklist.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/40ed05bf2dda8c8d71cd428f4030be6c.png",
+    "category": ["Entertainment", "Bengali", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Bangla"
+  },
+  {
+    "name": "Colors Bangla",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=https://genz2.zibobdixserver.top/304/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://stvlive.net:8080/colorsbangla/index.m3u8"
+      },
+      {
+        "name": "Server 3",
+        "url": "https://api.naariclothing.com/dd/live.m3u8?id=756&token=JITENDRA_KUMAR"
+      },
+      {
+        "name": "Server 4",
+        "url": "https://yupptvcatchupire.yuppcdn.net/preview/colorsbanglahd/800.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/vTQZ4Jg6/colors-bangla.jpg",
+    "category": ["Entertainment", "Bengali", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Bangla"
+  },
+  {
+    "name": "Sun Bangla",
+    "sources": [
+      {
+        "name": "Auto",
+        "url": "https://tulnit.fun/sun/stream.php/bf76ee92dd01473bb2eb57d137294484/SunBanglaB_IN_index.mpd",
+        "type": "dash",
+        "drm": {
+          "kid": "01f7b9f7bf7e425f86d6dfd478390e3f",
+          "key": "5fde68100a7856d055038236ffc7c84a"
+        }
+      }
+    ],
+    "img": "https://i.postimg.cc/Yqvwd2HC/sun-bangla.jpg",
+    "category": ["Entertainment", "Bengali", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Enterr10 Bangla",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://live-bangla.akamaized.net/liveabr/playlist.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/50rsyVks/enter10-bangla.jpg",
+    "category": ["Entertainment", "Bengali", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Bangla"
+  },
+  {
+    "name": "Ruposhi Bangla",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://mumt05.tangotv.in/RUPASIBANGLA/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://cdn-4.pishow.tv/live/1039/master.m3u8"
+      },
+      {
+        "name": "Server 3",
+        "url": "https://livegeoroueu.akamaized.net/28072023/smil:rupashibangla.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b"
+      }
+    ],
+    "img": "https://i.postimg.cc/8c1LTnTZ/ruposhi-bangla.jpg",
+    "category": ["Entertainment", "Bengali", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Bangla"
+  },
+  {
+    "name": "DD Bangla",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/7ff57cc9046b4c188b51a0d506f36e7f/index.m3u8"
+      }
+    ],
+    "img": "https://yt3.googleusercontent.com/jJxkTYCjjCHI1_OB6NK8G1n4vu-EIOj8gaPTxbnFA9tO_jkWJdCfUZy23fVCQtthdW9Nf8Et=s900-c-k-c0x00ffffff-no-rj",
+    "category": ["Entertainment", "Bengali", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Bangla"
+  },
+  {
+    "name": "Khushboo Bangla",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://cdn-4.pishow.tv/live/1473/master.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/brJdCXyf/khushboo-bangla.jpg",
+    "category": ["Entertainment", "Bengali", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Bangla"
+  },
+  {
+    "name": "Sony Aath",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://stvlive.net:8080/sonyaath/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://mhdtvhub.com/sliv/stream.php?id=1000009255&e=.m3u8"
+      },
+      {
+        "name": "Server 3",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=https://genz2.zibobdixserver.top/306/index.m3u8"
+      },
+      {
+        "name": "Server 4",
+        "url": "https://padmaonline.duckdns.org:8088/SonyAath/index.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/3bc4288071a532cad74816bab70acd05.png",
+    "category": ["Entertainment", "Bengali", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Bangla"
+  },
+  {
+    "name": "Akash Aath",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://mumt03.tangotv.in/AAKASHAATH/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://cdn-4.pishow.tv/live/969/master.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/WzkcbSSJ/akash-aath.jpg",
+    "category": ["Entertainment", "Bengali", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Bangla"
+  },
+  {
+    "name": "R Plus Gold",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://mumt03.tangotv.in/RPLUSGOLD/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/fbWdLj4y/rplusgold.jpg",
+    "category": ["Entertainment", "Bengali", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Bangla"
+  },
+  {
+    "name": "Tara TV",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://legitpro.co.in/taratv/taratv/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/tara-tv/index.m3u8?ads.vf=G9BFeQBhLSm"
+      }
+    ],
+    "img": "https://yt3.googleusercontent.com/ytc/AIdro_njjooSlwTJnKdIZCGueYfSfotEcv0VLNzeeX8C_3735g=s900-c-k-c0x00ffffff-no-rj",
+    "category": ["Entertainment", "Bengali", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Bangla"
+  },
+  {
+    "name": "Zee Sarthak",
+    "sources": [
+      {
+        "name": "Auto",
+        "url": "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeesarthak/default/devil.mpd",
+        "type": "dash",
+        "drm": {
+          "kid": "ecad0b097b574078a4a1bde24bfdb2e5",
+          "key": "568bb13d04db4b738864f6c849474cd5"
+        }
+      }
+    ],
+    "img": "https://d388d59m61mm0v.cloudfront.net/optimized/content/common/logos/channel/logos/zee-sarthak.png",
+    "category": ["Entertainment", "Odia", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Odia"
+  },
+  {
+    "name": "Tarang TV",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://livetv.tarangplus.in/tarangtv-origin/live/playlist.m3u8"
+      }
+    ],
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/TARANG_TV.jpg/1280px-TARANG_TV.jpg",
+    "category": ["Entertainment", "Odia", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Odia"
+  },
+  {
+    "name": "Rang TV",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://mumt01.tangotv.in/RANG/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://cdn-7.pishow.tv/live/10017/master.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/0a5c79b522b0934ea9b2806dd9b8339f.png",
+    "category": ["Entertainment", "Assamese", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Assamese"
+  },
+  {
+    "name": "Rengoni",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://d1msejlow1t3l4.cloudfront.net/fta/rengonitv/playlist.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://mumt05.tangotv.in/RENGONI/index.m3u8"
+      }
+    ],
+    "img": "https://pbs.twimg.com/profile_images/880366209404776451/d8zE7-fu.jpg",
+    "category": ["Entertainment", "Assamese", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Assamese"
+  },
+  {
+    "name": "Jonack",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://cdn-6.pishow.tv/live/10006/master.m3u8"
+      }
+    ],
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmYGjpabqQX8Wch3j6EpftLRPbG2VgyOkr1A&s",
+    "category": ["Entertainment", "Assamese", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Assamese"
+  },
+  {
+    "name": "Pear TV",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://mumt01.tangotv.in/PEARTV/index.m3u8"
+      }
+    ],
+    "img": "https://www.lyngsat.com/logo/tv/pp/pear-tv-in.png",
+    "category": ["Entertainment", "Assamese", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Assamese"
+  },
+  {
+    "name": "Star Plus",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://stvlive.net:8080/starplus/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=https://genz2.zibobdixserver.top/401/index.m3u8"
+      },
+      {
+        "name": "Server 3",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://maxotts.maxdigitaltv.com/x-media/C51/master.m3u8"
+      },
+      {
+        "name": "Server 4",
+        "url": "https://padmaonline.duckdns.org:8088/StarPlusHD/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/htNZQ0x0/Star-Plus.jpg",
+    "category": ["Entertainment", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Star Bharat",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://maxotts.maxdigitaltv.com/x-media/C301/master.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://anywhere.pwisetthon.com/http://217.20.112.199:8888/lifeokhd/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/W176T68d/Star-Bharat.jpg",
+    "category": ["Entertainment", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Zee TV",
+    "sources": [
+      {
+        "name": "SD",
+        "url": "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeetv/default/manifest.mpd",
+        "type": "dash",
+        "drm": {
+          "kid": "ed068cf84f0640ccbc7c0e395c0a272e",
+          "key": "bb722190f2bb446391020411a7d0828b"
+        }
+      }
+    ],
+    "img": "https://preview.redd.it/zee-tv-new-logo-v0-rdavl0od4j5f1.jpeg?auto=webp&s=23fc180397ed9368e1b7e637e5c6a6d350647b1f",
+    "category": ["Entertainment", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Zee TV HD",
+    "sources": [
+      {
+        "name": "HD",
+        "url": "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeetvhd/default/index.mpd",
+        "type": "dash",
+        "drm": {
+          "kid": "65c3633157574361b191059e46e72968",
+          "key": "78450b11381340c297d96c13183d3744"
+        }
+      }
+    ],
+    "img": "https://yt3.googleusercontent.com/yawyROd5jQqRiXHdmttib1ZhZTZ_flA4ACjPpNNdrVFC_J8NWmrlI-Se97YMaCJSvId4s7eV=s900-c-k-c0x00ffffff-no-rj",
+    "category": ["Entertainment", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "& TV",
+    "sources": [
+      {
+        "name": "SD",
+        "url": "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Andtv/default/manifest.mpd",
+        "type": "dash",
+        "drm": {
+          "kid": "26df86eeebb04d7fbc45c948f76e81fd",
+          "key": "5f3a23f1a73c4c96ababce5fffe7b06b"
+        }
+      }
+    ],
+    "img": "https://i.postimg.cc/MHqdfgbZ/tv.jpg",
+    "category": ["Entertainment", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "& TV HD",
+    "sources": [
+      {
+        "name": "HD",
+        "url": "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Andtvhd/default/index.mpd",
+        "type": "dash",
+        "drm": {
+          "kid": "67d18634ccb04875875c60fb8d9caaba",
+          "key": "99a66471c09e4b8a8dc39a0de6803f75"
+        }
+      }
+    ],
+    "img": "https://i.postimg.cc/xTjxKHqG/tvhd.jpg",
+    "category": ["Entertainment", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Anmol TV",
+    "sources": [
+      {
+        "name": "SD",
+        "url": "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeeanmol/default/manifest.mpd",
+        "type": "dash",
+        "drm": {
+          "kid": "4023613457774cbeb71a62c339970e63",
+          "key": "1c3e9fce5f014542be9cd1f749181204"
+        }
+      }
+    ],
+    "img": "https://i.postimg.cc/Jnd9k7Cy/anmol-tv.jpg",
+    "category": ["Entertainment", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Zing",
+    "sources": [
+      {
+        "name": "SD",
+        "url": "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zing/default/manifest.mpd",
+        "type": "dash",
+        "drm": {
+          "kid": "f0fb14eebe474a6ab74c8301d55a7224",
+          "key": "f9f8b2e30704458b8db844a285ce32be"
+        }
+      }
+    ],
+    "img": "https://i.postimg.cc/cCn5tQc5/zing.jpg",
+    "category": ["Entertainment", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Big Magic",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://mumt05.tangotv.in/BIGMAGIC/index.m3u8"
+      }
+    ],
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTshxArWWUTWYmwlcIZGhOXbTw5GraQkf4xjA&s",
+    "category": ["Entertainment", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Colors",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://api.naariclothing.com/dd/live.m3u8?id=144&token=JITENDRA_KUMAR"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://stvlive.net:8080/colorshd/tracks-v1a1/mono.m3u8"
+      },
+      {
+        "name": "Server 3",
+        "url": "https://warm-caverns-48629-92fab798385f.herokuapp.com/http://103.175.242.10:8080/colorshd/index.m3u8"
+      },
+      {
+        "name": "Server 4",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://maxotts.maxdigitaltv.com/x-media/C45/master.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/vBL4YjR8/colors.jpg",
+    "category": ["Entertainment", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "MTV",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://api.naariclothing.com/dd/live.m3u8?id=248&token=JITENDRA_KUMAR"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/dd31feecea35b168edef5b73d95fa378.png",
+    "category": ["Entertainment", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Sony Sab",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://mhdtvhub.com/sliv/stream.php?id=1000009248&e=.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=https://genz.zibobdixserver.top/sab/index.m3u8"
+      },
+      {
+        "name": "Server 3",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://maxotts.maxdigitaltv.com/x-media/C64/master.m3u8"
+      },
+      {
+        "name": "Server 4",
+        "url": "https://satoshi-cors.herokuapp.com/http://103.99.249.139/sonysab/index.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/1c988cc725451c2480c56865af4d59d8.png",
+    "category": ["Entertainment", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Sony Pal",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://mhdtvhub.com/sliv/stream.php?id=1000009273&e=.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://maxotts.maxdigitaltv.com/x-media/C106/master.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/9405dcc6dcddf846aa98d2c7bfe0e9fa.png",
+    "category": ["Entertainment", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Sony Entertainment",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://mhdtvhub.com/sliv/stream.php?id=1000009246&e=.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=https://genz2.zibobdixserver.top/403/index.m3u8"
+      },
+      {
+        "name": "Server 3",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://maxotts.maxdigitaltv.com/x-media/C66/master.m3u8"
+      },
+      {
+        "name": "Server 4",
+        "url": "https://warm-caverns-48629-92fab798385f.herokuapp.com/http://103.175.242.10:8080/sonyentten/index.m3u8"
+      },
+      {
+        "name": "Server 5",
+        "url": "https://padmaonline.duckdns.org:8088/SETHD/index.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/e93d8803c883ab337e40d171a8ed02e5.png",
+    "category": ["Entertainment", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "DD National",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/40492a64c1db4a1385ba1a397d357d3a/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/PrVcPf1R/DD-National.png",
+    "category": ["Entertainment", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Shemaroo TV",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://airtelapp.shemaroo.com/shemarootv/smil:shemarootvadp.smil/playlist.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://mumt02.tangotv.in/SHEMAROOTV/index.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/fe2abb2de6b079ea2e97ba2902b903fb.png",
+    "category": ["Entertainment", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Shemaroo Umang",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://mumt04.tangotv.in/SHEMAROOUMANG/index.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/shows/epgdata/e374d0166e26360d753d5b9bb631ed78.png?width=300",
+    "category": ["Entertainment", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Dangal",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://live-dangal.akamaized.net/liveabr/playlist.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/Hk2rQKsR/Dangal.png",
+    "category": ["Entertainment", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Dangal 2",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://live-dangal2.akamaized.net/liveabr/playlist.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/HWyjSjkQ/Dangal-2.png",
+    "category": ["Entertainment", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Nazara",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://cc-p1izg43bk7sj5.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-p1izg43bk7sj5/DIYC/PMSL/IN10/Nazara_IN_B/Nazara_IN_B.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/85PWMDdN/nazara.jpg",
+    "category": ["Entertainment", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Abzy Dhakad",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/4fe6ab07a13543d6bdb2ec63b3e2df44/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/Yq9H0sLb/Abzy-Dhakad.png",
+    "category": ["Entertainment", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Zee Marathi",
+    "sources": [
+      {
+        "name": "Auto",
+        "url": "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeemarathi/default/manifest.mpd",
+        "type": "dash",
+        "drm": {
+          "kid": "2a8d6c938ea647248f7a10eedc39f097",
+          "key": "7d81feb84ed84bd88fdc5ca9de3c16da"
+        }
+      }
+    ],
+    "img": "https://imagesdishtvd2h.whatsonindia.com/dasimages/channel/landscape/360x270/4bimlHJj.png",
+    "category": ["Entertainment", "Marathi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Fakt Marathi",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://cdn-6.pishow.tv/live/10002/master.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/87bc6f3984109dd5ef35e2e4fb1b64cb.png",
+    "category": ["Entertainment", "Marathi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Marathi"
+  },
+  {
+    "name": "Sony Marathi",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://mhdtvhub.com/sliv/stream.php?id=1000009259&e=.m3u8"
+      }
+    ],
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4wRjk798Ys8XdOzogPeYLsXGPP4w_8KZEXA&s",
+    "category": ["Entertainment", "Marathi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Marathi"
+  },
+  {
+    "name": "Colors Marathi",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://anywhere.pwisetthon.com/http://217.20.112.199/ColorsMarathi/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/R0PJ5d59/colors-marathi.jpg",
+    "category": ["Entertainment", "Marathi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Marathi"
+  },
+  {
+    "name": "Shemaroo MarathiBana",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://airtelapp.shemaroo.com/marathibana/smil:marathibanaadp.smil/playlist.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/4db56a487bc1edcd7438e667b6a46284.png",
+    "category": ["Entertainment", "Marathi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Marathi"
+  },
+  {
+    "name": "Star Vijay",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://ajkiptv.ridsys.in/riptv/live/STAR_VIJAY/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://ptuf.ridsys.in/riptv/live/STAR_VIJAY/index.m3u8"
+      },
+      {
+        "name": "Server 3",
+        "url": "https://cdn-2.pishow.tv/live/1383/master.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/4yDVmXQV/star-vijay.jpg",
+    "category": ["Entertainment", "Tamil", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Tamil"
+  },
+  {
+    "name": "Zee Tamil",
+    "sources": [
+      {
+        "name": "HD",
+        "url": "https://unifi-live2.secureswiftcontent.com/Content/DASH/Live/channel(ZeeTamil)/master.mpd",
+        "type": "dash",
+        "drm": {
+          "kid": "06e1831ba6f946568bdea62e67ca7317",
+          "key": "f02c40d2006e036104f7726116861d7c"
+        }
+      }
+    ],
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXAQ8QqR_jJq1z3OK7yqDPRTixOPnGVbF-Zg&s",
+    "category": ["Entertainment", "Tamil", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Colors Tamil",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://ajkiptv.ridsys.in/riptv/live/COLORS_TAMIL/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://ptu.ridsys.in/riptv/live/COLORS_TAMIL/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/nV2zd4j7/colors-tamil-1.jpg",
+    "category": ["Entertainment", "Tamil", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Tamil"
+  },
+  {
+    "name": "Colors Tamil HD",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://ptuf.ridsys.in/riptv/live/COLORS_TAMIL/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://ajkiptv.ridsys.in/riptv/live/COLORS_TAMIL/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/nV2zd4j7/colors-tamil-1.jpg",
+    "category": ["Entertainment", "Tamil", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Tamil"
+  },
+  {
+    "name": "Sun TV",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://ptuf.ridsys.in/riptv/live/SUN_TV/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://ajkiptv.ridsys.in/riptv/live/SUN_TV/index.m3u8"
+      },
+      {
+        "name": "Server 3",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://ptu.ridsys.in/riptv/live/SUN_TV/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/G3PrLGk2/suntv.jpg",
+    "category": ["Entertainment", "Tamil", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Tamil"
+  },
+  {
+    "name": "Sun TV HD",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://ajkiptv.ridsys.in/riptv/live/SUN_TV_HD/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://ajkiptv.ridsys.in/riptv/live/SUN_TV/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/G3PrLGk2/suntv.jpg",
+    "category": ["Entertainment", "Tamil", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Tamil"
+  },
+  {
+    "name": "Sun Life",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://ptuf.ridsys.in/riptv/live/SUN_LIFE/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/Wz8QMmnw/sun-life.jpg",
+    "category": ["Entertainment", "Tamil", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Tamil"
+  },
+  {
+    "name": "K TV",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://ajkiptv.ridsys.in/riptv/live/K_TV/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://ptu.ridsys.in/riptv/live/K_TV/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/T3VnQkmx/ktv.jpg",
+    "category": ["Entertainment", "Tamil", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Tamil"
+  },
+  {
+    "name": "K TV HD",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://ptuf.ridsys.in/riptv/live/K_TV/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://ajkiptv.ridsys.in/riptv/live/K_TV/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/T3VnQkmx/ktv.jpg",
+    "category": ["Entertainment", "Tamil", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Tamil"
+  },
+  {
+    "name": "MK Six",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://cdn-3.pishow.tv/live/1253/master.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/155bad426a169fdc4ba921c24c2af420.png",
+    "category": ["Entertainment", "Tamil", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Tamil"
+  },
+  {
+    "name": "Peppers",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://d1msejlow1t3l4.cloudfront.net/fta/peppers/chunks.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://cdn-2.pishow.tv/live/1383/master.m3u8"
+      }
+    ],
+    "img": "https://yt3.googleusercontent.com/ytc/AIdro_lRqWi7GK5UoOeKQs1hPj38bMyqPBwEo35pwDVGaw3Qbqs=s900-c-k-c0x00ffffff-no-rj",
+    "category": ["Entertainment", "Tamil", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Tamil"
+  },
+  {
+    "name": "Shalini TV",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://stream.singamcloud.in/shalinitv/shalinitv/index.m3u8"
+      }
+    ],
+    "img": "https://yt3.googleusercontent.com/oq4TNLaYR0tvJypHi2VH_wWn8MN2MijcMA0lJ3lSYAKn6ce8RjFPJYL_2eTygF18m8nOqcMN=s900-c-k-c0x00ffffff-no-rj",
+    "category": ["Entertainment", "Tamil", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Tamil"
+  },
+  {
+    "name": "Thanthi One",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://mumt02.tangotv.in/THANTHIONE/index.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/bcea7fce3598bc29fd4db2d2ba6d22f7.png",
+    "category": ["Entertainment", "Tamil", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Tamil"
+  },
+  {
+    "name": "Jaya TV HD",
+    "sources": [
+      {
+        "name": "Auto",
+        "url": "https://login.bheem.tv/bpk-tv/22376/output/index.mpd?",
+        "type": "dash",
+        "drm": {
+          "kid": "240e85c531b3557b9f80f460de9d3632",
+          "key": "1e152dddc7f6e7d7ff8bbea884907c24"
+        }
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/38564ce8c8aaac2c0529abbc55318d6f.png",
+    "category": ["Entertainment", "Tamil", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Jaya Max",
+    "sources": [
+      {
+        "name": "Auto",
+        "url": "https://login.bheem.tv/bpk-tv/22374/output/index.mpd?",
+        "type": "dash",
+        "drm": {
+          "kid": "ab7b51986d1d5c71ae7a3eccfa387547",
+          "key": "90543e8dd493f5dc0e105ce32fd964e0"
+        }
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/2160e45255960cfbacc217bfe5ec63d4.png",
+    "category": ["Entertainment", "Tamil", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Jaya Movie",
+    "sources": [
+      {
+        "name": "Auto",
+        "url": "https://login.bheem.tv/bpk-tv/22373/output/index.mpd?",
+        "type": "dash",
+        "drm": {
+          "kid": "db45a6ff634252209fd4b66847078456",
+          "key": "134f625213a09e244ebceb257c22b2f3"
+        }
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/J_Movies.png",
+    "category": ["Entertainment", "Tamil", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Chithiram",
+    "sources": [
+      {
+        "name": "Auto",
+        "url": "https://login.bheem.tv/bpk-tv/22378/output/index.mpd?",
+        "type": "dash",
+        "drm": {
+          "kid": "928e0f5213fc5a7ebeb0bd8cbd4d1442",
+          "key": "22b778641744694ad3de2822ee018d38"
+        }
+      }
+    ],
+    "img": "https://yt3.googleusercontent.com/VfehqpmL-G5zlPGITYe2BlRuoW_BLm4mOmRSXxIze8jSPzJjQ4TShN-FCR_cn8kImVm2gGHvgnw=s900-c-k-c0x00ffffff-no-rj",
+    "category": ["Entertainment", "Tamil", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Sirippoli",
+    "sources": [
+      {
+        "name": "Auto",
+        "url": "https://login.bheem.tv/bpk-tv/22379/output/index.mpd?",
+        "type": "dash",
+        "drm": {
+          "kid": "b0bef7a3d07f5b9c8b4b2de472da7718",
+          "key": "3139f66c3e590441bec542fcf16dcaca"
+        }
+      }
+    ],
+    "img": "https://static.wikia.nocookie.net/logopedia/images/7/74/Sirippoli_tv.jpg/revision/latest?cb=20191224115900",
+    "category": ["Entertainment", "Tamil", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Vendhar TV",
+    "sources": [
+      {
+        "name": "Auto",
+        "url": "https://login.bheem.tv/bpk-tv/22380/output/index.mpd?",
+        "type": "dash",
+        "drm": {
+          "kid": "9d40de25714e5bfea8d4416e122cbe1f",
+          "key": "cf4e7638142ca8ee949de71f6c77a85f"
+        }
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/ce5de13ed1621e06c89426c3f9665e69.png",
+    "category": ["Entertainment", "Tamil", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Brio TV",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://mumt02.tangotv.in/BRIOTV/index.m3u8"
+      }
+    ],
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9PS3pMceApdbIKsTzMIxPorDNQHAqW2YgdQ&s",
+    "category": ["Entertainment", "Tamil", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Tamil"
+  },
+  {
+    "name": "Star Maa",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=https://genz2.zibobdixserver.top/408/index.m3u8"
+      }
+    ],
+    "img": "https://static.wikia.nocookie.net/logopedia/images/d/df/Star_maa.png/revision/latest?cb=20210520145908",
+    "category": ["Entertainment", "Telugu", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Telugu"
+  },
+  {
+    "name": "ZEE Telugu",
+    "sources": [
+      {
+        "name": "Auto",
+        "url": "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeetelgu/default/manifest.mpd",
+        "type": "dash",
+        "drm": {
+          "kid": "1ce5cd75a6ad44a38a7d1b8dbaf9c330",
+          "key": "657fc8e7d533456cb0644fe03458a4b2"
+        }
+      }
+    ],
+    "img": "https://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_Telugu.png",
+    "category": ["Entertainment", "Telugu", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Telugu"
+  },
+  {
+    "name": "ETV Telugu HD",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://d2z3q47xzd535o.cloudfront.net/v1/master/9d43eacaed199f8d5883927e7aef514a8a08e108/ETV_HD_H264-2_cloud_in/index.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/23c6235eac966a5e93f152e0eb3eefc0.png",
+    "category": ["Entertainment", "Telugu", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Telugu"
+  },
+  {
+    "name": "ETV Telugu HD USA",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://livegeorouus.akamaized.net/100823/etvhd_2500/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/23c6235eac966a5e93f152e0eb3eefc0.png",
+    "category": ["Entertainment", "Telugu", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Telugu"
+  },
+  {
+    "name": "ETV Plus",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://d27tnkf60df3v4.cloudfront.net/v1/master/9d43eacaed199f8d5883927e7aef514a8a08e108/ETV_PLUS_H264-3_cloud_in/index.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/7a20f635d55450d674220f2e37739da3.png",
+    "category": ["Entertainment", "Telugu", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Telugu"
+  },
+  {
+    "name": "ETV Josh",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://cc-uyh1ow5zouoio.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-uyh1ow5zouoio/WWBI/Amagi/ETV_Josh_IN/playlist.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/9MsMLCT4/etv-main.jpg",
+    "category": ["Entertainment", "Telugu", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Telugu"
+  },
+  {
+    "name": "Studio Yuva",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://mumt01.tangotv.in/STUDIOYUVA/index.m3u8"
+      }
+    ],
+    "img": "https://yt3.googleusercontent.com/V-a2CieMvWBWCdM6cUh-UZR4z7t3wEXzmn7Zd3p7MTXPWfXGggTSzNCrS1TXGG_pYqPstlnFOVg=s900-c-k-c0x00ffffff-no-rj",
+    "category": ["Entertainment", "Telugu", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Telugu"
+  },
+  {
+    "name": "Kairali TV",
+    "sources": [
+      {
+        "name": "Auto",
+        "url": "https://login.bheem.tv/bpk-tv/22412/output/index.mpd",
+        "type": "dash",
+        "drm": {
+          "kid": "1382b4f8623151e88c52787ae11f11ab",
+          "key": "de71cbb248a62cc2c4a66c8546b49d7d"
+        }
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/ea4af867a91ddeb85fb5990c9be079e5.png",
+    "category": ["Entertainment", "Malayalam", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Malayalam"
+  },
+  {
+    "name": "Kairali TV",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://mumt01.tangotv.in/KAIRALI/index.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/ea4af867a91ddeb85fb5990c9be079e5.png",
+    "category": ["Entertainment", "Malayalam", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Malayalam"
+  },
+  {
+    "name": "Kairali We",
+    "sources": [
+      {
+        "name": "Auto",
+        "url": "https://login.bheem.tv/bpk-tv/22411/output/index.mpd",
+        "type": "dash",
+        "drm": {
+          "kid": "a78509d336ba5e58a79f80792b648c47",
+          "key": "e4da90d5040db158a71c04e8ac48f2cc"
+        }
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/f3c39d6579c9ffe19e491f59647dda49.png",
+    "category": ["Entertainment", "Malayalam", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Malayalam"
+  },
+  {
+    "name": "Kerala Vision",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://mumt03.tangotv.in/KERALAVISION/index.m3u8"
+      }
+    ],
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTysojarYeIH0HE_TtpZgiYAddCCvDS3_CBgA&s",
+    "category": ["Entertainment", "Malayalam", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Malayalam"
+  },
+  {
+    "name": "Asianet",
+    "sources": [
+      {
+        "name": "Auto",
+        "url": "https://login.bheem.tv/bpk-tv/22389/output/index.mpd?",
+        "type": "dash",
+        "drm": {
+          "kid": "c0c3d8692a6a574e9a731ff7ed7ca7fe",
+          "key": "87eed062e3b13bd639f5cba89b83ea33"
+        }
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/e8c1375787d09c2bc90f7e4ba420ea50.png",
+    "category": ["Entertainment", "Malayalam", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Malayalam"
+  },
+  {
+    "name": "Asianet",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://anywhere.pwisetthon.com/http://217.20.112.199/asianet/index.m3u8"
+      }
+    ],
+    "img": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Asianet_2023_logo.png",
+    "category": ["Entertainment", "Malayalam", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Malayalam"
+  },
+  {
+    "name": "Mazhavil Manorama",
+    "sources": [
+      {
+        "name": "SD",
+        "url": "https://yuppmedtaorire.akamaized.net/v1/master/a0d007312bfd99c47f76b77ae26b1ccdaae76cb1/mazhavilmanorama_nim_https/050522/mazhavilmanorama/playlist.m3u8"
+      },
+      {
+        "name": "HD",
+        "url": "https://cdn-7.pishow.tv/live/1129/master.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/bcbf005fdbbe3c4c5224827def2387b8.png",
+    "category": ["Entertainment", "Malayalam", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Malayalam"
+  },
+  {
+    "name": "Flowers TV",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://jio.drmlive.net/jio/bpk-tv/Flower_TV_MOB/Fallback/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://yuppmedtaorire.akamaized.net/v1/master/a0d007312bfd99c47f76b77ae26b1ccdaae76cb1/flowers_nim_https/050522/flowers/playlist.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/shows/2026-03-05/260305634006.jpg?width=700",
+    "category": ["Entertainment", "Malayalam", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Malayalam"
+  },
+  {
+    "name": "Amrita TV",
+    "sources": [
+      {
+        "name": "Auto",
+        "url": "https://login.bheem.tv/bpk-tv/22391/output/index.mpd?",
+        "type": "dash",
+        "drm": {
+          "kid": "513e09e96cd355198d22a63f3259452f",
+          "key": "8b5c7793bba86d6e885fc08b9ff9e5e0"
+        }
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/e8c1375787d09c2bc90f7e4ba420ea50.png",
+    "category": ["Entertainment", "Malayalam", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Malayalam"
+  },
+  {
+    "name": "ZEE Kannada",
+    "sources": [
+      {
+        "name": "Auto",
+        "url": "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeekannada/default/manifest.mpd",
+        "type": "dash",
+        "drm": {
+          "kid": "50e714b65ead453cbfab9b20bed5c79d",
+          "key": "bc08e108b9ee4f65b99cb9dad9532f3f"
+        }
+      }
+    ],
+    "img": "https://imagesdishtvd2h.whatsonindia.com/dasimages/channel/landscape/360x270/1PrOGXAh.png",
+    "category": ["Entertainment", "Kannada", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Kannada"
+  },
+  {
+    "name": "Siri Kannada All Time",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://mumt02.tangotv.in/SIRIKANNADAALLTIME/index.m3u8"
+      }
+    ],
+    "img": "https://www.lyngsat.com/logo/tv/ss/siri-kannada-all-time-in.png",
+    "category": ["Entertainment", "Kannada", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Kannada"
+  },
+  {
+    "name": "Hum TV",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://ml-pull-dvc-myco.io:2096/HUM_ENTERTAINMENT/tracks-v1a1/mono.ts.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/NMyGY6FT/hum.jpg",
+    "category": ["Entertainment", "Urdu", "Pakistan"],
+    "package": ["150", "250", "500"],
+    "description": "Pakistan"
+  },
+  {
+    "name": "Ary Digital",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://ml-pull-dvc-myco.io:2096/ARY_DIGITAL/tracks-v1a1/mono.ts.m3u8"
+      }
+    ],
+    "img": "https://mir-s3-cdn-cf.behance.net/projects/404/90ecb9218167821.Y3JvcCw1NzUzLDQ1MDAsMTEyNSww.jpg",
+    "category": ["Entertainment", "Urdu", "Pakistan"],
+    "package": ["150", "250", "500"],
+    "description": "Pakistan"
+  },
+  {
+    "name": "Aaj Entertainment",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://ml-pull-dvc-myco.io:2096/AAJ_ENTERTAINMENT/tracks-v1a1/mono.ts.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://s2.ideationtec.live/AAJ_Entertainment/AAJ_Entertainment.m3u8"
+      }
+    ],
+    "img": "https://yt3.googleusercontent.com/dU-Bp46E2XlBaw376I_Boc-0lTEHgBrFJffOK4g1qQvQW5Ah00qL1IYGfWTYjekh8HibJb7nsQ=s900-c-k-c0x00ffffff-no-rj",
+    "category": ["Entertainment", "Urdu", "Pakistan"],
+    "package": ["150", "250", "500"],
+    "description": "Pakistan"
+  },
+  {
+    "name": "Express Entertainment",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://ml-pull-dvc-myco.io:2096/EXPRESS_ENTERTAINMENT/tracks-v1a1/mono.ts.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://s3.ideationtec.live/Express_Entertainment/Express_Entertainment.m3u8"
+      }
+    ],
+    "img": "https://r2.thesportsdb.com/images/media/channel/logo/sswurt1476662766.png",
+    "category": ["Entertainment", "Urdu", "Pakistan"],
+    "package": ["150", "250", "500"],
+    "description": "Pakistan"
+  },
+  {
+    "name": "Green Entertainment",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://ml-pull-dvc-myco.io:2096/GREEN_ENTERTAINMENT/tracks-v1a1/mono.ts.m3u8"
+      }
+    ],
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYOMJrXPGx1YIFBC6ogdcJ87M35xQjneLhKA&s",
+    "category": ["Entertainment", "Urdu", "Pakistan"],
+    "package": ["150", "250", "500"],
+    "description": "Pakistan"
+  },
+  {
+    "name": "Geo Entertainment",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://ml-pull-dvc-myco.io:2096/GEO_ENTERTAINEMNT/tracks-v1a1/mono.ts.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://s3.ideationtec.live/GEO_Entertainment/GEO_Entertainment.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/GpLH0TvJ/geo-ent.jpg",
+    "category": ["Entertainment", "Urdu", "Pakistan"],
+    "package": ["150", "250", "500"],
+    "description": "Pakistan"
+  },
+  {
+    "name": "Bol Entertainment",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://ml-pull-dvc-myco.io:2096/BOL_ENTERTAINMENT/tracks-v1a1/mono.ts.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://s2.ideationtec.live/BOL_Entertainment_HD/BOL_Entertainment_HD.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/HstckCdt/bol-ent.jpg",
+    "category": ["Entertainment", "Urdu", "Pakistan"],
+    "package": ["150", "250", "500"],
+    "description": "Pakistan"
+  },
+  {
+    "name": "Sab Entertainment",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://ml-pull-dvc-myco.io:2096/SAB_ENTERTAINMENT/tracks-v1a1/mono.ts.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://s1.ideationtec.live/SAB_Entertainment/SAB_Entertainment.m3u8"
+      }
+    ],
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGE8uyneXAmDlEikCnonDG2YX9SxfvfWnFWg&s",
+    "category": ["Entertainment", "Urdu", "Pakistan"],
+    "package": ["150", "250", "500"],
+    "description": "Pakistan"
+  },
+  {
+    "name": "Mun TV",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://ml-pull-dvc-myco.io:2096/MUN_TV/tracks-v1a1/mono.ts.m3u8"
+      }
+    ],
+    "img": "https://media.licdn.com/dms/image/v2/D4D0BAQFEQlJZEt9u8w/company-logo_200_200/company-logo_200_200/0/1697180175196?e=2147483647&v=beta&t=_qhFwyXTYEWa5QTTUDI3MwI8aefVr39xDxYKItDNLS0",
+    "category": ["Entertainment", "Urdu", "Pakistan"],
+    "package": ["150", "250", "500"],
+    "description": "Pakistan"
+  },
+  {
+    "name": "A Plus",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://s3.ideationtec.live/A_Plus/A_Plus.m3u8"
+      }
+    ],
+    "img": "https://upload.wikimedia.org/wikipedia/en/5/5b/A-Plus_TV_Logo.png",
+    "category": ["Entertainment", "Urdu", "Pakistan"],
+    "package": ["150", "250", "500"],
+    "description": "Pakistan"
+  },
+  {
+    "name": "Aur Life",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://s3.ideationtec.live/Aur_Life/Aur_Life.m3u8"
+      }
+    ],
+    "img": "https://yt3.googleusercontent.com/HuRtbtQKBU0desDRLArEeqjxI5qIhIKTZcaZeh0oO1ynmZM07V9LU5en4Qg5Q2BnImyxpOLE=s900-c-k-c0x00ffffff-no-rj",
+    "category": ["Entertainment", "Urdu", "Pakistan"],
+    "package": ["150", "250", "500"],
+    "description": "Pakistan"
+  },
+  {
+    "name": "LTN Family HD",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://s3.ideationtec.live/LTN_Family_HD/LTN_Family_HD.m3u8"
+      }
+    ],
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEvVuUYrmyYYivPTlPlj4Zs833NMboieTgiw&s",
+    "category": ["Entertainment", "Urdu", "Pakistan"],
+    "package": ["150", "250", "500"],
+    "description": "Pakistan"
+  },
+  {
+    "name": "Mehran TV",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://s2.ideationtec.live/Mehran_TV/Mehran_TV.m3u8"
+      }
+    ],
+    "img": "https://yt3.googleusercontent.com/NVrndNv3iCyD8VNX4t9sWCAj-c4iSbUQ9uWYY9zrnEIcQIialwizqgoDeCdO5BkzueGJwuwuKSU=s900-c-k-c0x00ffffff-no-rj",
+    "category": ["Entertainment", "Urdu", "Pakistan"],
+    "package": ["150", "250", "500"],
+    "description": "Pakistan"
+  },
+  {
+    "name": "MIX Bel Araby",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://ml-pull-hwc.myco.io/MixBelAraby/hls/MixBelAraby_H264-1080p.m3u8?pkg_media=video&pkg_hm=index.m3u8&pkg_svc=1&pkg_vcodec=avc1"
+      }
+    ],
+    "img": "https://media0098.elcinema.com/tvguide/1371_1.png",
+    "category": ["Entertainment", "Arabic", "Egypt"],
+    "package": ["150", "250", "500"],
+    "description": "Arabic"
+  },
+  {
+    "name": "Mix One",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://ml-pull-hwc.myco.io/MixONE/hls/MixONE_H264-720p.m3u8?pkg_media=video&pkg_hm=index.m3u8&pkg_svc=1&pkg_vcodec=avc1"
+      }
+    ],
+    "img": "https://yt3.googleusercontent.com/GNAHhu67wZNeTbEONgZbP-5l0w9qmBNjNcNtXEqg-8fq8UZsqKRmKDqtg5hgmAAph_bAqLfJ=s900-c-k-c0x00ffffff-no-rj",
+    "category": ["Entertainment", "Arabic", "Egypt"],
+    "package": ["150", "250", "500"],
+    "description": "Arabic"
+  }
+]
