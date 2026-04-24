@@ -6,7 +6,7 @@
       "name": "T Play",
       "url": "https://raw.githubusercontent.com/tplaylive/iptv-secure-channels/refs/heads/main/main.js",
       "type": "json",
-      "enabled": true
+      "enabled": false
     },
     {
       "name": "Music",
