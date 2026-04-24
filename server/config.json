@@ -10,7 +10,7 @@
     },
     {
       "name": "Music",
-      "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/android/app/src/main/assets/music.json",
+      "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/android/capacitor-cordova-android-plugins/src/main/movies.json",
       "type": "json",
       "enabled": true
     },
