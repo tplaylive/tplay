@@ -1,0 +1,1410 @@
+[
+  {
+    "name": "BBC News",
+    "sources": [
+      {
+        "name": "UK",
+        "url": "https://tplay.live/out/news/bbc-news/index.m3u8"
+      },
+      {
+        "name": "Asia",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=https://cdn4.skygo.mn/live/disk1/BBC_News/HLSv3-FTA/BBC_News.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/s2679ZP4/bbc.jpg",
+    "category": ["News", "English", "USA"],
+    "package": ["150", "250", "500"],
+    "description": "World News"
+  },
+  {
+    "name": "CNN",
+    "sources": [
+      {
+        "name": "USA",
+        "url": "https://qp-pldt-live-grp-12-prod.akamaized.net/out/u/dr_cnnhd.mpd",
+        "type": "dash",
+        "drm": {
+          "kid": "900c43f0e02742dd854148b7a75abbec",
+          "key": "da315cca7f2902b4de23199718ed7e90"
+        }
+      }
+    ],
+    "img": "https://play-lh.googleusercontent.com/375NW5yL8owK_hW9igW9sh-YJbda9ZcygpDXuVvK_R7l-yJp-fuhb4qvUw_FE4XW4ms",
+    "category": ["News", "English", "USA"],
+    "package": ["150", "250", "500"],
+    "description": "World News"
+  },
+  {
+    "name": "CNN Headlines",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://mediapackage-ptcn-source.fullscreen.nz/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/3xKMbd8F/cnn-h.jpg",
+    "category": ["News", "English", "USA"],
+    "package": ["500"],
+    "description": "Watch CNN Headlines"
+  },
+  {
+    "name": "Al Jazeera",
+    "sources": [
+      {
+        "name": "Qatar",
+        "url": "https://live-hls-web-aje-fa.thehlive.com/AJE/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/50TpLNKY/aljazeera.jpg",
+    "category": ["News", "English", "Qatar"],
+    "package": ["150", "250", "500"],
+    "description": "World News"
+  },
+  {
+    "name": "Press TV",
+    "sources": [
+      {
+        "name": "Qatar",
+        "url": "https://live.presstv.ir/hls/presstv.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/mDpyYpdB/presstv.jpg",
+    "category": ["News", "English", "Iran"],
+    "package": ["250", "500"],
+    "description": "Iranian news and documentary"
+  },
+  {
+    "name": "RT",
+    "sources": [
+      {
+        "name": "Qatar",
+        "url": "https://wisewatchoott.wiseplayout.com/RT/master.m3u8"
+      }
+    ],
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Russia-today-logo.svg/1280px-Russia-today-logo.svg.png",
+    "category": ["News", "English", "Russia"],
+    "package": ["250", "500"],
+    "description": "Russian 24/7 English-language news"
+  },
+  {
+    "name": "Reuters",
+    "sources": [
+      {
+        "name": "UK",
+        "url": "https://dbrb49pjoymg4.cloudfront.net/10001/99951197/hls/playlist.m3u8?ads.xumo_channelId=99951197"
+      }
+    ],
+    "img": "https://i.postimg.cc/cHCwD43k/reuters-u.jpg",
+    "category": ["News", "English", "USA"],
+    "package": ["500"],
+    "description": "World News"
+  },
+  {
+    "name": "Sky News",
+    "sources": [
+      {
+        "name": "UK Stream 1",
+        "url": "https://d25w9q07b2mtmw.cloudfront.net/live/master.m3u8"
+      },
+      {
+        "name": "UK Stream 2",
+        "url": "https://d3f4oii5n0oeqi.cloudfront.net/11701/88814560/hls/master.m3u8?ads.xumo_channelId=88814560"
+      },
+      {
+        "name": "UK Stream 3",
+        "url": "https://linear417-gb-hls1-prd-ak.cdn.skycdp.com/100e/Content/HLS_001_1080_30/Live/channel(skynews)/index_mob.m3u8"
+      },
+      {
+        "name": "UK Stream 4",
+        "url": "https://dbrb49pjoymg4.cloudfront.net/10001/99951223/hls/master.m3u8?ads.xumo_channelId=99951223"
+      }
+    ],
+    "img": "https://i.postimg.cc/02WZxFkm/sky-news.jpg",
+    "category": ["News", "English", "USA"],
+    "package": ["250", "500"],
+    "description": "World News"
+  },
+  {
+    "name": "Sky News Now",
+    "sources": [
+      {
+        "name": "Stream 1",
+        "url": "https://amg00663-skynews-skynewsau-samsungau-r7n40.amagi.tv/playlist.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/x1NGQdp6/sky-news-now.jpg",
+    "category": ["News", "English", "Australia"],
+    "package": ["500"],
+    "description": "Australia"
+  },
+  {
+    "name": "Bloomberg Television",
+    "sources": [
+      {
+        "name": "USA",
+        "url": "https://dcfcae89.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/U2Ftc3VuZy1pbl9CbG9vbWJlcmdUVl9ITFM/playlist.m3u8"
+      }
+    ],
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXZCiWELnS_hJTOtsTrWDZKkhkmthiH2BfLA&s",
+    "category": ["News", "English", "USA"],
+    "package": ["250", "500"],
+    "description": "Global financial and business news"
+  },
+  {
+    "name": "Bloomberg Originals",
+    "sources": [
+      {
+        "name": "USA",
+        "url": "https://f56779ab.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/U2Ftc3VuZy1pbl9CbG9vbWJlcmdPcmlnaW5hbHNfSExT/playlist.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/vBbrwFKG/bloomberg-org.jpg",
+    "category": ["News", "English", "USA"],
+    "package": ["500"],
+    "description": "featuring stories from Businessweek and Bloomberg News"
+  },
+  {
+    "name": "Global News",
+    "sources": [
+      {
+        "name": "Canada",
+        "url": "https://live.corusdigitaldev.com/groupd/live/49a91e7f-1023-430f-8d66-561055f3d0f7/live.isml/.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/MGTgYV95/global-news.jpg",
+    "category": ["News", "English", "Canada"],
+    "package": ["500"],
+    "description": "Business, Health, Politics and World News"
+  },
+  {
+    "name": "Fox News HD",
+    "sources": [
+      {
+        "name": "USA",
+        "url": "https://nog-live1-ott.izzigo.tv/2/out/u/dash/FOX-NEWS-HD/default.mpd",
+        "type": "dash",
+        "drm": {
+          "kid": "aa611985e0c890fdf50d5c6ed88ad0c0",
+          "key": "61dc9d01e315bf46ee43bc9fe882ebd8"
+        }
+      }
+    ],
+    "img": "https://i.postimg.cc/15BRz02h/fox-news.jpg",
+    "category": ["News", "English", "USA"],
+    "package": ["500"],
+    "description": "U.S. politics and culture"
+  },
+  {
+    "name": "CGTN",
+    "sources": [
+      {
+        "name": "English",
+        "url": "https://english-livebkali.cgtn.com/live/encgtn.m3u8"
+      },
+      {
+        "name": "Arabic",
+        "url": "https://arabic-livews.cgtn.com/hls/LSveq57bErWLinBnxosqjisZ220802LSTefTAS9zc9mpU08y3np9TH220802cd/playlist.m3u8"
+      },
+      {
+        "name": "Español",
+        "url": "https://espanol-livews.cgtn.com/hls/LSveOGBaBw41Ea7ukkVAUdKQ220802LSTexu6xAuFH8VZNBLE1ZNEa220802cd/playlist.m3u8"
+      },
+      {
+        "name": "Français",
+        "url": "https://francais-livews.cgtn.com/hls/LSvev95OuFZtKLc6CeKEFYXj220802LSTeV6PO0Ut9r71Uq3k5goCA220802cd/playlist.m3u8"
+      },
+      {
+        "name": "Русский",
+        "url": "https://russian-livews.cgtn.com/hls/LSvexABhNipibK5KRuUkvHZ7220802LSTeze9o8tdFXMHsb1VosgoT220802cd/playlist.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/nLDtqqRw/cgtn.jpg",
+    "category": ["News", "English", "China"],
+    "package": ["500"],
+    "description": "China"
+  },
+  {
+    "name": "NHK World",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://cdn4.skygo.mn/live/disk1/NHK_World/HLSv3-FTA/NHK_World.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/dtxLjPmL/nhk-world.jpg",
+    "category": ["News", "English", "Japan"],
+    "package": ["500"],
+    "description": "Japan and Asia"
+  },
+  {
+    "name": "TOI Global",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://live.sli.ke/live/npnhm84gz9/fhd/stream.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/h4QwtVyC/toi.jpg",
+    "category": ["News", "English", "India"],
+    "package": ["500"],
+    "description": "Times of India"
+  },
+  {
+    "name": "DD News",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/0811cd8c37ca4c409d5385a6cd2fa18b/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/c4y3Vd73/dd.png",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Sansad TV 1",
+    "sources": [
+      {
+        "name": "LokSabha",
+        "url": "https://hls.media.nic.in/hls/live/lstv/lstv.m3u8"
+      }
+    ],
+    "img": "https://yt3.googleusercontent.com/2fK9Y8FCQvlRWuIojyWIywPKRU4TgzfwCTciLzlTOT9wQScACk_7Y9LFuWfBBgoWDZe_UhzQQR0=s900-c-k-c0x00ffffff-no-rj",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Sansad TV 2",
+    "sources": [
+      {
+        "name": "Rajya Sabha",
+        "url": "https://hls.media.nic.in/hls/live/rstv/rstv.m3u8"
+      }
+    ],
+    "img": "https://yt3.googleusercontent.com/2fK9Y8FCQvlRWuIojyWIywPKRU4TgzfwCTciLzlTOT9wQScACk_7Y9LFuWfBBgoWDZe_UhzQQR0=s900-c-k-c0x00ffffff-no-rj",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "India News",
+    "sources": [
+      {
+        "name": "National",
+        "url": "https://newsxott.in/hls/indianewsnational.m3u8"
+      },
+      {
+        "name": "Gujarat",
+        "url": "https://newsxott.in/hls/indianewsgujarat.m3u8"
+      },
+      {
+        "name": "Haryana",
+        "url": "https://newsxott.in/hls/indianewsharyana.m3u8"
+      },
+      {
+        "name": "Punjab",
+        "url": "https://newsxott.in/hls/indianewspunjab.m3u8"
+      },
+      {
+        "name": "Uttar Pradesh",
+        "url": "https://newsxott.in/hls/indianewsupuk.m3u8"
+      }
+    ],
+    "img": "https://karthavya.com/wp-content/uploads/2019/07/India-News-Live.png",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "News X",
+    "sources": [
+      {
+        "name": "News X",
+        "url": "https://newsxott.in/hls/newsx.m3u8"
+      },
+      {
+        "name": "News X World",
+        "url": "https://newsxott.in/hls/newsxworld.m3u8"
+      }
+    ],
+    "img": "https://yt3.googleusercontent.com/zwrmWphe47oXEHVndsokIHupuBpVWq2_a_LCxiV_JA0YmaosO7S3kMeFyTNhNLUO8ovmT3hDfX0=s900-c-k-c0x00ffffff-no-rj",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "First India News",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://xlbor37ydvaj-hls-live.wmncdn.net/firstindianewstv1/live.stream/index.m3u8"
+      }
+    ],
+    "img": "https://play-lh.googleusercontent.com/iJZoVQx0zOCpmQ-z_ey2Y2NspoXA2vjQDm49KPioIzUka9sT8-HAEnmdQXuzxSwauQ=w600-h300-pc0xffffff-pd",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "News18 India",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://n18syndication.akamaized.net/bpk-tv/News18_India_NW18_MOB/output01/index.m3u8"
+      }
+    ],
+    "img": "https://erp.adgully.com/artical_image/a4f638aa199ee1ccb9ffdc24d9c2af25.jpeg",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "News18 Odia",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://n18syndication.akamaized.net/bpk-tv/News18_Odia_NW18_MOB/output01/index.m3u8"
+      }
+    ],
+    "img": "https://yt3.googleusercontent.com/ytc/AIdro_lKSOQ8zd8GU5-2gdBlhzeXM8JyUd-2_4UK7Y9bOzOrPa4=s900-c-k-c0x00ffffff-no-rj",
+    "category": ["News", "Odia", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "News18 Urdu",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://n18syndication.akamaized.net/bpk-tv/News18_Urdu_NW18_MOB/output01/index.m3u8"
+      }
+    ],
+    "img": "https://upload.wikimedia.org/wikipedia/commons/f/f7/News18_Urdu_logo.png",
+    "category": ["News", "Urdu", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "News18 Kerala",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://n18syndication.akamaized.net/bpk-tv/News18_Kerala_NW18_MOB/output01/index.m3u8"
+      }
+    ],
+    "img": "https://upload.wikimedia.org/wikipedia/commons/0/05/News18_Kerala.png",
+    "category": ["News", "Malayalam", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Aaj Tak",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://aajtaklive-amd.akamaized.net/hls/live/2014416/aajtak/aajtaklive/live_404p/chunks.m3u8"
+      }
+    ],
+    "img": "https://upload.wikimedia.org/wikipedia/en/7/77/Aaj_Tak_logo.svg",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Aaj Tak HD",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://livehub-voidnet.onrender.com/cluster/streamcore/in/AAJTAK_REDIS.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://feeds.intoday.in/aajtak/api/aajtakhd/master.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/0jjjL9vR/aaj-tak.jpg",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "NDTV 24/7",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://ndtv24x7elemarchana.akamaized.net/hls/live/2003678/ndtv24x7/master.m3u8"
+      }
+    ],
+    "img": "https://onlineradiofm.in/assets/image/radio/180/NDTV-24X7-Radio.jpg",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "NDTV India",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://ndtvindiaelemarchana.akamaized.net/hls/live/2003679/ndtvindia/master.m3u8"
+      }
+    ],
+    "img": "https://images.hindustantimes.com/rf/image_size_640x362/HT/p2/2016/11/05/Pictures/_8ba2e79a-a350-11e6-93ed-ab826829dd0b.png",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "India Today",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://indiatodaylive.akamaized.net/hls/live/2014320/indiatoday/indiatodaylive/playlist.m3u8"
+      }
+    ],
+    "img": "https://akm-img-a-in.tosshub.com/indiatoday/images/livetv/indiaToday.jpg",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "India TV Speed News",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://poclive-indiatvnews.akamaized.net/hlslive/Admin/px0219297/live/janya/master.m3u8"
+      }
+    ],
+    "img": "https://yt3.googleusercontent.com/HNUGXVlQ05nqlFouGhScjNXE33T-qaF20GWFjo_fj97Rc6gcv8LNTw1ao5aK_B4OH5_iPLkPRA=s900-c-k-c0x00ffffff-no-rj",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Zee Bharat",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeehindustan/default/manifest.mpd",
+        "type": "dash",
+        "drm": {
+          "kid": "10616d7c4bee41f1825bd805c6295172",
+          "key": "dc85f2112f63477fb39fc149493c49be"
+        }
+      }
+    ],
+    "img": "https://imagesdishtvd2h.whatsonindia.com/dasimages/channel/landscape/360x270/TknReKLD.png",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Zee Bihar Jharkhand",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeebiharjharkhand/default/manifest.mpd",
+        "type": "dash",
+        "drm": {
+          "kid": "e1ec6098b5014ac7aae0b37f72d5e85e",
+          "key": "c04950f25d8e4107a96e828e7911e53b"
+        }
+      }
+    ],
+    "img": "https://imagesdishtvd2h.whatsonindia.com/dasimages/channel/landscape/360x270/5zkMvEbF.png",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Zee Business",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeebusiness/default/manifest.mpd",
+        "type": "dash",
+        "drm": {
+          "kid": "bef87892e58c446d893b16a848703b70",
+          "key": "51959fcbc8fe4091b570ba254bf749ae"
+        }
+      }
+    ],
+    "img": "https://imagesdishtvd2h.whatsonindia.com/dasimages/channel/landscape/360x270/vExrDK9r.png",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Mirror Now",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://dai.google.com/linear/hls/event/ClPOullTQky5vGPf7fMZ8g/master.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://pubads.g.doubleclick.net/ssai/event/DXkHhH2QSnma-HnE3QJqlA/master.m3u8"
+      }
+    ],
+    "img": "https://media.licdn.com/dms/image/v2/C4D0BAQERZwk1iL4m_w/company-logo_200_200/company-logo_200_200/0/1631322422535?e=2147483647&v=beta&t=Dk2eJzcMflN0nQxbryoMPfaCZRSgCmlrPk4A6XbCebI",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "ET Now",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://pubads.g.doubleclick.net/ssai/event/pJrzNyDoT_K_GwYQsijTsQ/master.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://anywhere.pwisetthon.com/http://212.102.34.8:9080/ETNOW/video.m3u8"
+      }
+    ],
+    "img": "https://www.medianews4u.com/wp-content/uploads/2025/12/ET-NOW-Unveils-a-Powerful-New-Programming-Slate_-All-About-Your-Company-DEEP-DIVE-BrandVerse-and-Year-End-Programming-2025.png",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "ET Now Swadesh",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://d32gxr3r1ksq2p.cloudfront.net/master.m3u8"
+      }
+    ],
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8s5ukJJCvsZwP7vO8PlUKJHwlnyHZqBiYlA&s",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "CNBC Awaaz",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://n18syndication.akamaized.net/bpk-tv/CNBC_Awaaz_NW18_MOB/output01/master.m3u8"
+      }
+    ],
+    "img": "https://upload.wikimedia.org/wikipedia/commons/f/f8/CNBC_Awwaz_2025.svg",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "CNBC Bajar",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://n18syndication.akamaized.net/bpk-tv/CNBC_Bazaar_NW18_MOB/output01/master.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/27307b18067a6f2784b1597da20426ff.png",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "CNBC TV18",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://n18syndication.akamaized.net/bpk-tv/CNBC_TV18_NW18_MOB/output01/index.m3u8"
+      }
+    ],
+    "img": "https://media.licdn.com/dms/image/v2/D4D0BAQGXbP9MEGQ2MA/company-logo_200_200/B4DZcIT5xiGgAI-/0/1748191125673/cnbc_tv18_logo?e=2147483647&v=beta&t=KFbzWG-tLyBsxJILxVo9cAiyFHaZP_BPhTVOCTH_AFc",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "CNN News18",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://n18syndication.akamaized.net/bpk-tv/CNN_News18_NW18_MOB/output01/index.m3u8"
+      }
+    ],
+    "img": "https://erp.adgully.com/artical_image/43d69552e24c92ea14e14bca3007eb78.jpeg",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Kashish News",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://server.thelegitpro.in/kashishnews/kashishnews/index.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/8d69aeee54fa6a6d9feae943d972eaa7.png",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Jharkhand & Bihar"
+  },
+  {
+    "name": "NEWS11 Bharat",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://mumt02.tangotv.in/NEWS11BHARAT/index.m3u8"
+      }
+    ],
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZwZ9A80iMUyTVqQDL6AdzrUmpZdxO090eUA&s",
+    "category": ["News", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Jharkhand & Bihar"
+  },
+  {
+    "name": "Kairali News",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://cdn-3.pishow.tv/live/1469/master.m3u8"
+      }
+    ],
+    "img": "https://upload.wikimedia.org/wikipedia/en/6/6e/Kairali_TV.svg",
+    "category": ["News", "Malayalam", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Malayalam"
+  },
+  {
+    "name": "Manorama News",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://mmtvnews1.akamaized.net/v1/master/673630b269b766886555eebfddd4f27f3de3ab50/mmtvNewsCampaign1/index.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/0a22e24d565a1f951c03e2008216de15.png",
+    "category": ["News", "Malayalam", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Malayalam"
+  },
+  {
+    "name": "Media One",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://cdn-3.pishow.tv/live/1481/master.m3u8"
+      }
+    ],
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-MXv3hLTU1hj3ZUPC8g5RH4-0J7CbrakGzA&s",
+    "category": ["News", "Malayalam", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Malayalam"
+  },
+  {
+    "name": "Malai Murasu TV",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://cdn-3.pishow.tv/live/1606/master.m3u8"
+      }
+    ],
+    "img": "https://static.wikia.nocookie.net/logopedia/images/d/d1/Malai_Murasu.png/revision/latest?cb=20191229035538",
+    "category": ["News", "Tamil", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Tamil"
+  },
+  {
+    "name": "Jaya Plus",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://satoshi-cors.herokuapp.com/http://45.148.145.57/IN_JayaPlus/tracks-v1a1/mono.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/ed00e083788380a3523e2ef1d7f33fe8.png",
+    "category": ["News", "Tamil", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Tamil"
+  },
+  {
+    "name": "ETV Andhra Pradesh",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://d14vo2b97spizt.cloudfront.net/v1/master/9d43eacaed199f8d5883927e7aef514a8a08e108/ETV_AP_H264-3_cloud_in/index.m3u8"
+      }
+    ],
+    "img": "https://static.wikia.nocookie.net/logopedia/images/5/5f/ETV_Andhra_Pradesh.png/revision/latest?cb=20240314105548",
+    "category": ["News", "Telugu", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Telugu"
+  },
+  {
+    "name": "SITI 24X7",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://www.schannels.in/SITI24X7_1/index.m3u8"
+      }
+    ],
+    "img": "https://yt3.googleusercontent.com/cSsxzVa-2j7DQ7ZLaRSS5oV4RVtkfiwIZoccMKSyitWXf5g1UyYcwavRI2rr-9JaBO52e_6T=s176-c-k-c0x00ffffff-no-rj-mo",
+    "category": ["News", "Telugu", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Telugu"
+  },
+  {
+    "name": "MBCTV",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://mumt03.tangotv.in/MBCTV/index.m3u8"
+      }
+    ],
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxtjnyTDqsFChVwz0ZS_ww_8GUFnjfnbXmxw&s",
+    "category": ["News", "Odia", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Odia"
+  },
+  {
+    "name": "Ekamra Bharat",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://live.ekamraott.com/bharat/bharat/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/02p7JKxy/ekamra-bharat.jpg",
+    "category": ["News", "Odia", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Odia"
+  },
+  {
+    "name": "MBC TV Odisha",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://mumt03.tangotv.in/MBCTV/index.m3u8"
+      }
+    ],
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTcLnb_i5kxG-7DhXERKQ3kAZaQihpn8gvlA&s",
+    "category": ["News", "Odia", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Odia"
+  },
+  {
+    "name": "Nagaland TV",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://cdn-6.pishow.tv/live/10014/master.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/44b5607770003fbe0016e2fcc76c1d27.png",
+    "category": ["News", "Assamese", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Assamese"
+  },
+  {
+    "name": "News Live",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://cdn-6.pishow.tv/live/10011/master.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/987db636160bb68e54edcc8a28174dbb.png",
+    "category": ["News", "Assamese", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Assamese"
+  },
+  {
+    "name": "ND24",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://cdn-6.pishow.tv/live/10009/master.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/6d4646c268dc11a5f4cca475de3e252b.png",
+    "category": ["News", "Assamese", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Assamese"
+  },
+  {
+    "name": "Northeast Live",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://cdn-6.pishow.tv/live/10015/master.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/af0805180c02dafc110162325e6d02f4.png",
+    "category": ["News", "Assamese", "Hindi", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Assamese"
+  },
+  {
+    "name": "DY 365",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://cdn-6.pishow.tv/live/10001/master.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/60bde8480db9ae5e7779d0390f4922be.png",
+    "category": ["News", "Assamese", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Assamese"
+  },
+  {
+    "name": "NKTV Plus",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://cdn-6.pishow.tv/live/10013/master.m3u8"
+      }
+    ],
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQuFhrrg5ZWLKw6wESjUJw_PzLeotEPGS4aA&s",
+    "category": ["News", "Assamese", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Assamese"
+  },
+  {
+    "name": "NKTV Bangla",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://cdn-6.pishow.tv/live/10012/master.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/19882e79d666c48e72d1bda6e4678ee7.png",
+    "category": ["News", "Assamese", "India"],
+    "package": ["150", "250", "500"],
+    "description": "Assamese"
+  },
+  {
+    "name": "News18 Bangla",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://n18syndication.akamaized.net/bpk-tv/News18_Bangla_NW18_MOB/output01/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/Dydmbp8n/news18-bangla.png",
+    "category": ["News", "Bengali", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "TV9 Bangla",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://vg-tv9yupp.akamaized.net/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/vglive-sk-563504/main.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/5ae4eeadbb6f44f6be84d033be2ba6eb.png",
+    "category": ["News", "Bengali", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Republic Bangla",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://vg-republictvlive.akamaized.net/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/vglive-sk-456368/main.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://vg-republictvyupp.akamaized.net/ptnr-yuppt/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/vglive-sk-613605/main.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/f11228378d280692f211cc09b3f48cd1.png",
+    "category": ["News", "Bengali", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Zee 24 Ghanta",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01412-xiaomiasia-zee24ghantaa-xiaomi/playlist.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/pdgPSKps/zee-24ghanta.png",
+    "category": ["News", "Bengali", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Calcutta News",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://d1msejlow1t3l4.cloudfront.net/fta/calcuttanews/chunks.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://legitpro.co.in/cnnnews/tracks-v1a1/mono.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/b4ad619d5bd6dfa8a0eb3c4efc216ae3.png",
+    "category": ["News", "Bengali", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Kolkata TV",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://mumt01.tangotv.in/KOLKATATV/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/mkVfbs7P/kolkatatv.jpg",
+    "category": ["News", "Bengali", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Samay Kolkata",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://server.livelegitpro.in/samaykolkata/samaykolkata/index.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/ee9954b737d955c0302e52eaf6bbf3d7.png",
+    "category": ["News", "Bengali", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "24 Hours TV",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://server.livelegitpro.in/24hourstv/24hourstv/index.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/60b7dddaa99f3db26dc5307e794fae00.png",
+    "category": ["News", "Bengali", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "R Plus News",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://thelegitpro.in/pntv/rplusnews24x7/index.m3u8"
+      }
+    ],
+    "img": "https://jiotvimages.cdn.jio.com/dare_images/images/channel/ce460fc820fffafe1ca664fd2d45d4ef.png",
+    "category": ["News", "Bengali", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "ABP Ananda",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://d2l4ar6y3mrs4k.cloudfront.net/live-streaming/ananda-livetv/master.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/HjGW7XCJ/abp-ananda.png",
+    "category": ["News", "Bengali", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "BTV News",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://tplay.live/out/news/btv-news.index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/7hdvpw4F/btv-news.jpg",
+    "category": ["News", "Bengali", "Bangladesh"],
+    "package": ["150", "250", "500"],
+    "description": "Bangladesh"
+  },
+  {
+    "name": "Sangsad TV",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://tplay.live/out/news/btv-sangsad/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://tplay.live/out/news/bd-sangsad.index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/RVR9YF6Y/sangsad.jpg",
+    "category": ["News", "Bengali", "Bangladesh"],
+    "package": ["150", "250", "500"],
+    "description": "Bangladesh"
+  },
+  {
+    "name": "BTV Chattogram",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://tplay.live/out/news/btv-chattagram.index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/mgvdN3ZW/btv-cht.jpg",
+    "category": ["News", "Bengali", "Bangladesh"],
+    "package": ["150", "250", "500"],
+    "description": "Bangladesh"
+  },
+  {
+    "name": "Somoy TV",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1702/output/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://stvlive.net:8080/somoy/index.m3u8"
+      },
+      {
+        "name": "Server 3",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=https://genz2.zibobdixserver.top/205/index.m3u8"
+      },
+      {
+        "name": "Server 4",
+        "url": "https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/somoyt000011226615544544.stream/playlist.m3u8"
+      },
+      {
+        "name": "Server 5",
+        "url": "https://tplay.live/out/news/somoy-tv/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/HsVVr6FH/somoy-tv.png",
+    "category": ["News", "Bengali", "Bangladesh"],
+    "package": ["150", "250", "500"],
+    "description": "Bangladesh"
+  },
+  {
+    "name": "Jamuna Television",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1701/output/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/jamuna-test-sample-ok.stream/playlist.m3u8"
+      },
+      {
+        "name": "Server 3",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://stvlive.net:8080/jamuna/index.m3u8"
+      },
+      {
+        "name": "Server 4",
+        "url": "https://tplay.live/out/news/jamuna-tv/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/dtR7Gh4t/jamuna-tv.png",
+    "category": ["News", "Bengali", "Bangladesh"],
+    "package": ["150", "250", "500"],
+    "description": "Bangladesh"
+  },
+  {
+    "name": "Independent TV",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://stvlive.net:8080/independent/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://tplay.live/out/news/independent-tv/index.m3u8"
+      },
+      {
+        "name": "Server 3",
+        "url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1704/output/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/3rL7TH81/Independent-TV.png",
+    "category": ["News", "Bengali", "Bangladesh"],
+    "package": ["150", "250", "500"],
+    "description": "Bangladesh"
+  },
+  {
+    "name": "Channel 24",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://stvlive.net:8080/channel24/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://ch24cdn.ncare.live/channel24/ch24office/index.m3u8"
+      },
+      {
+        "name": "Server 3",
+        "url": "https://tplay.live/out/news/channel-24/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/QdqkCSFX/channel-24.png",
+    "category": ["News", "Bengali", "Bangladesh"],
+    "package": ["150", "250", "500"],
+    "description": "Bangladesh"
+  },
+  {
+    "name": "News 24",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://tplay.live/out/news/news-24/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/bNJny8Qw/news-24.png",
+    "category": ["News", "Bengali", "Bangladesh"],
+    "package": ["150", "250", "500"],
+    "description": "Bangladesh"
+  },
+  {
+    "name": "Ekhon",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/globaltv.stream/playlist.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://tplay.live/out/bangladesh/ekhontv.index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/KcHxyPzx/ekhon.jpg",
+    "category": ["News", "Bengali", "Bangladesh"],
+    "package": ["150", "250", "500"],
+    "description": "Bangladesh"
+  },
+  {
+    "name": "Ekattor Television",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://stvlive.net:8080/ekattor/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1705/output/index.m3u8"
+      },
+      {
+        "name": "Server 3",
+        "url": "https://tplay.live/out/news/ekattor-tv/index.m3u8"
+      },
+      {
+        "name": "Server 4",
+        "url": "https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/ekattor.stream/playlist.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/jjtWwrG9/ekattor-tv.png",
+    "category": ["News", "Bengali", "Bangladesh"],
+    "package": ["150", "250", "500"],
+    "description": "Bangladesh"
+  },
+  {
+    "name": "ATN News",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1706/output/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=http://stvlive.net:8080/atnnews/index.m3u8"
+      },
+      {
+        "name": "Server 3",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=https://genz2.zibobdixserver.top/203/index.m3u8"
+      },
+      {
+        "name": "Server 4",
+        "url": "https://tplay.live/out/news/atn-news/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/ZRFCxYdp/atn-news.png",
+    "category": ["News", "Bengali", "Bangladesh"],
+    "package": ["150", "250", "500"],
+    "description": "Bangladesh"
+  },
+  {
+    "name": "DBC News",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://autumn-shape-b04a.soft-disk-1347.workers.dev/?url=https://genz2.zibobdixserver.top/204/index.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/dbcnews.stream/mono.m3u8"
+      },
+      {
+        "name": "Server 3",
+        "url": "https://anywhere.pwisetthon.com/http://tvn2.chowdhury-shaheb.com/dbc/index.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/cJGD5HdQ/dbc.jpg",
+    "category": ["News", "Bengali", "Bangladesh"],
+    "package": ["150", "250", "500"],
+    "description": "Bangladesh"
+  },
+  {
+    "name": "Star News",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/starnewsbd.stream/playlist.m3u8"
+      },
+      {
+        "name": "Server 2",
+        "url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1710/output/index.m3u8"
+      }
+    ],
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNYXbr0RNs-Nj_kAaimUwXFBWtn-eHAgbOUQ&s",
+    "category": ["News", "Bengali", "Bangladesh"],
+    "package": ["150", "250", "500"],
+    "description": "Bangladesh"
+  },
+  {
+    "name": "Jago News24",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://app.ncare.live/live-orgin/jagonews24.stream/playlist.m3u8"
+      }
+    ],
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWQJo4a5pILF85Yuw6A5NxG5LHFhBKK1zuHw&s",
+    "category": ["News", "Bengali", "Bangladesh"],
+    "package": ["150", "250", "500"],
+    "description": "Bangladesh"
+  },
+  {
+    "name": "WION",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://d7x8z4yuq42qn.cloudfront.net/index_1.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/ZKqXrCqn/wion.jpg",
+    "category": ["News", "English", "India"],
+    "package": ["150", "250", "500"],
+    "description": "India"
+  },
+  {
+    "name": "Avenues",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://webott.viatv.com.np/v0t1/Avenews,.stream/playlist.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/8CFJwHTt/avenues.jpg",
+    "category": ["News", "Nepali", "Nepal"],
+    "package": ["150", "250", "500"],
+    "description": ""
+  },
+  {
+    "name": "ABC News",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://webott.viatv.com.np/v0t1/ABCNews576.stream/playlist.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/9FfLHB9J/abc-news-nepali.jpg",
+    "category": ["News", "Nepali", "Nepal"],
+    "package": ["150", "250", "500"],
+    "description": ""
+  },
+  {
+    "name": "Sagarmatha",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://webott.viatv.com.np/v0t1/Sagarmatha.stream/playlist.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/kGZCvg8S/sagarmatha.jpg",
+    "category": ["News", "Nepali", "Nepal"],
+    "package": ["150", "250", "500"],
+    "description": ""
+  },
+  {
+    "name": "Mountain",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://webott.viatv.com.np/v0t1/Mountain576.stream/playlist.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/gJfcRTSt/mountain.jpg",
+    "category": ["News", "Nepali", "Nepal"],
+    "package": ["150", "250", "500"],
+    "description": ""
+  },
+  {
+    "name": "NTV News",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://webott.viatv.com.np/v0t1/NtvNews576.stream/playlist.m3u8"
+      }
+    ],
+    "img": "https://i.postimg.cc/263gW5sF/ntv-plus.jpg",
+    "category": ["News", "Nepali", "Nepal"],
+    "package": ["150", "250", "500"],
+    "description": ""
+  },
+  {
+    "name": "CCTV 4",
+    "sources": [
+      {
+        "name": "Server 1",
+        "url": "https://cdn10jtedge.indihometv.com/atm/DASH/CCTV_4/manifest.mpd",
+        "type": "dash"
+      }
+    ],
+    "img": "https://upload.wikimedia.org/wikipedia/he/f/f6/1920px-CCTV-4_Logo.svg.png",
+    "category": ["News", "Chinese", "China"],
+    "package": ["250", "500"],
+    "description": ""
+  },
+  {
+    "name": "Al Ekhbariya",
+    "sources": [
+      {
+        "name": "Arabic",
+        "url": "https://cdn-globecast.akamaized.net/live/eds/al_ekhbariya/hls_roku/index.m3u8"
+      }
+    ],
+    "img": "https://upload.wikimedia.org/wikipedia/commons/e/e3/%D8%A7%D9%84%D9%82%D9%86%D8%A7.png",
+    "category": ["News", "Arabic", "Saudi Arabia"],
+    "package": ["250", "500"],
+    "description": "Saudi Arabia"
+  },
+  {
+    "name": "Libya Al Wataniya",
+    "sources": [
+      {
+        "name": "Arabic",
+        "url": "https://cdn-globecast.akamaized.net/live/eds/libya_al_watanya/hls_roku/index.m3u8"
+      }
+    ],
+    "img": "https://i.imgur.com/KSUny9D.jpeg",
+    "category": ["News", "Arabic", "Libya"],
+    "package": ["250", "500"],
+    "description": "Libya"
+  }
+]
