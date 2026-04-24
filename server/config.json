@@ -37,7 +37,14 @@
       "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/client/src/components/Mix-Entertainment.json",
       "type": "json",
       "enabled": true
-    },    {
+    },
+    {
+      "name": "Sports",
+      "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/client/src/pages/Sports.json",
+      "type": "json",
+      "enabled": true
+    },
+    {
       "name": "Dish Tv",
       "url": "https://raw.githubusercontent.com/geekyhimanshu/Khu/01702035a52a28036f87f38a7f458574164ff03f/Dishtv.m3u",
       "type": "m3u",
