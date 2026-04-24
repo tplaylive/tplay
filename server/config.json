@@ -18,7 +18,7 @@
       "name": "Dish Tv",
       "url": "https://raw.githubusercontent.com/geekyhimanshu/Khu/01702035a52a28036f87f38a7f458574164ff03f/Dishtv.m3u",
       "type": "m3u",
-      "enabled": true
+      "enabled": false
     },
         {
       "name": "Music",
