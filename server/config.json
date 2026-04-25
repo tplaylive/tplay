@@ -6,55 +6,55 @@
       "name": "News",
       "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/android/capacitor-cordova-android-plugins/src/main/news.json",
       "type": "json",
-      "enabled": true
+      "enabled": false
     },
     {
       "name": "Kids",
       "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/client/src/components/ui/kids.json",
       "type": "json",
-      "enabled": true
+      "enabled": false
     },
     {
       "name": "Music",
       "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/android/app/src/main/assets/music.json",
       "type": "json",
-      "enabled": true
+      "enabled": false
     },
     {
       "name": "Movies",
       "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/client/src/lib/Movies.json",
       "type": "json",
-      "enabled": true
+      "enabled": false
     },
     {
       "name": "Entertainment",
       "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/client/src/hooks/Entertainment.json",
       "type": "json",
-      "enabled": true
+      "enabled": false
     },
     {
       "name": "Mix-Entertainment",
       "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/client/src/components/Mix-Entertainment.json",
       "type": "json",
-      "enabled": true
+      "enabled": false
     },
     {
       "name": "Infotainment",
       "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/dist/public/assets/Infotainment.json",
       "type": "json",
-      "enabled": true
+      "enabled": false
     },
     {
       "name": "Sports",
       "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/client/src/pages/Sports.json",
       "type": "json",
-      "enabled": true
+      "enabled": false
     },
     {
       "name": "Religious",
       "url": "https://raw.githubusercontent.com/tplaylive/tplay/refs/heads/main/android/capacitor-cordova-android-plugins/src/Religious.json",
       "type": "json",
-      "enabled": true
+      "enabled": false
     },
     {
       "name": "Dish Tv",
