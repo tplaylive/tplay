@@ -183,7 +183,7 @@
       },
       {
         "name": "Server 2",
-        "url": "https://mhdtvhub.com/sliv/stream.php?id=1000009255&e=.m3u8"
+        "url": "https://alymize.com/sliv/stream.m3u8?id=1000009255&e=.m3u8"
       },
       {
         "name": "Server 3",
@@ -543,7 +543,7 @@
     "sources": [
       {
         "name": "Server 1",
-        "url": "https://mhdtvhub.com/sliv/stream.php?id=1000009248&e=.m3u8"
+        "url": "https://alymize.com/sliv/stream.m3u8?id=1000009248&e=.m3u8"
       },
       {
         "name": "Server 2",
@@ -568,7 +568,7 @@
     "sources": [
       {
         "name": "Server 1",
-        "url": "https://mhdtvhub.com/sliv/stream.php?id=1000009273&e=.m3u8"
+        "url": "https://alymize.com/sliv/stream.m3u8?id=1000009273&e=.m3u8"
       },
       {
         "name": "Server 2",
@@ -585,7 +585,7 @@
     "sources": [
       {
         "name": "Server 1",
-        "url": "https://mhdtvhub.com/sliv/stream.php?id=1000009246&e=.m3u8"
+        "url": "https://alymize.com/sliv/stream.m3u8?id=1000009246&e=.m3u8"
       },
       {
         "name": "Server 2",
@@ -740,7 +740,7 @@
     "sources": [
       {
         "name": "Server 1",
-        "url": "https://mhdtvhub.com/sliv/stream.php?id=1000009259&e=.m3u8"
+        "url": "https://alymize.com/sliv/stream.m3u8?id=1000009259&e=.m3u8"
       }
     ],
     "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4wRjk798Ys8XdOzogPeYLsXGPP4w_8KZEXA&s",
